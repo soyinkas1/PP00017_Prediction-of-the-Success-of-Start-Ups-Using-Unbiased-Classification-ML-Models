@@ -245,8 +245,8 @@ def clean_data():
     # Convert the started_on and completed_on to DateTime data type
     organizations['founded_on'] = pd.to_datetime(organizations['founded_on'], errors='coerce')
     organizations['closed_on'] = pd.to_datetime(organizations['closed_on'], errors='coerce')
-    # Drop organisations without founded_on and closed_on
-    organizations.dropna(subset=['founded_on', 'closed_on'], inplace=True)
+    # Drop organisations without twitter_url, facebook_url, founded_on and closed_on values
+    organizations.dropna(subset=['twitter_url', 'facebook_url', 'founded_on', 'closed_on'], inplace=True)
     # Fill the rows with no degree_type, no subject, no started_on, no completed_on.
     for col in organizations.columns:
         if organizations[col].dtype == 'O':
