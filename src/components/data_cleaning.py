@@ -182,9 +182,9 @@ def clean_data():
     ipos.drop(['name', 'type', 'permalink', 'cb_url', 'rank', 'created_at',
                'updated_at', 'org_cb_url'], axis=1, inplace=True)
     # Missing price currency code to be filled with USD
-    ipos['money_raised_currency_code'].fillna('USD', inplace=True)
-    ipos['valuation_price_currency_code'].fillna('USD', inplace=True)
-    ipos['share_price_currency_code'].fillna('USD', inplace=True)
+    # ipos['money_raised_currency_code'].fillna('USD', inplace=True)
+    # ipos['valuation_price_currency_code'].fillna('USD', inplace=True)
+    # ipos['share_price_currency_code'].fillna('USD', inplace=True)
     # Missing string values (addresses etc.) filled with "not known and numeric values with 0
     for col in ipos.columns:
         if ipos[col].dtype == 'O':
@@ -202,10 +202,10 @@ def clean_data():
     # Remove the unneeded columns
     jobs.drop(['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at'], axis=1, inplace=True)
     # Rows with missing personnel names, uuid and org_name will be dropped
-    jobs.dropna(subset=['name', 'person_uuid', 'person_name', 'org_name'], inplace=True)
-    jobs['title'] = jobs['title'].astype("string")
+    jobs.dropna(subset=['name', 'person_uuid', 'person_name', 'org_name', 'title'], inplace=True)
+    # jobs['title'] = jobs['title'].astype("string")
     # Rows with missing job titles will be filled with "not known"
-    jobs['title'].fillna('not known', inplace=True)
+    # jobs['title'].fillna('not known', inplace=True)
     # Missing dates will be filled with 0 (will be processed to DateTime before training of model)
     jobs.fillna(0, inplace=True)
     # Save the clean version of the dataset
