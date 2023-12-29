@@ -3,19 +3,20 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
+  n_rows: 1000
   acquisition_source_data_file: data/acquisitions.csv
   cat_groups_source_data_file: data/category_groups.csv
   degrees_source_data_file: data/degrees.csv
   event_appearances_source_data_file: data/event_appearances.csv
-  events_source_data_file: data/events.csv')
+  events_source_data_file: data/events.csv
   funding_rounds_source_data_file: data/funding_rounds.csv
   funds_source_data_file: data/funds.csv
-  investments_partners_source_data_file: data/investments_partners.csv
+  investments_partners_source_data_file: data/investment_partners.csv
   investments_source_data_file: data/investments.csv
   investors_source_data_file: data/investors.csv
   ipos_source_data_file: data/ipos.csv
   jobs_source_data_file: data/jobs.csv
-  org_source_data_file: data/org_parents.csv
+  org_parents_source_data_file: data/org_parents.csv
   organization_descriptions_source_data_file: data/organization_descriptions.csv
   organizations_source_data_file: data/organizations.csv
   people_source_data_file: data/people.csv
@@ -24,16 +25,16 @@ data_ingestion:
   acquisition_local_data_file: artifacts/data_ingestion/acquisitions.csv
   cat_groups_local_data_file: artifacts/data_ingestion/category_groups.csv
   degrees_local_data_file: artifacts/data_ingestion/degrees.csv
-  event_local_data_file: artifacts/data_ingestion/event_appearances.csv
-  events_local_data_file: artifacts/data_ingestion/events.csv')
-  funding_local_data_file: artifacts/data_ingestion/funding_rounds.csv
+  event_appearances_local_data_file: artifacts/data_ingestion/event_appearances.csv
+  events_local_data_file: artifacts/data_ingestion/events.csv
+  funding_rounds_local_data_file: artifacts/data_ingestion/funding_rounds.csv
   funds_local_data_file: artifacts/data_ingestion/funds.csv
-  investments_partners_local_data_file: artifacts/data_ingestion/investments_partners.csv
+  investments_partners_local_data_file: artifacts/data_ingestion/investment_partners.csv
   investments_local_data_file: artifacts/data_ingestion/investments.csv
   investors_local_data_file: artifacts/data_ingestion/investors.csv
   ipos_local_data_file: artifacts/data_ingestion/ipos.csv
   jobs_local_data_file: artifacts/data_ingestion/jobs.csv
-  org_local_data_file: artifacts/data_ingestion/org_parents.csv
+  org_parents_local_data_file: artifacts/data_ingestion/org_parents.csv
   organization_descriptions_local_data_file: artifacts/data_ingestion/organization_descriptions.csv
   organizations_local_data_file: artifacts/data_ingestion/organizations.csv
   people_local_data_file: artifacts/data_ingestion/people.csv
@@ -46,10 +47,10 @@ data_ingestion:
     cat_groups_local_data_file: artifacts/data_cleaning/category_groups.csv
     degrees_local_data_file: artifacts/data_cleaning/degrees.csv
     event_local_data_file: artifacts/data_cleaning/event_appearances.csv
-    events_local_data_file: artifacts/data_cleaning/events.csv')
+    events_local_data_file: artifacts/data_cleaning/events.csv
     funding_local_data_file: artifacts/data_cleaning/funding_rounds.csv
     funds_local_data_file: artifacts/data_cleaning/funds.csv
-    investments_partners_local_data_file: artifacts/data_cleaning/investments_partners.csv
+    investments_partners_local_data_file: artifacts/data_cleaning/investment_partners.csv
     investments_local_data_file: artifacts/data_cleaning/investments.csv
     investors_local_data_file: artifacts/data_cleaning/investors.csv
     ipos_local_data_file: artifacts/data_cleaning/ipos.csv
