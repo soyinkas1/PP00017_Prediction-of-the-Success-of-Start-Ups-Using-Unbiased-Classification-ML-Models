@@ -5,6 +5,7 @@ from pathlib import Path
 @dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir: Path
+    n_rows: int
     acquisition_source_data_file: Path
     cat_groups_source_data_file: Path
     degrees_source_data_file: Path
