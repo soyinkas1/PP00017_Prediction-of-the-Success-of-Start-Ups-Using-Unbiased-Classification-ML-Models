@@ -61,8 +61,12 @@ data_ingestion:
     people_local_data_file: artifacts/data_cleaning/people.csv
     people_descriptions_local_data_file: artifacts/data_cleaning/people_descriptions.csv
 
-    acquisition_column_to_drop: ['permalink', 'cb_url', 'rank', 'created_at', 'updated_at',
-                       'acquiree_cb_url', 'acquirer_cb_url', 'price_currency_code']
+    acquisition_column_to_drop: [ 'permalink', 'cb_url', 'rank', 'created_at',
+       'updated_at', 'acquiree_cb_url','acquirer_cb_url', 'uuid', 'name', 'type', 'acquiree_name',
+       'acquiree_country_code', 'acquiree_state_code', 'acquiree_region',
+       'acquiree_city','acquirer_country_code', 'acquirer_state_code', 'acquirer_region',
+       'acquirer_city', 'acquisition_type','price', 'price_currency_code']
+    acquisition_column_to_rename: {'acquiree_uuid':'org_uuid'}
     cat_groups_column_to_drop: ['rank', 'permalink', 'cb_url', 'created_at', 'updated_at']
     degrees_column_to_drop: ['name', 'rank', 'permalink', 'cb_url', 'created_at', 'updated_at']
     event_appearances_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at']

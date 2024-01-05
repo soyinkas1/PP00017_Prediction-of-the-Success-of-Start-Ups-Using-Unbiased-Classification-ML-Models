@@ -85,7 +85,7 @@ class ConfigurationManager:
         people_descriptions_local_data_file = config.people_descriptions_local_data_file
         )
 
-        return  data_cleaning_config
+        return data_cleaning_config
 
 
 

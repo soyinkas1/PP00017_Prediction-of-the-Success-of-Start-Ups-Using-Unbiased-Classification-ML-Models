@@ -64,6 +64,7 @@ class DataCleaningConfig:
     people_descriptions_local_data_file: Path
 
     acquisition_column_to_drop: list
+    acquisition_column_to_rename : dict
     cat_groups_column_to_drop: list
     degrees_column_to_drop: list
     event_appearances_column_to_drop: list
