@@ -29,12 +29,12 @@ class DataIngestion:
             acq_df.to_csv(self.ingestion_config.acquisition_local_data_file, index=False)
             logging.info('Saved the acquisitions dataset in csv format')
 
-            catg_dfs = pd.read_csv(self.ingestion_config.cat_groups_source_data_file, chunksize=chunk_size,
-                                   low_memory=True, nrows=self.ingestion_config.n_rows)
-            catg_df = pd.concat(catg_dfs)
-            logging.info('Read the category groups dataset as dataframe')
-            catg_df.to_csv(self.ingestion_config.cat_groups_local_data_file, index=False)
-            logging.info('Saved the category groups dataset in csv format')
+            # catg_dfs = pd.read_csv(self.ingestion_config.cat_groups_source_data_file, chunksize=chunk_size,
+            #                        low_memory=True, nrows=self.ingestion_config.n_rows)
+            # catg_df = pd.concat(catg_dfs)
+            # logging.info('Read the category groups dataset as dataframe')
+            # catg_df.to_csv(self.ingestion_config.cat_groups_local_data_file, index=False)
+            # logging.info('Saved the category groups dataset in csv format')
 
             deg_dfs = pd.read_csv(self.ingestion_config.degrees_source_data_file, chunksize=chunk_size,
                                   low_memory=True, nrows=self.ingestion_config.n_rows)
@@ -50,12 +50,12 @@ class DataIngestion:
             event_app_df.to_csv(self.ingestion_config.event_appearances_local_data_file, index=False)
             logging.info('Saved the event appearances dataset in csv format')
 
-            events_dfs = pd.read_csv(self.ingestion_config.events_source_data_file, chunksize=chunk_size,
-                                     low_memory=True, nrows=self.ingestion_config.n_rows)
-            events_df = pd.concat(events_dfs)
-            logging.info('Read the events dataset as dataframe')
-            events_df.to_csv(self.ingestion_config.events_local_data_file, index=False)
-            logging.info('Saved the events dataset in csv format')
+            # events_dfs = pd.read_csv(self.ingestion_config.events_source_data_file, chunksize=chunk_size,
+            #                          low_memory=True, nrows=self.ingestion_config.n_rows)
+            # events_df = pd.concat(events_dfs)
+            # logging.info('Read the events dataset as dataframe')
+            # events_df.to_csv(self.ingestion_config.events_local_data_file, index=False)
+            # logging.info('Saved the events dataset in csv format')
 
             funding_rounds_dfs = pd.read_csv(self.ingestion_config.funding_rounds_source_data_file, chunksize=chunk_size,
                                              low_memory=True, nrows=self.ingestion_config.n_rows)
@@ -64,33 +64,33 @@ class DataIngestion:
             funding_rounds_df.to_csv(self.ingestion_config.funding_rounds_local_data_file, index=False)
             logging.info('Saved the funding rounds dataset in csv format')
 
-            funds_dfs = pd.read_csv(self.ingestion_config.funds_source_data_file, chunksize=chunk_size,
-                                    low_memory=True, nrows=self.ingestion_config.n_rows)
-            funds_df = pd.concat(funds_dfs)
-            logging.info('Read the funds dataset as dataframe')
-            funds_df.to_csv(self.ingestion_config.funds_local_data_file, index=False)
-            logging.info('Saved the funds dataset in csv format')
-
-            inv_partn_dfs = pd.read_csv(self.ingestion_config.investments_partners_source_data_file, chunksize=chunk_size,
-                                        low_memory=True, nrows=self.ingestion_config.n_rows)
-            inv_partn_df = pd.concat(inv_partn_dfs)
-            logging.info('Read the investment partners dataset as dataframe')
-            inv_partn_df.to_csv(self.ingestion_config.investments_partners_local_data_file, index=False)
-            logging.info('Saved the investment partners dataset in csv format')
-
-            inv_dfs = pd.read_csv(self.ingestion_config.investments_source_data_file, chunksize=chunk_size,
-                                  low_memory=True, nrows=self.ingestion_config.n_rows)
-            inv_df = pd.concat(inv_dfs)
-            logging.info('Read the investments dataset as dataframe')
-            inv_df.to_csv(self.ingestion_config.investments_local_data_file, index=False)
-            logging.info('Saved the investments dataset in csv format')
-
-            investors_dfs = pd.read_csv(self.ingestion_config.investors_source_data_file, chunksize=chunk_size,
-                                        low_memory=True, nrows=self.ingestion_config.n_rows)
-            investors_df = pd.concat(investors_dfs)
-            logging.info('Read the investors dataset as dataframe')
-            investors_df.to_csv(self.ingestion_config.investors_local_data_file, index=False)
-            logging.info('Saved the investors dataset in csv format')
+            # funds_dfs = pd.read_csv(self.ingestion_config.funds_source_data_file, chunksize=chunk_size,
+            #                         low_memory=True, nrows=self.ingestion_config.n_rows)
+            # funds_df = pd.concat(funds_dfs)
+            # logging.info('Read the funds dataset as dataframe')
+            # funds_df.to_csv(self.ingestion_config.funds_local_data_file, index=False)
+            # logging.info('Saved the funds dataset in csv format')
+            #
+            # inv_partn_dfs = pd.read_csv(self.ingestion_config.investments_partners_source_data_file, chunksize=chunk_size,
+            #                             low_memory=True, nrows=self.ingestion_config.n_rows)
+            # inv_partn_df = pd.concat(inv_partn_dfs)
+            # logging.info('Read the investment partners dataset as dataframe')
+            # inv_partn_df.to_csv(self.ingestion_config.investments_partners_local_data_file, index=False)
+            # logging.info('Saved the investment partners dataset in csv format')
+            #
+            # inv_dfs = pd.read_csv(self.ingestion_config.investments_source_data_file, chunksize=chunk_size,
+            #                       low_memory=True, nrows=self.ingestion_config.n_rows)
+            # inv_df = pd.concat(inv_dfs)
+            # logging.info('Read the investments dataset as dataframe')
+            # inv_df.to_csv(self.ingestion_config.investments_local_data_file, index=False)
+            # logging.info('Saved the investments dataset in csv format')
+            #
+            # investors_dfs = pd.read_csv(self.ingestion_config.investors_source_data_file, chunksize=chunk_size,
+            #                             low_memory=True, nrows=self.ingestion_config.n_rows)
+            # investors_df = pd.concat(investors_dfs)
+            # logging.info('Read the investors dataset as dataframe')
+            # investors_df.to_csv(self.ingestion_config.investors_local_data_file, index=False)
+            # logging.info('Saved the investors dataset in csv format')
 
             ipos_dfs = pd.read_csv(self.ingestion_config.ipos_source_data_file, chunksize=chunk_size,
                                    low_memory=True, nrows=self.ingestion_config.n_rows)
