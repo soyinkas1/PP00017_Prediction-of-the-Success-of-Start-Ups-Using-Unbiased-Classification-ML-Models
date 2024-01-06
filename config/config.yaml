@@ -103,8 +103,8 @@ data_cleaning:
   people_descriptions_column_to_drop: [ 'type', 'permalink', 'cb_url','created_at','updated_at', 'name', 'rank']
   people_descriptions_column_to_rename: {'uuid': 'person_uuid', 'description': 'people_description'}
 
-  degrees_completed_on: degrees_completed_on
-  degrees_started_on: degrees_started_on
+  degree_completed_on: degree_completed_on
+  degree_started_on: degree_started_on
   founded_on: founded_on
   closed_on: closed_on
   last_funding_on: last_funding_on

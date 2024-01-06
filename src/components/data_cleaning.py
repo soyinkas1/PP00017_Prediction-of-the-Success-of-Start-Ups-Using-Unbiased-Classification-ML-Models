@@ -18,7 +18,7 @@ class DataCleaning:
 
     def clean_data(self):
         # Ingest data
-        data_ingestion = DataIngestion()
+        data_ingestion = DataIngestion(self.ingestion_config)
         data_ingestion.initiate_data_ingestion()
 
         # Acquisition dataset cleaning
@@ -48,19 +48,19 @@ class DataCleaning:
         # Rename started_on and completed_on to make distinct
         degrees.rename(columns=self.cleaning_config.degrees_column_to_rename, inplace=True)
         # Convert the started_on and completed_on to DateTime data type
-        degrees[self.cleaning_config.degrees_completed_on] = pd.to_datetime(degrees[
-                                                            self.cleaning_config.degrees_completed_on], errors='coerce')
-        degrees[self.cleaning_config.degrees_started_on] = pd.to_datetime(degrees[
-                                                            self.cleaning_config.degrees_started_on], errors='coerce')
+        degrees[self.cleaning_config.degree_completed_on] = \
+            pd.to_datetime(degrees[self.cleaning_config.degree_completed_on], errors='coerce')
+        degrees[self.cleaning_config.degree_started_on] = \
+            pd.to_datetime(degrees[self.cleaning_config.degree_started_on], errors='coerce')
         # Fill the started_on date with 4 years less than completed_on date
-        degrees.loc[degrees[self.cleaning_config.degrees_started_on].isna() & degrees[
-            self.cleaning_config.degrees_completed_on].notna(), self.cleaning_config.degrees_started_on] = \
-            degrees[self.cleaning_config.degrees_completed_on] - pd.offsets.DateOffset(years=4)
+        degrees.loc[degrees[self.cleaning_config.degree_started_on].isna() & degrees[
+            self.cleaning_config.degree_completed_on].notna(), self.cleaning_config.degree_started_on] = \
+            degrees[self.cleaning_config.degree_completed_on] - pd.offsets.DateOffset(years=4)
 
         # Fill the completed_on date with 4 years more than started_on date
-        degrees.loc[degrees[self.cleaning_config.degrees_completed_on].isna() & degrees[
-            self.cleaning_config.degrees_started_on].notna(), self.cleaning_config.degrees_completed_on] = \
-            degrees[self.cleaning_config.degrees_started_on] + pd.offsets.DateOffset(years=4)
+        degrees.loc[degrees[self.cleaning_config.degree_completed_on].isna() & degrees[
+            self.cleaning_config.degree_started_on].notna(), self.cleaning_config.degree_completed_on] = \
+            degrees[self.cleaning_config.degree_started_on] + pd.offsets.DateOffset(years=4)
         # Drop the rows with no degree_type, no subject, no started_on, no completed_on.
         degrees.dropna(subset=self.cleaning_config.degrees_column_to_drop_na, inplace=True)
         # Save the clean version of the dataset
@@ -75,7 +75,7 @@ class DataCleaning:
         # Drop rows with missing values
         event_appearances.dropna(inplace=True)
         # Save the clean version of the dataset
-        event_appearances.to_csv('artifacts/event_appearances.csv', index=False)
+        event_appearances.to_csv(self.cleaning_config.event_appearances_local_data_file, index=False)
 
         # Funding rounds dataset cleaning
 
@@ -179,7 +179,7 @@ class DataCleaning:
         organizations[self.cleaning_config.employee_count] = organizations[self.cleaning_config.employee_count].\
             astype(int)
         # Save the clean version of the dataset
-        organizations.to_csv('artifacts/organizations.csv', index=False)
+        organizations.to_csv(self.cleaning_config.organizations_local_data_file, index=False)
 
         # Organisation descriptions dataset cleaning
 
@@ -198,7 +198,7 @@ class DataCleaning:
         # Organisations without descriptions should be imputed with 'no description'
         organization_descriptions[self.cleaning_config.organization_description].fillna('no description', inplace=True)
         # Save the clean version of the dataset
-        organization_descriptions.to_csv('artifacts/organization_descriptions.csv', index=False)
+        organization_descriptions.to_csv(self.cleaning_config.organization_descriptions_local_data_file, index=False)
 
         # People dataset cleaning
         logging.info('Cleaning people dataset...')
@@ -225,7 +225,7 @@ class DataCleaning:
         # Missing descriptions will be imputed with "no description"
         people_descriptions[self.cleaning_config.people_description].fillna('no description', inplace=True)
         # Save the clean version of the dataset
-        people_descriptions.to_csv('artifacts/people_descriptions.csv', index=False)
+        people_descriptions.to_csv(self.cleaning_config.people_descriptions_local_data_file, index=False)
 
         logging.info('First level cleaning of all datasets completed...')
 
@@ -296,6 +296,8 @@ class DataCleaning:
         # The success_ds will now be merged with the backbone_ds.
         backbone_ds = pd.merge(backbone_ds, success_ds, right_on=self.cleaning_config.org_uuid,
                                left_on=self.cleaning_config.uuid, how='left')
+        # Companies not on this success Dataframe will have value filled with 0 (failure)
+        backbone_ds['success'].fillna(0, inplace=True)
         # cast the success column as INT
         backbone_ds['success'] = backbone_ds['success'].astype(int)
         # Save the backbone_ds before merging with the scraped dataset, cleaning and preparing for model training
