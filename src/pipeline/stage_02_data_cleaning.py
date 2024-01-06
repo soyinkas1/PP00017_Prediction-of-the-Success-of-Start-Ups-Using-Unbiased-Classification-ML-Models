@@ -7,15 +7,17 @@ from src.entity.config_entity import DataCleaningConfig
 
 STAGE_NAME = "Data Cleaning Stage"
 
-class DataCleaningPipeline:
 
-    def __init__(self, config: DataCleaningConfig):
-            self.cleaning_config = config
+
+class DataCleaningPipeline:
+    def __init__(self):
+        pass
 
     def main(self):
         config = ConfigurationManager()
         data_cleaning_config = config.get_data_cleaning_config()
-        data_cleaning = DataCleaning(config=data_cleaning_config)
+        data_ingest_config = config.get_data_ingestion_config()
+        data_cleaning = DataCleaning(config=data_cleaning_config, ingest_config=data_ingest_config)
         data_cleaning.clean_data()
         data_cleaning.merge_for_backbone_dataset()
 

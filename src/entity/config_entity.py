@@ -69,7 +69,6 @@ class DataCleaningConfig:
     jobs_column_to_drop: list
     jobs_column_to_rename: dict
     jobs_column_to_drop_na: list
-    jobs_column_to_fill_na: str
     org_parents_column_to_drop: list
     org_parents_column_to_rename: dict
     organizations_column_to_drop: list
@@ -83,8 +82,8 @@ class DataCleaningConfig:
     people_descriptions_column_to_drop: list
     people_descriptions_column_to_rename: dict
 
-    degrees_completed_on: str
-    degrees_started_on: str
+    degree_completed_on: str
+    degree_started_on: str
     founded_on: str
     closed_on: str
     last_funding_on: str
