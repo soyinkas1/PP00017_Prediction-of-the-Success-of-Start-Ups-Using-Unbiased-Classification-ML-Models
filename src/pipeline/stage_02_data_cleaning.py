@@ -17,6 +17,8 @@ class DataCleaningPipeline:
         data_cleaning_config = config.get_data_cleaning_config()
         data_cleaning = DataCleaning(config=data_cleaning_config)
         data_cleaning.clean_data()
+        data_cleaning.merge_for_backbone_dataset()
+
 
 
 if __name__ == '__main__':
