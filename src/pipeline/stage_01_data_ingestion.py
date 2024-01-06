@@ -6,6 +6,7 @@ import sys
 
 STAGE_NAME = "Data Ingestion Stage"
 
+
 class DataIngestionPipeline:
 
     def __init__(self):

@@ -41,79 +41,90 @@ data_ingestion:
   people_descriptions_local_data_file: artifacts/data_ingestion/people_descriptions.csv
 
 
-  data_cleaning:
-    root_dir: artifacts/data_cleaning
-    acquisition_local_data_file: artifacts/data_cleaning/acquisitions.csv
-    cat_groups_local_data_file: artifacts/data_cleaning/category_groups.csv
-    degrees_local_data_file: artifacts/data_cleaning/degrees.csv
-    event_local_data_file: artifacts/data_cleaning/event_appearances.csv
-    events_local_data_file: artifacts/data_cleaning/events.csv
-    funding_local_data_file: artifacts/data_cleaning/funding_rounds.csv
-    funds_local_data_file: artifacts/data_cleaning/funds.csv
-    investments_partners_local_data_file: artifacts/data_cleaning/investment_partners.csv
-    investments_local_data_file: artifacts/data_cleaning/investments.csv
-    investors_local_data_file: artifacts/data_cleaning/investors.csv
-    ipos_local_data_file: artifacts/data_cleaning/ipos.csv
-    jobs_local_data_file: artifacts/data_cleaning/jobs.csv
-    org_local_data_file: artifacts/data_cleaning/org_parents.csv
-    organization_descriptions_local_data_file: artifacts/data_cleaning/organization_descriptions.csv
-    organizations_local_data_file: artifacts/data_cleaning/organizations.csv
-    people_local_data_file: artifacts/data_cleaning/people.csv
-    people_descriptions_local_data_file: artifacts/data_cleaning/people_descriptions.csv
+data_cleaning:
+  root_dir: artifacts/data_cleaning
+  acquisition_local_data_file: artifacts/data_cleaning/acquisitions.csv
+  degrees_local_data_file: artifacts/data_cleaning/degrees.csv
+  event_appearances_local_data_file: artifacts/data_cleaning/event_appearances.csv
+  funding_rounds_local_data_file: artifacts/data_cleaning/funding_rounds.csv
+  ipos_local_data_file: artifacts/data_cleaning/ipos.csv
+  jobs_local_data_file: artifacts/data_cleaning/jobs.csv
+  org_parents_local_data_file: artifacts/data_cleaning/org_parents.csv
+  organization_descriptions_local_data_file: artifacts/data_cleaning/organization_descriptions.csv
+  organizations_local_data_file: artifacts/data_cleaning/organizations.csv
+  people_local_data_file: artifacts/data_cleaning/people.csv
+  people_descriptions_local_data_file: artifacts/data_cleaning/people_descriptions.csv
 
-    acquisition_column_to_drop: [ 'permalink', 'cb_url', 'rank', 'created_at',
-       'updated_at', 'acquiree_cb_url','acquirer_cb_url', 'uuid', 'name', 'type', 'acquiree_name',
-       'acquiree_country_code', 'acquiree_state_code', 'acquiree_region',
-       'acquiree_city','acquirer_country_code', 'acquirer_state_code', 'acquirer_region',
-       'acquirer_city', 'acquisition_type','price', 'price_currency_code']
-    acquisition_column_to_rename: {'acquiree_uuid':'org_uuid'}
-    cat_groups_column_to_drop: ['rank', 'permalink', 'cb_url', 'created_at', 'updated_at']
-    degrees_column_to_drop: ['name', 'rank', 'permalink', 'cb_url', 'created_at', 'updated_at']
-    event_appearances_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at']
-    events_column_to_drop: ['type', 'permalink', 'cb_url', 'created_at', 'updated_at', 'logo_url']
-    funding_rounds_column_to_drop: ['type', 'permalink', 'cb_url', 'created_at', 'updated_at', 'post_money_valuation_usd',
-                         'post_money_valuation', 'post_money_valuation_currency_code', 'investor_count']
-    funds_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at',
-                'updated_at']
-    investments_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at']
-    investments_partners_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at']
-    investors_column_to_drop: ['permalink', 'cb_url', 'created_at', 'updated_at', 'logo_url']
-    ipos_column_to_drop: ['name', 'type', 'permalink', 'cb_url', 'rank', 'created_at',
-               'updated_at', 'org_cb_url', 'money_raised_currency_code',
-              'valuation_price_currency_code', 'share_price_currency_code' ]
-    jobs_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at', 'updated_at']
-    org_parents_column_to_drop: ['permalink', 'cb_url', 'created_at', 'updated_at']
-    organization_descriptions_column_to_drop: ['type', 'permalink', 'cb_url', 'created_at', 'updated_at']
-    organizations_column_to_drop: ['permalink', 'cb_url', 'created_at', 'updated_at', 'num_funding_rounds', 'total_funding_usd',
-                        'total_funding', 'total_funding_currency_code', 'last_funding_on', 'logo_url', 'alias1',
-                        'alias2', 'alias3', 'num_exits']
-    people_column_to_drop: ['type', 'permalink', 'created_at', 'updated_at', 'cb_url', 'logo_url']
-    people_descriptions_column_to_drop: ['type', 'permalink', 'cb_url', 'created_at', 'updated_at']
+  acquisition_column_to_drop: ['permalink', 'cb_url', 'rank', 'created_at',
+     'updated_at', 'acquiree_cb_url','acquirer_cb_url', 'uuid', 'name', 'type', 'acquiree_name',
+     'acquiree_country_code', 'acquiree_state_code', 'acquiree_region',
+     'acquiree_city','acquirer_country_code', 'acquirer_state_code', 'acquirer_region',
+     'acquirer_city', 'acquisition_type','price', 'price_currency_code']
+  acquisition_column_to_rename: {'acquiree_uuid':'org_uuid'}
+  degrees_column_to_drop: ['name','rank','permalink','cb_url','created_at','updated_at',
+                           'uuid','type','person_name']
+  degrees_column_to_rename: {'started_on': 'degree_started_on', 'completed_on': 'degree_completed_on',
+                      'is_completed': 'degree_is_completed'}
+  degrees_column_to_drop_na: ['institution_uuid', 'institution_name', 'degree_type', 'subject',
+                     'degree_started_on', 'degree_completed_on']
+  event_appearances_column_to_drop: [ 'uuid', 'name', 'type', 'participant_type', 'permalink',
+                      'cb_url', 'rank', 'created_at','updated_at', 'short_description']
+  funding_rounds_column_to_drop: [ 'type', 'permalink', 'cb_url', 'created_at',
+     'updated_at', 'uuid', 'name', 'rank', 'country_code', 'state_code', 'region', 'city',
+      'raised_amount','raised_amount_currency_code', 'org_name',
+     'lead_investor_uuids', 'post_money_valuation', 'post_money_valuation_currency_code']
+  ipos_column_to_drop: ['name','type', 'permalink', 'cb_url', 'rank', 'created_at','updated_at', 'org_cb_url', 'uuid',
+         'org_name', 'country_code', 'state_code', 'region', 'city', 'stock_exchange_symbol', 'stock_symbol',
+          'share_price', 'share_price_currency_code', 'valuation_price',
+         'valuation_price_currency_code', 'money_raised', 'money_raised_currency_code']
+  jobs_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at','updated_at',
+         'person_name', 'org_uuid', 'org_name']
+  jobs_column_to_rename: {'started_on': 'job_started_on', 'ended_on': 'job_ended_on',
+                      'is_current': 'job_is_current', 'title': 'job_title'}
+  jobs_column_to_drop_na: ['name','person_uuid', 'job_title']
+  org_parents_column_to_drop: ['permalink', 'cb_url', 'created_at','updated_at', 'rank']
+  org_parents_column_to_rename: {'uuid': 'org_uuid', 'name': 'org_name'}
+  organizations_column_to_drop: ['permalink', 'cb_url', 'created_at',
+                                 'updated_at', 'num_funding_rounds', 'total_funding', 'total_funding_currency_code',
+                                 'logo_url', 'alias1', 'alias2', 'alias3', 'num_exits',
+                                 'email', 'phone', 'short_description', 'legal_name', 'domain',
+                                 'homepage_url', 'country_code', 'state_code', 'region', 'city',
+                                 'address', 'postal_code']
+  organizations_column_to_drop_na: ['twitter_url', 'facebook_url', 'founded_on']
+  organization_descriptions_column_to_drop: [ 'type', 'permalink', 'cb_url', 'created_at','updated_at',
+                                              'name', 'rank']
+  organization_descriptions_column_to_rename: {'description': 'organization_description'}
+  organization_descriptions_column_to_drop_na: ['uuid']
+  people_column_to_drop: ['type', 'permalink', 'rank', 'created_at','updated_at','cb_url','logo_url', 'name',
+          'country_code', 'state_code', 'region', 'city']
+  people_column_to_rename: {'uuid': 'person_uuid', 'facebook_url': 'people_facebook_url', 'linkedin_url': 'people_linkedin_url',
+                         'twitter_url': 'people_twitter_url'}
+  people_column_to_drop_na: ['first_name', 'last_name', 'featured_job_organization_uuid']
+  people_descriptions_column_to_drop: [ 'type', 'permalink', 'cb_url','created_at','updated_at', 'name', 'rank']
+  people_descriptions_column_to_rename: {'uuid': 'person_uuid', 'description': 'people_description'}
 
-    acquisition_column_to_drop_na: list
-    cat_groups_column_to_drop_na: list
-    degrees_column_to_drop_na: ['person_name', 'institution_uuid', 'institution_name', 'degree_type', 'subject',
-                           'started_on', 'completed_on']
-    event_appearances_column_to_drop_na: list
-    events_column_to_drop_na: list
-    funding_rounds_column_to_drop_na: list
-    funds_column_to_drop_na: ['announced_on', 'raised_amount_usd', 'raised_amount',
-                         'raised_amount_currency_code']
-    investments_column_to_drop_na: ['name', 'funding_round_uuid', 'funding_round_name']
-    investments_partners_column_to_drop_na: list
-    investors_column_to_drop_na: ['name']
-    ipos_column_to_drop_na: list
-    jobs_column_to_drop_na: ['name', 'person_uuid', 'person_name', 'org_name', 'title']
-    org_parents_column_to_drop_na: list
-    organization_descriptions_column_to_drop_na: ['name']
-    organizations_column_to_drop_na: ['twitter_url', 'facebook_url', 'founded_on', 'closed_on']
-    people_column_to_drop_na: list
-    people_descriptions_column_to_drop_na: list
+  degrees_completed_on: degrees_completed_on
+  degrees_started_on: degrees_started_on
+  founded_on: founded_on
+  closed_on: closed_on
+  last_funding_on: last_funding_on
+  description: description
+  job_started_on: job_started_on
+  job_ended_on: job_ended_on
+  employee_count: employee_count
+  organization_description: organization_description
+  people_description: people_description
 
-    completed_on: completed_on
-    started_on: started_on
-    founded_on: founded_on
-    closed_on: closed_on
-    description: description
-
+  uuid: uuid
+  featured_job_organization_uuid: featured_job_organization_uuid
+  person_uuid: person_uuid
+  event_group_by: ['participant_uuid', 'appearance_type']
+  event_uuid: event_uuid
+  participant_uuid: participant_uuid
+  appearance_type: appearance_type
+  org_uuid: org_uuid
+  unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+  success_column_to_drop: [ 'acquirer_uuid', 'acquirer_name', 'acquired_on','price_usd', 'investment_type',
+                            'announced_on', 'raised_amount_usd', 'post_money_valuation_usd', 'investor_count',
+                            'went_public_on', 'share_price_usd', 'valuation_price_usd', 'money_raised_usd']
 
