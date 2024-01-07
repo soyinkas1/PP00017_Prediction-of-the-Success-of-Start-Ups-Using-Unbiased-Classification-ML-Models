@@ -4,7 +4,7 @@ from src.logger import logging
 from src.exception import CustomException
 import sys
 
-STAGE_NAME = "Data Ingestion Stage"
+STAGE_NAME = "Data Ingestion"
 
 
 class DataIngestionPipeline:

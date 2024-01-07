@@ -5,7 +5,7 @@ from src.exception import CustomException
 import sys
 from src.entity.config_entity import DataCleaningConfig
 
-STAGE_NAME = "Data Cleaning Stage"
+STAGE_NAME = "Data Cleaning"
 
 
 
