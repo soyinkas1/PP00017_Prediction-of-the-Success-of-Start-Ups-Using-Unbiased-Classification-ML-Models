@@ -1,14 +1,20 @@
 import pandas as pd
 from src.components.data_ingestion import DataIngestion
-from src.utils import imput_rank, ScraperTool, ScraperToolConfig
+from src.components.data_cleaning import DataCleaning
+import numpy as np
 from src.logger import logging
 import warnings
-from src.components.data_cleaning import clean_data
+from src.entity.config_entity import DataCleaningConfig, DataIngestionConfig
+from src.utils.common import ScraperTool, ScraperToolConfig
 
-# Scrape Twitter
 
-# t_scraper = ScraperTool()
-# t_scraper.scrape_twitter(df_rows=5, max_tweets=20)
+class DataEnrichment:
+    def __init__(self):
+
+    # Scrape Twitter
+    def twitter_data_scrape(self, max_tweets=None):
+        t_scraper = ScraperTool()
+        t_scraper.scrape_twitter(df_rows=5, max_tweets=20)
 
 
 # Scrape Facebook

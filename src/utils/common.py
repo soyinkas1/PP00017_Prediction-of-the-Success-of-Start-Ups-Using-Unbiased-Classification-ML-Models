@@ -24,14 +24,14 @@ from ensure import ensure_annotations
 
 
 
-def imput_rank(df):
-    """
-    The missing rank will be imputed with the nominal value from the tail end of the dataset
-    param: df: dataframe with a rank column named "rank" having missing values
-    """
-    leng= len(df)
-    counter = pd.Series(range(1,len(df['rank'][df['rank'].isna()] )+1))
-    df['rank'].mask(df['rank'].isna(), [leng-counter], inplace=True)
+# def imput_rank(df):
+#     """
+#     The missing rank will be imputed with the nominal value from the tail end of the dataset
+#     param: df: dataframe with a rank column named "rank" having missing values
+#     """
+#     leng= len(df)
+#     counter = pd.Series(range(1,len(df['rank'][df['rank'].isna()] )+1))
+#     df['rank'].mask(df['rank'].isna(), [leng-counter], inplace=True)
 
 
 @dataclass
