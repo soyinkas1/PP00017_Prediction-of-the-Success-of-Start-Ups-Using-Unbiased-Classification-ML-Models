@@ -105,3 +105,22 @@ class DataCleaningConfig:
     unclean_backbone_local_data_file: Path
     success_column_to_drop: list
 
+
+@dataclass(frozen=True)
+class DataEnrichConfig:
+    df_rows: int
+    max_tweets: int
+
+
+
+@dataclass
+class ScraperToolConfig:
+    chrome_driver_path: str
+    organizations_local_data_file: Path
+    twitter_url: str
+    facebook_url: str
+    username: str
+    password: str
+
+
+
