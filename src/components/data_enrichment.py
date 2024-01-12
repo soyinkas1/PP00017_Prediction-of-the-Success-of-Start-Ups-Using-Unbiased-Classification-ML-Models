@@ -9,7 +9,7 @@ from src.utils.common import ScraperTool, ScraperToolConfig
 
 
 class DataEnrichment:
-    def __init__(self):
+    def __init__(self, config=DataEnrichConfig):
 
     # Scrape Twitter
     def twitter_data_scrape(self, max_tweets=None):
