@@ -225,7 +225,7 @@ class ScraperTool:
         os.makedirs(os.path.dirname("tweets_scrapped\\"), exist_ok=True)
         # Save each DataFrame as a csv file for each entity
         for key, val in data.items():
-           val.to_csv("tweets_scraped\\{}.csv".format(str(key)))
+           val.to_csv("tweets_scrapped\\{}.csv".format(str(key)))
 
 
 def read_yaml(path_to_yaml: Path) -> ConfigBox:

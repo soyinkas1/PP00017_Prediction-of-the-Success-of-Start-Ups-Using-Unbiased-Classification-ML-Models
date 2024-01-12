@@ -128,3 +128,19 @@ data_cleaning:
                             'announced_on', 'raised_amount_usd', 'post_money_valuation_usd', 'investor_count',
                             'went_public_on', 'share_price_usd', 'valuation_price_usd', 'money_raised_usd']
 
+data_scrapping:
+  chrome_driver_path: src/chromedriver.exe
+  organizations_local_data_file: artifacts/data_cleaning/organizations.csv
+  twitter_url: twitter_url
+  facebook_url: facebook_url
+  username: SoyinkaSoy
+  password: Olatunde1$
+  tweet_scrapped_dir: tweets_scrapped
+
+
+data_enrich:
+  root_dir: artifacts/data_enrich
+  enriched_backbone_local_data_file: artifacts/data_enrich/enrich_backbone.csv
+  unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+  df_rows: 50
+  max_tweets: 20

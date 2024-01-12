@@ -1,6 +1,6 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig
+from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig
 
 
 class ConfigurationManager:
@@ -125,3 +125,40 @@ class ConfigurationManager:
         )
 
         return data_cleaning_config
+
+    def get_scrapping_config(self) -> DataScrappingConfig:
+        config = self.config.data_scrapping
+
+        create_directories([config.tweet_scrapped_dir])
+
+        data_scrapping_config = DataScrappingConfig(
+            chrome_driver_path=config.chrome_driver_path,
+            organizations_local_data_file=config.organizations_local_data_file,
+            twitter_url=config.twiiter_url,
+            facebook_url=config.facebook_url,
+            username=config.username,
+            password=config.password,
+            tweet_scrapped_dir=config.tweet_scrapped_dir
+
+        )
+
+        return data_scrapping_config
+
+    def get_data_enrich_config(self) -> DataEnrichConfig:
+        config = self.config.data_enrich
+
+        create_directories([config.tweet_scrapped_dir])
+
+        data_scrapping_config = DataScrappingConfig(
+            chrome_driver_path=config.chrome_driver_path,
+            organizations_local_data_file=config.organizations_local_data_file,
+            twitter_url=config.twiiter_url,
+            facebook_url=config.facebook_url,
+            username=config.username,
+            password=config.password,
+            tweet_scrapped_dir=config.tweet_scrapped_dir
+
+        )
+
+        return data_scrapping_config
+

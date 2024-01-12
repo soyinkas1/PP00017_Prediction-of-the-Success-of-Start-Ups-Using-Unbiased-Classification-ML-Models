@@ -108,19 +108,23 @@ class DataCleaningConfig:
 
 @dataclass(frozen=True)
 class DataEnrichConfig:
+    root_dir: Path
+    enriched_backbone_local_data_file: Path
+    unclean_backbone_local_data_file: Path
     df_rows: int
     max_tweets: int
 
 
-
 @dataclass
-class ScraperToolConfig:
+class DataScrappingConfig:
     chrome_driver_path: str
     organizations_local_data_file: Path
     twitter_url: str
     facebook_url: str
     username: str
     password: str
+    tweet_scrapped_dir: str
+
 
 
 
