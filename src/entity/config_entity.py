@@ -109,7 +109,19 @@ class DataCleaningConfig:
 @dataclass(frozen=True)
 class DataEnrichConfig:
     root_dir: Path
+    twitter_sentiment_local_data_file: Path
     enriched_backbone_local_data_file: Path
+    column_to_load: list
+    follower_data: str
+    following_data: str
+    account: str
+    polarity: str
+    subjectivity: str
+    tweet_analysis: str
+    text: str
+    enrich_data_columns: list
+
+
 
 
 
@@ -121,10 +133,12 @@ class DataScrappingConfig:
     unclean_backbone_local_data_file: Path
     twitter_url: str
     facebook_url: str
-    username: str
-    password: str
+    twitter_username: str
+    twitter_password: str
     df_rows: int
     max_tweets: int
+    facebook_username: str
+    facebook_password: str
 
 
 

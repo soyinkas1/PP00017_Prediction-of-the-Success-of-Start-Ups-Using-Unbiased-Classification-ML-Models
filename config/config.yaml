@@ -134,13 +134,26 @@ data_scrapping:
   unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
   twitter_url: twitter_url
   facebook_url: facebook_url
-  username: SoyinkaSoy
-  password: Olatunde1$
+  twitter_username: SoyinkaSoy
+  twitter_password: Olatunde1$
   df_rows: 2
   max_tweets: 5
+  facebook_username: SoyinkaSoy
+  facebook_password: Olatunde1$
 
 data_enrich:
   root_dir: artifacts/data_enrich
-  enriched_backbone_local_data_file: artifacts/data_enrich/enrich_backbone.csv
+  enriched_backbone_local_data_file: artifacts/data_enrich/enrich_unclean_backbone.csv
+  twitter_sentiment_local_data_file: artifacts/data_enrich/twitter_sentiments.csv
+  column_to_load: ['account', 'text', 'follower_data', 'following_data']
+  follower_data: follower_data
+  following_data: following_data
+  account: account
+  polarity: polarity
+  subjectivity: subjectivity
+  tweet_analysis: tweet_analysis
+  text: text
+  enrich_data_columns: ['following', 'followers', 'polarity',
+                                          'subjectivity', 'twitter_url']
 
 
