@@ -11,5 +11,6 @@ seaborn
 box
 yaml
 ensure
+
 -e .
 setuptools

@@ -137,10 +137,12 @@ class ConfigurationManager:
             unclean_backbone_local_data_file=config.unclean_backbone_local_data_file,
             twitter_url=config.twitter_url,
             facebook_url=config.facebook_url,
-            username=config.username,
-            password=config.password,
+            twitter_username=config.twitter_username,
+            twitter_password=config.twitter_password,
             df_rows=config.df_rows,
-            max_tweets=config.max_tweets
+            max_tweets=config.max_tweets,
+            facebook_username=config.facebook_username,
+            facebook_password=config.facebook_password,
 
         )
 
@@ -153,7 +155,18 @@ class ConfigurationManager:
 
         data_enrich_config = DataEnrichConfig(
             root_dir=config.root_dir,
+            twitter_sentiment_local_data_file=config.twitter_sentiment_local_data_file,
             enriched_backbone_local_data_file=config.enriched_backbone_local_data_file,
+            column_to_load=config.column_to_load,
+            follower_data=config.follower_data,
+            following_data=config.following_data,
+            account=config.account,
+            polarity=config.polarity,
+            subjectivity=config.subjectivity,
+            tweet_analysis=config.tweet_analysis,
+            text=config.text,
+            enrich_data_columns=config.enrich_data_columns
+
 
 
 
