@@ -33,14 +33,13 @@ class DataScrapping:
         """
         social_df = pd.read_csv(self.clean_data_config.unclean_backbone_local_data_file,
                                 nrows=self.scrapping_config.df_rows)
-        print(social_df.head(3))
         logging.info("Twitter url loaded......")
         # Create an empty dictionary to store tweets scraped
         data = {}
 
         # Helper function to scrape account details of the organisations
         def get_follow():
-            time.sleep(5)
+            time.sleep(10)
             try:
                 follower_data = driver.find_element(By.XPATH,
                                                     '//a[contains(@href,"followers")]//span/span').text
@@ -59,7 +58,7 @@ class DataScrapping:
         # Helper function to scrape each post
         def get_tweets(element):
             logging.info("Tweets scrapping ongoing......")
-            time.sleep(5)
+            time.sleep(10)
             try:
                 user = element.find_element(By.XPATH, './/span[contains(text(),"@")]').text
                 text = element.find_element(By.XPATH, './/div[@lang]').text
@@ -75,7 +74,7 @@ class DataScrapping:
 
             return tweet_data
 
-        time.sleep(5)
+        time.sleep(10)
         # time.sleep(6)  # this time might vary depending on your computer
 
         # search_box.send_Keys(Keys.ENTER)
@@ -96,7 +95,7 @@ class DataScrapping:
                 driver = webdriver.Chrome(service=service, options=options)
                 driver.get(twitter_page)
                 driver.maximize_window()
-                time.sleep(5)
+                time.sleep(10)
                 try:
                     login_link = driver.find_element(By.XPATH, './/a[@data-testid="login"]')
                     # login_link.click()
@@ -136,7 +135,7 @@ class DataScrapping:
                 name = name[-1]
                 search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
                 search_box.send_keys(name, Keys.ENTER)
-                time.sleep(10)
+                time.sleep(15)
                 # Create list to store the tweet details
                 user_data = []
                 texts = []

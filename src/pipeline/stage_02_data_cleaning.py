@@ -23,12 +23,12 @@ class DataCleaningPipeline:
 
 
 
-if __name__ == '__main__':
-    try:
-        logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
-        obj = DataCleaningPipeline()
-        obj.main()
-        logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
-
-    except Exception as e:
-        raise CustomException(e, sys)
+# if __name__ == '__main__':
+#     try:
+#         logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
+#         obj = DataCleaningPipeline()
+#         obj.main()
+#         logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
+#
+#     except Exception as e:
+#         raise CustomException(e, sys)

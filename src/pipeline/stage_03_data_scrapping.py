@@ -21,7 +21,6 @@ class DataScrappingPipeline:
         data_scrapping.twitter_data_scrapping()
 
 
-
 if __name__ == '__main__':
     try:
         logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
@@ -31,3 +30,4 @@ if __name__ == '__main__':
 
     except Exception as e:
         raise CustomException(e, sys)
+#
