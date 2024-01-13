@@ -23,13 +23,13 @@ class DataEnrichmentPipeline:
         data_enrich.get_tweet_sentiment_analysis()
         data_enrich.enrich_dataset()
 
-
-if __name__ == '__main__':
-    try:
-        logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
-        obj = DataEnrichmentPipeline()
-        obj.main()
-        logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
-
-    except Exception as e:
-        raise CustomException(e, sys)
+#
+# if __name__ == '__main__':
+#     try:
+#         logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
+#         obj = DataEnrichmentPipeline()
+#         obj.main()
+#         logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
+#
+#     except Exception as e:
+#         raise CustomException(e, sys)

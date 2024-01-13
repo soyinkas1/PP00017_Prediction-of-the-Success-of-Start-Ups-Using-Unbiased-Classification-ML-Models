@@ -3,7 +3,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  n_rows: 5000
+  n_rows: 1000
   acquisition_source_data_file: data/acquisitions.csv
   cat_groups_source_data_file: data/category_groups.csv
   degrees_source_data_file: data/degrees.csv
@@ -136,8 +136,8 @@ data_scrapping:
   facebook_url: facebook_url
   twitter_username: SoyinkaSoy
   twitter_password: Olatunde1$
-  df_rows: 2
-  max_tweets: 5
+  df_rows: 1000
+  max_tweets: 20
   facebook_username: SoyinkaSoy
   facebook_password: Olatunde1$
 
