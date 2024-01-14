@@ -1,5 +1,5 @@
 from src.config.configuration import ConfigurationManager
-from src.components.data_scrapping import DataScrapping
+from src.components.data_scrap_test import DataScrapping
 from src.logger import logging
 from src.exception import CustomException
 import sys

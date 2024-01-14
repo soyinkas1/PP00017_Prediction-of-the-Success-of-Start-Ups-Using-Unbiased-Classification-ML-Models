@@ -136,8 +136,8 @@ data_scrapping:
   facebook_url: facebook_url
   twitter_username: SoyinkaSoy
   twitter_password: Olatunde1$
-  df_rows: 1000
-  max_tweets: 20
+  df_rows: 5
+  max_tweets: 10
   facebook_username: SoyinkaSoy
   facebook_password: Olatunde1$
 
