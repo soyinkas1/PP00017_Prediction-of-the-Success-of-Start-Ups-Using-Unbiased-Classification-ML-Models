@@ -9,28 +9,28 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-@dataclass
-class DataIngestionConfig:
-    """
-    This class defines all the inputs (configurations) required for DataIngestion class
-    """
-    acquistions_data_path: str = os.path.join('artifacts', 'acquisitions.csv')
-    cat_groups_data_path: str = os.path.join('artifacts', 'category_groups.csv')
-    degrees_data_path: str = os.path.join('artifacts', 'degrees.csv')
-    event_appearances_data_path: str = os.path.join('artifacts', 'event_appearances.csv')
-    events_data_path: str = os.path.join('artifacts', 'events.csv')
-    funding_rounds_data_path: str = os.path.join('artifacts', 'funding_rounds.csv')
-    funds_data_path: str = os.path.join('artifacts', 'funds.csv')
-    investments_partners_data_path: str = os.path.join('artifacts', 'investments_partners.csv')
-    investments_data_path: str = os.path.join('artifacts', 'investments.csv')
-    investors_data_path: str = os.path.join('artifacts', 'investors.csv')
-    ipos_data_path: str = os.path.join('artifacts', 'ipos.csv')
-    jobs_data_path: str = os.path.join('artifacts', 'jobs.csv')
-    org_parents_data_path: str = os.path.join('artifacts', 'org_parents.csv')
-    organization_descriptions_data_path: str = os.path.join('artifacts', 'organization_descriptions.csv')
-    organizations_data_path: str = os.path.join('artifacts', 'organizations.csv')
-    people_data_path: str = os.path.join('artifacts', 'people.csv')
-    people_descriptions_data_path: str = os.path.join('artifacts', 'people_descriptions.csv')
+# @dataclass
+# class DataIngestionConfig:
+#     """
+#     This class defines all the inputs (configurations) required for DataIngestion class
+#     """
+#     acquistions_data_path: str = os.path.join('artifacts', 'acquisitions.csv')
+#     cat_groups_data_path: str = os.path.join('artifacts', 'category_groups.csv')
+#     degrees_data_path: str = os.path.join('artifacts', 'degrees.csv')
+#     event_appearances_data_path: str = os.path.join('artifacts', 'event_appearances.csv')
+#     events_data_path: str = os.path.join('artifacts', 'events.csv')
+#     funding_rounds_data_path: str = os.path.join('artifacts', 'funding_rounds.csv')
+#     funds_data_path: str = os.path.join('artifacts', 'funds.csv')
+#     investments_partners_data_path: str = os.path.join('artifacts', 'investments_partners.csv')
+#     investments_data_path: str = os.path.join('artifacts', 'investments.csv')
+#     investors_data_path: str = os.path.join('artifacts', 'investors.csv')
+#     ipos_data_path: str = os.path.join('artifacts', 'ipos.csv')
+#     jobs_data_path: str = os.path.join('artifacts', 'jobs.csv')
+#     org_parents_data_path: str = os.path.join('artifacts', 'org_parents.csv')
+#     organization_descriptions_data_path: str = os.path.join('artifacts', 'organization_descriptions.csv')
+#     organizations_data_path: str = os.path.join('artifacts', 'organizations.csv')
+#     people_data_path: str = os.path.join('artifacts', 'people.csv')
+#     people_descriptions_data_path: str = os.path.join('artifacts', 'people_descriptions.csv')
 
 
 class DataIngestion:
