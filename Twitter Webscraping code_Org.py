@@ -131,6 +131,6 @@ for twitter_page in social_df['twitter_url']:
 
 
 
-# Save each DataFrame as a csv file for each entity
+# Save each DataFrame as a csv file for each entity scrapped
 for key, val in data.items():
    val.to_csv("C:\\Users\\VG\\OneDrive - Cardiff Metropolitan University\\Document Management\\Dissertation\\Crunchbase Data\\tweets\\{}.csv".format(str(key)))
