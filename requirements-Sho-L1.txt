@@ -1,0 +1,16 @@
+
+pandas
+numpy
+scikit-learn
+plotly
+textBlob
+selenium
+geopandas
+matplotlib
+seaborn
+box
+yaml
+ensure
+
+-e .
+setuptools
