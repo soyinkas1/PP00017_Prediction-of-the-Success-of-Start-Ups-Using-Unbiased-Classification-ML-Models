@@ -156,4 +156,11 @@ data_enrich:
   enrich_data_columns: ['following', 'followers', 'polarity',
                                           'subjectivity', 'twitter_url']
 
-
+data_transformation:
+    root_dir: Partifacts/data_transformation
+    unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+    transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
+    per_exp_at_coy_start: str #(This the experience of the personnel at founding date of company)
+    founded_on: str
+    completed_on: str
+    degree_Length: int

@@ -123,10 +123,7 @@ class DataEnrichConfig:
 
 
 
-
-
-
-@dataclass
+@dataclass(frozen=True)
 class DataScrappingConfig:
     root_dir: Path
     chrome_driver_path: str
@@ -142,4 +139,18 @@ class DataScrappingConfig:
 
 
 
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    clean_backbone_local_data_file: Path
+    transformed_data_local_data_file: Path
+    per_exp_at_coy_start: str #(This the experience of the personnel at founding date of company)
+    founded_on: str
+    completed_on: str
+    degree_Length: int
 
+    # state_code_o
+    # postal_code_p
+    # closed_on
+    # completed_on
+    # started_on
