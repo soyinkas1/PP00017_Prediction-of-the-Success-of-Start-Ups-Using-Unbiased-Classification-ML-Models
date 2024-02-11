@@ -27,25 +27,25 @@ except Exception as e:
     logging.exception(e)
     raise e
 
-STAGE_NAME = 'Data Scraping'
+# STAGE_NAME = 'Data Scraping'
 
-try:
-    logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
-    data_scrapping = DataScrappingPipeline()
-    data_scrapping.main()
-    logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
-except Exception as e:
-    logging.exception(e)
-    raise e
+# try:
+#     logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
+#     data_scrapping = DataScrappingPipeline()
+#     data_scrapping.main()
+#     logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
+# except Exception as e:
+#     logging.exception(e)
+#     raise e
 
 
-STAGE_NAME = 'Data Enrichment'
+# STAGE_NAME = 'Data Enrichment'
 
-try:
-    logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
-    data_enrich = DataEnrichmentPipeline()
-    data_enrich.main()
-    logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
-except Exception as e:
-    logging.exception(e)
-    raise e
+# try:
+#     logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
+#     data_enrich = DataEnrichmentPipeline()
+#     data_enrich.main()
+#     logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
+# except Exception as e:
+#     logging.exception(e)
+#     raise e
