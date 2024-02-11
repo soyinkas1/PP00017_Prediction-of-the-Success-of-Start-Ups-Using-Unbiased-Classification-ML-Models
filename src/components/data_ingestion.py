@@ -8,7 +8,6 @@ from src.entity.config_entity import DataIngestionConfig
 
 warnings.filterwarnings("ignore")
 
-<<<<<<< HEAD
 # @dataclass
 # class DataIngestionConfig:
 #     """
@@ -33,8 +32,6 @@ warnings.filterwarnings("ignore")
 #     people_descriptions_data_path: str = os.path.join('artifacts', 'people_descriptions.csv')
 
 
-=======
->>>>>>> 9689df6e094e9fbb9f579de2889952f36c70d7df
 class DataIngestion:
     """
     Class object that defines the data ingestion stage of the project
