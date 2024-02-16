@@ -94,17 +94,45 @@ try:
     driver.execute_script("arguments[0].click();", scores_tab)
     print('clicked')
 
-    rank =[]
+    rank = []
+    name = []
+    overall = []
+    teaching = []
+    research_env = []
+    research_qua = []
+    industry = []
+    int_outlook =[]
+
     # find the table rows
     time.sleep(100)
     matches = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.TAG_NAME, "tr")))
-    rank = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[1]")))
+    # rank = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[1]")))
+    # name = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[2]")))
+    # overall = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[3]")))
+    # teaching = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[4]")))
+    # research_env = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[5]")))
+    # research_qua = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[6]")))
+    # industry = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[7]")))
+    # Int_Outlook = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.XPATH, ".//tr/td[8]")))
+
+
     # matches = driver.find_elements(By.TAG_NAME, 'tr')
     print(len(matches))
-    print(len(rank))
+  
     for match in matches[0:9]:
-        print(match.text)
+        rank.append(match.find_element(By.XPATH, ".//tr/td[1]").text)
+        name.append(match.find_element(By.XPATH, ".//tr/td[2]").text)
+        overall.append(match.find_element(By.XPATH, ".//tr/td[3]").text)
+        teaching.append(match.find_element(By.XPATH, ".//tr/td[4]").text)
+        research_env.append(match.find_element(By.XPATH, ".//tr/td[5]").text)
+        research_qua.append(match.find_element(By.XPATH, ".//tr/td[6]").text)
+        industry.append(match.find_element(By.XPATH, ".//tr/td[7]").text)
+        int_outlook.append(match.find_element(By.XPATH, ".//tr/td[8]").text)
 
+    df = pd.DataFrame({'rank':rank, 'name': name, 'overall': overall, 'teaching': teaching,
+                  'research_env': research_env, 'research_qua': research_qua, 
+                   'industry': industry, 'int_outlook': int_outlook } )
+    df.to_csv('test.csv', index=False)
 
 except:
     # driver.quit()
