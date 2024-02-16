@@ -157,10 +157,11 @@ data_enrich:
                                           'subjectivity', 'twitter_url']
 
 data_transformation:
-    root_dir: Partifacts/data_transformation
+    root_dir: artifacts/data_transformation
     unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
     transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
-    per_exp_at_coy_start: str #(This the experience of the personnel at founding date of company)
-    founded_on: str
-    completed_on: str
-    degree_Length: int
+    per_exp_at_coy_start: er_exp_at_coy_start
+    founded_on: founded_on
+    completed_on: completed_on
+    degree_Length: degree_Length
+
