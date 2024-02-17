@@ -30,14 +30,13 @@ try:
     driver.maximize_window()
     time.sleep(10)
 except:
-    # driver.quit()
-    print('error1')
+    driver.quit()
+
 
 try:
     
     scores_tab = driver.find_element(By.XPATH, './/label[@for="scores"]')
     driver.execute_script("arguments[0].click();", scores_tab)
-    print('clicked')
 
     rank = []
     rank_name = []
@@ -47,21 +46,19 @@ try:
 
     # find the table rows
     time.sleep(10)
-    matches = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.TAG_NAME, "tr")))
+    ranks = WebDriverWait(driver, 8).until(EC.presence_of_all_elements_located((By.TAG_NAME, "tr")))
 
-    # matches = driver.find_elements(By.TAG_NAME, 'tr')
-    print(len(matches))
+    logging('Ranks found: {}'.format(len(rankstext)))
   
-    for match in matches:
-        # rank.append(match.text)
-        rank = match.text.split('\n')
+    for uni_rank in ranks:
+        rank = uni_rank.text.split('\n')
         rank_name.append(rank[0])
         country.append(rank[1])
-        # overall.append(rank[2])
+   
 
     df = pd.DataFrame({'rank_name':rank_name, 'country': country } )
-    df.to_csv('test.csv', index=False)
-    print(df.head(5))
+    df.to_csv('D:\\OneDrive\\Documents\\PERSONAL\\PERSONAL DEVELOPMENT\\DATA SCIENCE\\Personal Project Portfolio\\PP00017_Prediction of the Success of Start-Ups Using Unbiased Classification ML Models\\test.csv', index=False)
+    logging('University Ranking Scrapping Completed....')
 
 except Exception as e:
     raise CustomException(e, sys)
