@@ -63,19 +63,19 @@ class DataTransformation:
     logging.info("Data scrapper configuration done......")
 
     def data_transformation(self):
-    # Feature Engineering
+        # Feature Engineering
 
-    # We will derive features from the date based columns as follows:
+        # We will derive features from the date based columns as follows:
 
-    # per_exp_at_coy_start = founded_on - completed_on (This the experience of the personnel at founding date of company)
-    # Degree Lenght = completed_on - started_on
-    # Employee_count_min & Employee_count_max = Employee_count.split('-')
-    # We will drop the following columns
+        # per_exp_at_coy_start = founded_on - completed_on (This the experience of the personnel at founding date of company)
+        # Degree Lenght = completed_on - started_on
+        # Employee_count_min & Employee_count_max = Employee_count.split('-')
+        # We will drop the following columns
 
-    # state_code_o
-    # postal_code_p
-    # closed_on
-    # completed_on
-    # started_on
-    # Finally we will rearrange the features as Index -> Numerical -> Categorical -> Text -> Target/Label
-    
+        # state_code_o
+        # postal_code_p
+        # closed_on
+        # completed_on
+        # started_on
+        # Finally we will rearrange the features as Index -> Numerical -> Categorical -> Text -> Target/Label
+        
