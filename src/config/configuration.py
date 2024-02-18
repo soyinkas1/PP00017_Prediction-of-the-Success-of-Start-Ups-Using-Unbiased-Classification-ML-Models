@@ -1,6 +1,6 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig
+from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig
 
 
 class ConfigurationManager:
@@ -173,4 +173,51 @@ class ConfigurationManager:
         )
 
         return data_enrich_config
+    
+    def get_data_transfrom_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transform_config = DataTransformationConfig(
+                root_dir = config.root_dir,
+                clean_backbone_local_data_file=config.
+                transformed_data_local_data_file: Path
+                train_data_local_data_file: Path
+                validate_data_local_data_file: Path
+                test_data_local_data_file: Path
+                per_exp_at_coy_start: str 
+                founded_on: str
+                closed_on: str
+                degree_completed_on: str
+                degree_length: str
+                yrs_since_last_funding: str
+                yrs_of_operation: str
+                columns_to_parse_dates: list
+                columns_to_drop: list
+                columns_rearrangement: list
+                institution_name: str
+                degree_type: str
+                subject: str
+                degree_is_completed: str
+                exhibitor: str
+                organizer: str
+                speaker:str 
+                sponsor:str
+                last_funding_on: str
+                employee_cap_success: int
+                employee_count: str
+                success: str
+                uuid: str
+                train_percent: float
+                validate_percent: float
+                test_percent: float
+
+
+
+
+        )
+
+        return data_enrich_config
+
 

@@ -143,26 +143,7 @@ class DataIngestion:
 
             logging.info('Ingestion of the data is completed')
 
-            # return (
-            #     self.ingestion_config.acquistions_local_data_file,
-            #     self.ingestion_config.cat_groups_local_data_file,
-            #     self.ingestion_config.degrees_local_data_file,
-            #     self.ingestion_config.event_appearances_local_data_file,
-            #     self.ingestion_config.events_local_data_file,
-            #     self.ingestion_config.funding_rounds_local_data_file,
-            #     self.ingestion_config.funds_local_data_file,
-            #     self.ingestion_config.investments_partners_local_data_file,
-            #     self.ingestion_config.investments_local_data_file,
-            #     self.ingestion_config.investors_local_data_file,
-            #     self.ingestion_config.ipos_local_data_filee,
-            #     self.ingestion_config.jobs_local_data_file,
-            #     self.ingestion_config.org_parents_local_data_file,
-            #     self.ingestion_config.organization_descriptions_local_data_file,
-            #     self.ingestion_config.organizations_local_data_file,
-            #     self.ingestion_config.people_local_data_file,
-            #     self.ingestion_config.people_descriptions_local_data_file
-            #
-            # )
+        
 
         except Exception as e:
             raise CustomException(e, sys)
