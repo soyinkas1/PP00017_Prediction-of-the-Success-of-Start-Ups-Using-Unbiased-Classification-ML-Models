@@ -73,10 +73,11 @@ data_cleaning:
      'updated_at', 'uuid', 'name', 'rank', 'country_code', 'state_code', 'region', 'city',
       'raised_amount','raised_amount_currency_code', 'org_name',
      'lead_investor_uuids', 'post_money_valuation', 'post_money_valuation_currency_code']
-  ipos_column_to_drop: ['name','type', 'permalink', 'cb_url', 'rank', 'created_at','updated_at', 'org_cb_url', 'uuid',
+  ipos_column_to_drop: ['name', 'permalink', 'cb_url', 'rank', 'created_at','updated_at', 'org_cb_url', 'uuid',
          'org_name', 'country_code', 'state_code', 'region', 'city', 'stock_exchange_symbol', 'stock_symbol',
           'share_price', 'share_price_currency_code', 'valuation_price',
          'valuation_price_currency_code', 'money_raised', 'money_raised_currency_code']
+  ipos_column_to_rename: {'type': 'ipos_type'}
   jobs_column_to_drop: ['type', 'permalink', 'cb_url', 'rank', 'created_at','updated_at',
          'person_name', 'org_uuid', 'org_name']
   jobs_column_to_rename: {'started_on': 'job_started_on', 'ended_on': 'job_ended_on',

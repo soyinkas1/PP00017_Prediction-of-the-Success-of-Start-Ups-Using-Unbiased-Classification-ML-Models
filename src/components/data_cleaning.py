@@ -101,6 +101,10 @@ class DataCleaning:
 
         # Remove the unneeded columns
         ipos.drop(self.cleaning_config.ipos_column_to_drop, axis=1, inplace=True)
+
+        # Rename columns
+        ipos.rename(columns=self.cleaning_config.ipos_column_to_rename)
+
         # Missing string values (addresses etc.) filled with "not known and numeric values with 0
         for col in ipos.columns:
             if ipos[col].dtype == 'O':

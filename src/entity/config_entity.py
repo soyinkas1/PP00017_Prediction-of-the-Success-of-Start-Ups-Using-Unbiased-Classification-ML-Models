@@ -66,6 +66,7 @@ class DataCleaningConfig:
     event_appearances_column_to_drop: list
     funding_rounds_column_to_drop: list
     ipos_column_to_drop: list
+    ipos_column_to_rename: dict
     jobs_column_to_drop: list
     jobs_column_to_rename: dict
     jobs_column_to_drop_na: list
