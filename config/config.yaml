@@ -161,8 +161,41 @@ data_transformation:
     root_dir: artifacts/data_transformation
     unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
     transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
+    train_data_local_data_file: artifacts/data_transformation/train_data.csv
+    validate_data_local_data_file: artifacts/data_transformation/validate_data.csv
+    test_data_local_data_file: artifacts/data_transformation/test_data.csv
     per_exp_at_coy_start: er_exp_at_coy_start
     founded_on: founded_on
-    completed_on: completed_on
-    degree_Length: degree_Length
+    closed_on: closed_on
+    degree_completed_on: completed_on
+    degree_length: degree_length
+    yrs_since_last_funding: yrs_since_last_funding
+    yrs_of_operation: yrs_of_operation
+    columns_to_parse_dates: ['founded_on','last_funding_on','closed_on','degree_started_on',
+                                                    'degree_completed_on'] 
+    columns_to_drop: ['founded_on','closed_on','facebook_url','linkedin_url','twitter_url','person_uuid',
+               'founded_on','last_funding_on', 'first_name','last_name', 'featured_job_organization_uuid', 'featured_job_organization_name',
+               'people_facebook_url', 'people_linkedin_url', 'people_twitter_url', 'institution_uuid',
+               'degree_started_on', 'degree_completed_on', 'org_uuid']
+    columns_rearrangement: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start','sponsor','speaker',
+                'organizer','exhibitor', 'employee_count', 'total_funding_usd','rank','uuid',
+                'name', 'type', 'roles', 'status', 'category_list', 'category_groups_list', 'primary_role',
+                'organization_description',  'gender', 'featured_job_title', 'people_description', 'institution_name', 'degree_type', 
+                'subject', 'degree_is_completed','success']
+    institution_name: institution_name
+    degree_type: degree_typ
+    subject: subject
+    degree_is_completed: degree_is_completed
+    exhibitor: exhibitor
+    organizer: organizer
+    speaker: speaker 
+    sponsor: sponsor
+    last_funding_on: last_funding_on
+    employee_cap_success: 1000
+    employee_count: employee_count
+    success: success
+    uuid: uuid
+    train_percent: 0.6
+    validate_percent: 0.2
+   
 

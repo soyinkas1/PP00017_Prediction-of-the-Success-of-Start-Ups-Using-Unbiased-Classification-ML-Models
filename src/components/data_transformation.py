@@ -1,54 +1,11 @@
 # Import the required libraries
 import pandas as pd
-import os
+import numpy as np
 from datetime import date
-# import sys
-# from src.exception import CustomException
-# from src.logger import logging
-# from src.entity.config_entity import DataCleaningConfig, 
-
-# # Import Data Cleaning and Wrangling Libraries
-# import pandas as pd
-# import numpy as np
-# import re
-# import geopandas as gpd
-# import ydata_profiling
-
-# # Import Visualisation Libraries
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-# %matplotlib inline
-# import plotly.express as px
-
-
-# # Import NLP Libraries
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn.feature_extraction.text import CountVectorizer
-
-# # Import Machine Learning Classifiers models Libraries
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.svm import SVC
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.naive_bayes import MultinomialNB
-
-# # Import evaluations modules
-# from sklearn.metrics import plot_roc_curve
-# from sklearn.metrics import confusion_matrix, classification_report
-# from sklearn.metrics import precision_score, recall_score, f1_score
-# from sklearn.metrics import RocCurveDisplay
-
-
-# # Import other needed achine Learning Libraries
-# from sklearn.compose import ColumnTransformer
-# from sklearn.pipeline import Pipeline
-# from sklearn.impute import SimpleImputer
-# from sklearn.preprocessing import StandardScaler, OneHotEncoder,MinMaxScaler
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_val_score
-# from sklearn.feature_selection import SelectPercentile, chi2
-# from sklearn.svm import SVC
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.naive_bayes import MultinomialNB
+import sys
+from entity.config_entity import DataTransformationConfig, DataCleaningConfig
+from src.exception import CustomException
+from src.logger import logging
 
 
 
@@ -56,26 +13,139 @@ class DataTransformation:
     """"
     This class is transform and carry out feature engineering to produce the final dataset for modelling
     """
-    def __init__(self, config: DataTransformatonConfig, clean_data_config: DataCleaningConfig):
-        self.scrapping_config = config
+    def __init__(self, config: DataTransformationConfig, clean_data_config: DataCleaningConfig):
+        self.transform_config = config
         self.clean_data_config = clean_data_config
 
-    logging.info("Data scrapper configuration done......")
+    logging.info("Data transformation configuration done......")
 
     def data_transformation(self):
-        # Feature Engineering
-
-        # We will derive features from the date based columns as follows:
-
-        # per_exp_at_coy_start = founded_on - completed_on (This the experience of the personnel at founding date of company)
-        # Degree Lenght = completed_on - started_on
-        # Employee_count_min & Employee_count_max = Employee_count.split('-')
-        # We will drop the following columns
-
-        # state_code_o
-        # postal_code_p
-        # closed_on
-        # completed_on
-        # started_on
-        # Finally we will rearrange the features as Index -> Numerical -> Categorical -> Text -> Target/Label
         
+        try:
+            df = pd.read_csv(self.clean_data_config.unclean_backbone_local_data_file,
+                            parse_dates=self.transform_config.columns_to_parse_dates)
+            
+            logging.info("Data uploaded from data cleaning stage......")
+            logging.info("Data transformation started......")
+            # The following features should be filled with 'not known' and 'False' respectively  
+            df[self.transform_config.institution_name].fillna('not known',inplace=True)
+            df[self.transform_config.degree_type].fillna('not known',inplace=True)
+            df[self.transform_config.subject].fillna('not known',inplace=True)
+            df[self.transform_config.degree_is_completed].fillna('False',inplace=True)
+
+            # The dates will be filled with current date so that the derived dates from these will be zero (0)
+            for col in df.columns:
+                if df[col].dtype == 'O':
+                    df[col].fillna('not known',inplace=True)
+                elif not df[col].dtype == '<M8[ns]':
+                    df[col].fillna(0,inplace=True)
+                elif df[col].dtype == '<M8[ns]':
+                    df[col].fillna(np.datetime64(date.today()), inplace=True)
+
+            # Cast the data type for 'exhibitor', 'organizer', 'speaker', 'sponsor' from float to int
+            df[self.transform_config.exhibitor] = df[self.transform_config.exhibitor].astype(int)
+            df[self.transform_config.organizer] = df[self.transform_config.organizer].astype(int)
+            df[self.transform_config.speaker] = df[self.transform_config.speaker].astype(int)
+            df[self.transform_config.sponsor] = df[self.transform_config.sponsor].astype(int)
+
+            # drop all all rows with duplicate values across all columns.
+            df.drop_duplicates(keep='first', inplace=True)
+
+            # Create column for the years of experience of personnel at the founding of the company
+            df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - 
+                                                            df[self.transform_config.degree_completed_on])
+            # Convert the negative values to 0 days
+            df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(
+                lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
+            # Covert the days to years 
+            df[self.transform_config.per_exp_at_coy_start] = ((df[self.transform_config.per_exp_at_coy_start].dt.days)/365).astype(int)
+        
+            # Create a column for the Length of degree of personnel
+            df[self.transform_config.degree_length] = (df[self.transform_config.degree_completed_on] - df[self.clean_data_config.degree_started_on])
+            # Convert the negative values to 0 days
+            df[self.transform_config.degree_length] = df[self.transform_config.degree_length].apply(
+                lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
+            # Covert the days to years 
+            df[self.transform_config.degree_length] = ((df[self.transform_config.degree_length].dt.days)/365).astype(int)
+
+            # Create a column for the years since the last funding received by the organisation
+            df[self.transform_config.yrs_since_last_funding] = np.datetime64(date.today()) - df[self.transform_config.last_funding_on]
+            # Convert the negative values to 0 days
+            df[self.transform_config.yrs_since_last_funding] = df[self.transform_config.yrs_since_last_funding].apply(
+                lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
+            # Covert the days to years 
+            df[self.transform_config.yrs_since_last_funding] = ((df[self.transform_config.yrs_since_last_funding].dt.days)/365).astype(int)
+
+            # Create a column for the years of operation of the organisation
+            df[self.transform_config.yrs_of_operation] = df[self.transform_config.closed_on] - df[self.transform_config.founded_on] 
+            # Convert the negative values to 0 days
+            df[self.transform_config.yrs_of_operation] = df[self.transform_config.yrs_of_operation].apply(
+                lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
+            # Covert the days to years 
+            df[self.transform_config.yrs_of_operation] = ((df[self.transform_config.yrs_of_operation].dt.days)/365).astype(int)
+
+            # Drop the columns that are no longer required
+            df.drop([self.transform_config.columns_to_drop],axis=1,inplace=True)
+
+            # rearrange the dataset features
+            df = df[self.transform_config.columns_rearrangement]
+
+            # Reset the index of DataFrame
+            df.reset_index(drop=True, inplace=True)
+
+            # Set the organisations with employee count of 'employee_cap_success' and above as successful
+            for idx in df.index:
+                if df.loc[idx, self.transform_config.employee_count] >= self.transform_config.employee_cap_success:
+                    df.loc[idx, self.transform_config.success] = 1
+            
+            # Set the organisations with years of operation of 20 years and above as successful
+            for idx in df.index:
+                if df.loc[idx, self.transform_config.yrs_of_operation] >= 20 :
+                    df.loc[idx, self.transform_config.success] = 1
+
+            # Create a DataFrame of organisation with one or more rows as success = 1
+            suc_df = pd.DataFrame(df.groupby(self.transform_config.uuid)[self.transform_config.success].
+                                sum()[df.groupby(self.transform_config.uuid)[self.transform_config.success].sum()>0])
+            
+            # Update all rows of these organisations to success = 1
+            for idx in df.index:
+                for coy in suc_df.index:
+                    if df.loc[idx, self.transform_config.uuid] == coy :
+                        df.loc[idx, self.transform_config.success] = 1
+            
+            
+            # Save the updated final dataset at this stage
+            df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
+
+            logging.info("Saving transformed dataset......")
+
+            # Split the dataset into Training, Validation and Test sets in 60, 20, 20
+            train, validate, test = np.split(df.sample(frac=1), [int(self.transform_config.train_percent*len(df)), 
+                        int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
+            
+            # save the training dataset 
+            train.to_csv(self.transform_config.train_data_local_data_file, index=False)
+        
+            logging.info("Saving train dataset......")
+
+            # save the validation dataset 
+            validate.to_csv(self.transform_config.validate_data_local_data_file, index=False)
+            
+            logging.info("Saving validate dataset......")
+
+            # save the test dataset 
+            test.to_csv(self.transform_config.test_data_local_data_file, index=False)
+
+            logging.info("Saving test dataset......")
+
+            logging.info("Data transformation completed......")
+        
+        except Exception as e:
+            raise CustomException(e, sys)
+
+
+
+
+
+
+
