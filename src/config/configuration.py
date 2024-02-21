@@ -174,50 +174,47 @@ class ConfigurationManager:
 
         return data_enrich_config
     
-    def get_data_transfrom_config(self) -> DataTransformationConfig:
+    def get_data_transfrom_config(self, ) -> DataTransformationConfig:
         config = self.config.data_transformation
 
         create_directories([config.root_dir])
 
         data_transform_config = DataTransformationConfig(
-                root_dir = config.root_dir,
-                clean_backbone_local_data_file=config.
-                transformed_data_local_data_file: Path
-                train_data_local_data_file: Path
-                validate_data_local_data_file: Path
-                test_data_local_data_file: Path
-                per_exp_at_coy_start: str 
-                founded_on: str
-                closed_on: str
-                degree_completed_on: str
-                degree_length: str
-                yrs_since_last_funding: str
-                yrs_of_operation: str
-                columns_to_parse_dates: list
-                columns_to_drop: list
-                columns_rearrangement: list
-                institution_name: str
-                degree_type: str
-                subject: str
-                degree_is_completed: str
-                exhibitor: str
-                organizer: str
-                speaker:str 
-                sponsor:str
-                last_funding_on: str
-                employee_cap_success: int
-                employee_count: str
-                success: str
-                uuid: str
-                train_percent: float
-                validate_percent: float
-                test_percent: float
-
-
-
+                root_dir= config.root_dir,
+                unclean_backbone_local_data_file=config.unclean_backbone_local_data_file,
+                transformed_data_local_data_file=config.transformed_data_local_data_file,
+                train_data_local_data_file=config.train_data_local_data_file,
+                validate_data_local_data_file=config.validate_data_local_data_file,
+                test_data_local_data_file=config.test_data_local_data_file,
+                per_exp_at_coy_start=config.per_exp_at_coy_start,
+                founded_on=config.founded_on,
+                closed_on=config.closed_on,
+                degree_completed_on=config.degree_completed_on,
+                degree_length=config.degree_length,
+                yrs_since_last_funding=config.yrs_since_last_funding,
+                yrs_of_operation=config.yrs_of_operation,
+                columns_to_parse_dates=config.columns_to_parse_dates,
+                columns_to_drop=config.columns_to_drop,
+                columns_rearrangement=config.columns_rearrangement,
+                institution_name=config.institution_name,
+                degree_type=config.degree_type,
+                subject=config.subject,
+                degree_is_complete=config.degree_is_completed,
+                exhibitor=config.exhibitor,
+                organizer=config.organizer,
+                speaker=config.speaker,
+                sponsor=config.sponsor,
+                last_funding_on=config.last_funding_on,
+                employee_cap_success=config.employee_cap_success,
+                employee_count=config.employee_count,
+                success=config.success,
+                uuid=config.uuid,
+                train_percent=config.train_percent,
+                validate_percent=config.validate_percent,
+                test_percent=config.test_percent
 
         )
 
-        return data_enrich_config
+        return data_transform_config
 
 
