@@ -174,5 +174,10 @@ class DataTransformationConfig:
     train_percent: float
     validate_percent: float
     test_percent: float
+    num_features: list
+    text_feature_o: str
+    text_feature_p: str
+    cat_features: list
+    preprocessor_obj_path: Path
 
    

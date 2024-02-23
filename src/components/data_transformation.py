@@ -1,13 +1,27 @@
-# Import the required libraries
+# Import the required external libraries
 import pandas as pd
 import numpy as np
 from datetime import date
 import sys
+import os
+import warnings
+import dill
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder 
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+
+# Import the reuired internal classes and methods
 from entity.config_entity import DataTransformationConfig, DataCleaningConfig
 from src.exception import CustomException
 from src.logger import logging
+from src.utils.common import save_object
 
 
+# Suppress FutureWarnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 class DataTransformation:
     """"
@@ -123,20 +137,103 @@ class DataTransformation:
             train, validate, test = np.split(df.sample(frac=1), [int(self.transform_config.train_percent*len(df)), 
                         int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
             
-            # save the training dataset 
-            train.to_csv(self.transform_config.train_data_local_data_file, index=False)
+            # Create a list of feature categorisations
+            num_features = self.transform_config.num_features
+            text_feature_o =  self.transform_config.text_feature_o
+            text_feature_p = self.transform_config.text_feature_p
+            cat_features = self.transform_config.cat_features
+
+            # Define individual pipelines
+            num_pipeline = Pipeline(
+                steps = [
+                    ('imputer', SimpleImputer(strategy='median')),
+                    ('scalar', StandardScaler())  
+                ]
+            )
+
+            text_pipeline = Pipeline(
+                steps=[
+                    ('vectorizer', TfidfVectorizer(stop_words="english"))
+                ]
+            )
+
+            cat_pipeline = Pipeline(
+                steps=[
+                    ('imputer', SimpleImputer(strategy='constant', fill_value='not known')),
+                    ('one_hot', OneHotEncoder(handle_unknown='ignore')),
+                    ('scalar', StandardScaler(with_mean=False))
+                ]
+            )
+
+            # Create the preprocessing pipeline
+            preprocessor = ColumnTransformer(
+                    transformers=[
+                        ("text_o", text_pipeline, text_features_o),
+                        ("text_p", text_pipeline, text_features_p),
+                        ("num", num_pipeline, num_features),
+                        ("cat", cat_pipeline, cat_features)
+                    ]
+            )
+
+            # Save the preprocessor
+            save_object(self.transform_config.preprocessor_obj_path, preprocessor)
+
+            # Spilt the train, validate and test data into features and labels before applying the preprocessor
+            X_train = train.drop('success', axis=1)
+            y_train = train['success']
+
+            X_val = validate.drop('success', axis=1)
+            y_val = validate['success']
+
+            X_test = test.drop('success', axis=1)
+            y_test = test['success']
+
+            # Fit and transform the training input features data
+            X_train = preprocessor.fit_transform(X_train)
+
+            # Transform the Validation input features data
+            X_val = preprocessor.transform(X_val)
+
+            # Transform the Test input features data set
+            X_test = preprocessor.transform(X_test)
+
+            # Combine the X and y of the train, validate and test dataset and save to complete the transformation
+
+                # Train dataset
+            y_train_df = y_train.to_frame()
+
+            # Combine X_train and y_train_df
+            train_df = pd.concat([pd.DataFrame(X_train.todense()), y_train_df], axis=1)
+
+            # Save to CSV file
+            train_df.to_csv(self.transform_config.train_data_local_data_file, index=False)
         
-            logging.info("Saving train dataset......")
+            logging.info("Saving final train dataset......")
 
-            # save the validation dataset 
-            validate.to_csv(self.transform_config.validate_data_local_data_file, index=False)
+                # Validation dataset
+
+            y_val_df = y_val.to_frame()
+
+            # Combine X_train and y_train_df
+            val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
+
+            # Save to CSV file
+            val_df.to_csv(self.transform_config.validate_data_local_data_file, index=False)
             
-            logging.info("Saving validate dataset......")
+            logging.info("Saving final validate dataset......")
 
-            # save the test dataset 
-            test.to_csv(self.transform_config.test_data_local_data_file, index=False)
 
-            logging.info("Saving test dataset......")
+                # Test dataset
+
+            y_test_df = y_test.to_frame()
+
+            # Combine X_train and y_train_df
+            test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)
+
+            # Save to CSV file
+            test_df.to_csv(self.transform_config.test_data_local_data_file, index=False)
+
+            logging.info("Saving final test dataset......")
 
             logging.info("Data transformation completed......")
         

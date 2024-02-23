@@ -11,7 +11,7 @@ seaborn
 box
 yaml
 ensure
-jupyter
+
 
 # -e .
 # setuptools
