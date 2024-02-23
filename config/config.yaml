@@ -197,5 +197,17 @@ data_transformation:
     uuid: uuid
     train_percent: 0.6
     validate_percent: 0.2
+    # Create a list of feature categorisations
+    num_features: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 
+                      'sponsor', 'speaker', 'organizer', 'exhibitor', 'employee_count', 'total_funding_usd', 'rank']
+    text_features_o: 'organization_description'
+    text_features_p: 'people_description'
+    cat_features: ['uuid', 'name', 'type', 'roles', 'status', 'category_list', 
+                      'category_groups_list', 'primary_role', 'gender', 
+                      'featured_job_title', 'institution_name', 'degree_type',
+                      'subject', 'degree_is_completed']
+    preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
+    train
+    
    
 

@@ -163,7 +163,7 @@ def clean_dict(data: dict) -> dict:
     return data
 
 @ensure_annotations
-def get_analysis(score):
+def get_analysis(score: int):
     """
     Converts the polarity score to text analysis
     :param score:
@@ -175,3 +175,15 @@ def get_analysis(score):
         return 'Neutral'
     else:
         return 'Positive'
+    
+@ensure_annotations
+def save_object(file_path: Path, obj: Any):
+    """
+    Saves the object as a pickle file on the file_path provided
+    
+    """
+    dir_path = os.path.dirname(file_path)
+    os.makedirs(dir_path, exist_ok=True)
+    with open(file_path, 'wb') as file_obj:
+        dill.dump(obj, file_obj)
+     

@@ -211,7 +211,13 @@ class ConfigurationManager:
                 uuid=config.uuid,
                 train_percent=config.train_percent,
                 validate_percent=config.validate_percent,
-                test_percent=config.test_percent
+                test_percent=config.test_percent,
+                num_features=config.num_features,
+                text_feature_o=config.text_feature_o,
+                text_feature_p=config.text_feature_p,
+                cat_features=config.cat_features
+                
+
 
         )
 
