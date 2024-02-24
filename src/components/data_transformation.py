@@ -200,7 +200,9 @@ class DataTransformation:
             # Combine the X and y of the train, validate and test dataset and save to complete the transformation
 
                 # Train dataset
+            # Convert to DataFrame and reset index
             y_train_df = y_train.to_frame()
+            y_train_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
             train_df = pd.concat([pd.DataFrame(X_train.todense()), y_train_df], axis=1)
@@ -211,8 +213,9 @@ class DataTransformation:
             logging.info("Saving final train dataset......")
 
                 # Validation dataset
-
+            # Convert to DataFrame and reset index
             y_val_df = y_val.to_frame()
+            y_val_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
             val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
@@ -224,8 +227,9 @@ class DataTransformation:
 
 
                 # Test dataset
-
+            # Convert to DataFrame and reset index
             y_test_df = y_test.to_frame()
+            y_test_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
             test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)
