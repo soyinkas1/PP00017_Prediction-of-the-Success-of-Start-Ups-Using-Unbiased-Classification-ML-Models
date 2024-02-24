@@ -11,6 +11,7 @@ seaborn
 box
 yaml
 ensure
+lightgbm
 
 
 # -e .
