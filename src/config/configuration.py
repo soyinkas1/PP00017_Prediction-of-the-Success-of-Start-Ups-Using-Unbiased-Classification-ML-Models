@@ -1,14 +1,14 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig
+from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig
 
 
 class ConfigurationManager:
 
     def __init__(self,
-                 config_filepath=CONFIG_FILE_PATH):
+                 config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH):
         self.config = read_yaml(config_filepath)
-        # self.params = read_yaml(params_filepath)
+        self.params = read_yaml(params_filepath)
         # self.schema = read_yaml(schema_filepath)
         create_directories([self.config.artifacts_root])
 
@@ -222,5 +222,21 @@ class ConfigurationManager:
         )
 
         return data_transform_config
+    
+    def get_model_trainer_config(self, ) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+                root_dir=config.artifacts/model_trainer,
+                train_data_path=config.artifacts/model_trainer/train_arr.csv,
+                validation_data_path=config.artifacts/model_trainer/validation_arr.csv,
+                test_data_path=config.artifacts/model_trainer/test_arr.csv
+                
+        )
+
+        return model_trainer_config
 
 
