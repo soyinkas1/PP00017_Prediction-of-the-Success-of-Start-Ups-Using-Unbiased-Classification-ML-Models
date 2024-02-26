@@ -187,5 +187,7 @@ class ModelTrainerConfig:
     train_data_path: Path
     validation_data_path: Path
     test_data_path: Path
-
+    best_model_path: Path
+    models: list
+    params: dict
    

@@ -230,10 +230,14 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         model_trainer_config = ModelTrainerConfig(
-                root_dir=config.artifacts/model_trainer,
-                train_data_path=config.artifacts/model_trainer/train_arr.csv,
-                validation_data_path=config.artifacts/model_trainer/validation_arr.csv,
-                test_data_path=config.artifacts/model_trainer/test_arr.csv
+                root_dir=config.root_dir,
+                train_data_path=config.train_data_path,
+                validation_data_path=config.validation_data_path,
+                test_data_path=config.test_data_path,
+                best_model_path=config.best_model_path,
+                models=config.models,
+                params=params
+                
                 
         )
 
