@@ -35,21 +35,53 @@ from sklearn.pipeline import Pipeline
 from entity.config_entity import DataTransformationConfig, ModelTrainerConfig
 from src.exception import CustomException
 from src.logger import logging
-from src.utils.common import save_object
+from src.utils.common import save_object, evaluate_models
 
 
 
-class model_trainer:
+class ModelTrainer:
     def __init__(self, config: ModelTrainerConfig):
         self.model_trainer_config = config
+        
         # self.clean_data_config = clean_data_config
         
 
-    def initiate_model_trainer(self, train_data_path, validation_path, test_data_path):
+    def initiate_model_trainer(self):
 
         # We will load the training, validation and test dataset
 
         train = pd.read_csv(self.model_trainer_config.train_data_path)
         val = pd.read_csv(self.model_trainer_config.validation_data_path)
         test = pd.read_csv(self.model_trainer_config.test_data_path)
+
+        # Split the data into input features and target labels
+        X_train, y_train, X_val, y_val, X_test, y_test = train.iloc[:, :-1],train.iloc[:, -1], val.iloc[:, :-1], val.iloc[:, -1],test.iloc[:, :-1], test.iloc[:, -1]
+
+        # Evaluate the model and append its score to model_report
+        model_report:dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_val, y_test=y_val,
+                                                models=self.model_trainer_config.models, param=self.model_trainer_config.params)
+            
+        # To get best model score from dict
+        best_model_score = max(sorted(model_report.values()))
+        
+        # To get best model name from dict
+        best_model_name = list(model_report.keys())[
+                    list(model_report.values()).index(best_model_score)
+                ]
+        best_model = self.model_trainer_config.models[best_model_name]
+
+        if best_model_score < 0.6:
+            raise CustomException("No best model found")
+            
+        logging.info(f"Best found model on both training and testing dataset")
+
+        save_object(
+                    file_path=self.model_trainer_config.best_model_path,
+                    obj= best_model
+
+                )
+
+        return print(f'Best Model: {best_model}, Score: {best_model_score}')
+                        
+
 

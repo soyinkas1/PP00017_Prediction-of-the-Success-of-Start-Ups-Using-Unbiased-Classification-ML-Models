@@ -10,6 +10,10 @@ import joblib
 from pathlib import Path
 from typing import Any
 from ensure import ensure_annotations
+from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_val_score, GridSearchCV
+from src.exception import CustomException
+import sys
+
 
 
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -186,4 +190,50 @@ def save_object(file_path: Path, obj: Any):
     os.makedirs(dir_path, exist_ok=True)
     with open(file_path, 'wb') as file_obj:
         dill.dump(obj, file_obj)
-     
+
+
+@ensure_annotations
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
+
+    except Exception as e:
+        raise CustomException(e, sys)
+        
+
+@ensure_annotations    
+def evaluate_models(X_train, y_train, X_test, y_test, models, param):
+    try:
+        """
+        This method fits and score the models provided while doing a gridsearch cross
+        validation using the parameter grid provided
+        
+        input: X-train - Training data input features
+             y_train - Training data label 
+             X_test - Test data input features
+             y_test - Test data labels
+             models - ML model to experiment with
+             param :dict - parameter settings to try as values.
+             
+        Returns: a dictionary of the a key values pair of model and score
+        """ 
+                
+        report = {}
+
+        for i in range(len(list(models))):
+            model = list(models.values())[i]
+            para=param[list(models.keys())[i]]
+
+            gs = GridSearchCV(model,para,cv=3, verbose=3)
+            gs.fit(X_train,y_train)
+
+            model.set_params(**gs.best_params_)
+            model.fit(X_train,y_train)
+
+            test_model_score = model.score(X_test, y_test)
+
+            report[list(models.keys())[i]] = test_model_score
+        return report
+    except Exception as e:
+        raise e
