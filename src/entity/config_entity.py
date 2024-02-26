@@ -180,4 +180,12 @@ class DataTransformationConfig:
     cat_features: list
     preprocessor_obj_path: Path
 
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    validation_data_path: Path
+    test_data_path: Path
+
    
