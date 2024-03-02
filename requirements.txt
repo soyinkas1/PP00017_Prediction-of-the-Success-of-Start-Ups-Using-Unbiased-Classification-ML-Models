@@ -16,5 +16,5 @@ xgboost
 dill
 
 
-# -e .
-# setuptools
+-e .
+setuptools

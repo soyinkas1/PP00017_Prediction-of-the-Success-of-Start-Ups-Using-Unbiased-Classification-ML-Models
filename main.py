@@ -1,8 +1,8 @@
 from src.logger import logging
 from src.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from src.pipeline.stage_02_data_cleaning import DataCleaningPipeline
-# from src.pipeline.stage_03_data_scrapping import DataScrappingPipeline
-from src.pipeline import ModelTrainerPipeline
+from src.pipeline.stage_03_data_transformation import DataTransformationPipeline
+from src.pipeline.stage_04_model_trainer import ModelTrainerPipeline
 
 
 STAGE_NAME = 'Data Ingestion'
@@ -50,14 +50,24 @@ except Exception as e:
 #     logging.exception(e)
 #     raise e
 
+STAGE_NAME = 'Data Transformation'
 
-# STAGE_NAME = 'Model Trainer'
+try:
+    logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
+    data_transform = DataTransformationPipeline()
+    data_transform.main()
+    logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
+except Exception as e:
+    logging.exception(e)
+    raise e
 
-# try:
-#     logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
-#     model_trainer = ModelTrainerPipeline()
-#     model_trainer.main()
-#     logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
-# except Exception as e:
-#     logging.exception(e)
-#     raise e
+STAGE_NAME = 'Model Trainer'
+
+try:
+    logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
+    model_trainer = ModelTrainerPipeline()
+    model_trainer.main()
+    logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
+except Exception as e:
+    logging.exception(e)
+    raise e

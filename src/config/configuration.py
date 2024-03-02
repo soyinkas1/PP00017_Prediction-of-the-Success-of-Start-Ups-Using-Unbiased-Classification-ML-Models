@@ -225,7 +225,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self, ) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params
+        params = self.params.param_grid
 
         create_directories([config.root_dir])
 
@@ -236,7 +236,7 @@ class ConfigurationManager:
                 test_data_path=config.test_data_path,
                 best_model_path=config.best_model_path,
                 models=config.models,
-                params=params
+                params=params.params
                 
                 
         )
