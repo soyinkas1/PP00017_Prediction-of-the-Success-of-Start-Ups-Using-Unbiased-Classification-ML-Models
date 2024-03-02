@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Company Success</title>
+</head>
+<body>
+    <h2>Company Data Collection Form</h2>
+    <form id="dataForm">
+        <label for="yrs_of_operation">Years of Operation:</label><br>
+        <input type="number" id="yrs_of_operation" name="yrs_of_operation" min="0"><br><br>
+        
+        <label for="yrs_since_last_funding">Years Since Last Funding:</label><br>
+        <input type="number" id="yrs_since_last_funding" name="yrs_since_last_funding" min="0"><br><br>
+        
+        <label for="degree_length">Degree Length of Promoter:</label><br>
+        <input type="number" id="degree_length" name="degree_length" min="0"><br><br>
+
+        <label for="per_exp_at_coy_start">Promoter Years Experience at Company Start:</label><br>
+        <input type="number" id="per_exp_at_coy_start" name="per_exp_at_coy_start" min="0"><br><br>
+
+        <label for="sponsor">Number of Events-Sponsor:</label><br>
+        <input type="number" id="sponsor" name="sponsor" min="0"><br><br>
+
+        <label for="speaker">Number of Events-Speaker:</label><br>
+        <input type="number" id="speaker" name="speaker" min="0"><br><br>
+
+        <label for="organizer">Number of Events-Organizer:</label><br>
+        <input type="number" id="organizer" name="organizer" min="0"><br><br>
+
+        <label for="exhibitor">Number of Events-Exhibitor:</label><br>
+        <input type="number" id="exhibitor" name="exhibitor" min="0"><br><br>
+
+        <label for="employee_count">Employee Count:</label><br>
+        <input type="number" id="employee_count" name="employee_count" min="0"><br><br>
+
+        <label for="total_funding_usd">Total Funding (USD):</label><br>
+        <input type="number" id="total_funding_usd" name="total_funding_usd" min="0"><br><br>
+
+        <label for="status">Status:</label><br>
+        <select id="status" name="status">
+            <option value="status 1">Category 1</option>
+            <option value="status 2">Category 2</option>
+            <option value="status 3">Category 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+    
+        <label for="category_list">Category List:</label><br>
+        <select id="category_list" name="category_list">
+            <option value="Category 1">Category 1</option>
+            <option value="Category 2">Category 2</option>
+            <option value="Category 3">Category 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+
+        <label for="category_groups_list">Category Groups List:</label><br>
+        <select id="category_groups_list" name="category_groups_list">
+            <option value="Category_groups_1">Category 1</option>
+            <option value="Category_groups_2">Category 2</option>
+            <option value="Category_groups_3">Category 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+  
+        <label for="primary_role">Primary Role:</label><br>
+        <select id="primary_role" name="primary_role">
+            <option value="primary_role_1">Category 1</option>
+            <option value="primary_role_2">Category 2</option>
+            <option value="primary_role_3">Category 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        <label for="organization_description">Organization Description:</label><br>
+        <input type="text" id="organization_description" name="organization_description"><br><br>
+
+        <label for="gender">Promoter Gender:</label><br>
+        <select id="gender" name="gender"></select>
+            <option value="gender_1">Male</option>
+            <option value="gender_2">Female</option>
+        </select><br><br> 
+
+        <label for="featured_job_title">Promoter Job Title:</label><br>
+        <input type="text" id="featured_job_title" name="featured_job_title"><br><br>
+
+        <label for="people_description">Promoter Description:</label><br>
+        <input type="text" id="people_description" name="people_description"><br><br>
+
+        <label for="institution_name">Promoter Institution Name:</label><br>
+        <input type="text" id="institution_name" name="institution_name"><br><br>
+
+        <label for="degree_type">Promoter Degree Type:</label><br>
+        <input type="text" id="degree_type" name="degree_type"><br><br>
+
+        <label for="subject">Degree Subject:</label><br>
+        <input type="text" id="subject" name="subject"><br><br>
+
+        <label for="degree_is_completed">Degree Is Completed:</label><br>
+        <select id="category_groups_list" name="category_groups_list">
+            <option value="degree_is_completed_1">True</option>
+            <option value="degree_is_completed_2">False</option>
+        </select><br><br>
+      
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- <div id="result"></div>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get data points from form
+            var yrs_of_operation = document.getElementById("yrs_of_operation").value;
+            var yrs_since_last_funding = document.getElementById("yrs_since_last_funding").value;
+            var degree_length = document.getElementById("degree_length").value;
+            var per_exp_at_coy_start = document.getElementById("per_exp_at_coy_start").value;
+            var sponsor = document.getElementById("sponsor").value;
+            var speaker = document.getElementById("speaker").value;
+            var organizer = document.getElementById("organizer").value;
+            var exhibitor = document.getElementById("exhibitor").value;
+            var employee_count = document.getElementById("employee_count").value;
+            var total_funding_usd = document.getElementById("total_funding_usd").value;
+            var rank = document.getElementById("rank").value;
+            var uuid = document.getElementById("uuid").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var roles = document.getElementById("roles").value;
+            var status = document.getElementById("status").value;
+            var category_list = document.getElementById("category_list").value;
+            var category_groups_list = document.getElementById("category_groups_list").value;
+            var primary_role = document.getElementById("primary_role").value;
+            var organization_description = document.getElementById("organization_description").value;
+            var gender = document.getElementById("gender").value;
+            var featured_job_title = document.getElementById("featured_job_title").value;
+            var people_description = document.getElementById("people_description").value;
+            var institution_name = document.getElementById("institution_name").value;
+            var degree_type = document.getElementById("degree_type").value;
+            var subject = document.getElementById("subject").value;
+            var degree_is_completed = document.getElementById("degree_is_completed").value;
+
+            // Perform data validation here if needed
+
+            // For demonstration, let's just output success
+            -->

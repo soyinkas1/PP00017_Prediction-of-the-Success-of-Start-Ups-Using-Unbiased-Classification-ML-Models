@@ -32,7 +32,7 @@ from sklearn.feature_selection import SelectPercentile, chi2
 from sklearn.pipeline import Pipeline
 
 # import the internal classes and methods required
-from entity.config_entity import DataTransformationConfig, ModelTrainerConfig
+from src.entity.config_entity import DataTransformationConfig, ModelTrainerConfig
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.common import save_object, evaluate_models
@@ -44,7 +44,7 @@ class ModelTrainer:
         self.model_trainer_config = config
         
         # self.clean_data_config = clean_data_config
-        
+        logging.info('Model Trainer Configuration loaded...')
 
     def initiate_model_trainer(self):
 
@@ -54,13 +54,14 @@ class ModelTrainer:
         val = pd.read_csv(self.model_trainer_config.validation_data_path)
         test = pd.read_csv(self.model_trainer_config.test_data_path)
 
+        logging.info('Dataset loaded loaded...')
+      
         # Split the data into input features and target labels
         X_train, y_train, X_val, y_val, X_test, y_test = train.iloc[:, :-1],train.iloc[:, -1], val.iloc[:, :-1], val.iloc[:, -1],test.iloc[:, :-1], test.iloc[:, -1]
 
         # Evaluate the model and append its score to model_report
-        model_report:dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_val, y_test=y_val,
-                                                models=self.model_trainer_config.models, param=self.model_trainer_config.params)
-            
+        model_report:dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_val, y_test=y_val, models=self.model_trainer_config.models, param=self.model_trainer_config.params)
+        logging.info('Models evaluated for best one...')   
         # To get best model score from dict
         best_model_score = max(sorted(model_report.values()))
         
@@ -78,7 +79,6 @@ class ModelTrainer:
         save_object(
                     file_path=self.model_trainer_config.best_model_path,
                     obj= best_model
-
                 )
 
         return print(f'Best Model: {best_model}, Score: {best_model_score}')

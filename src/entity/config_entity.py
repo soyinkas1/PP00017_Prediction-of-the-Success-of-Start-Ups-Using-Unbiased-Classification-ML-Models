@@ -188,6 +188,27 @@ class ModelTrainerConfig:
     validation_data_path: Path
     test_data_path: Path
     best_model_path: Path
-    models: list
+    models: dict
     params: dict
+
+
+@dataclass(frozen=True)
+class PredictPipelineConfig:
+
+    per_exp_at_coy_start: str 
+    degree_length: str
+    yrs_since_last_funding: str
+    yrs_of_operation: str
+    institution_name: str
+    degree_type: str
+    subject: str
+    degree_is_completed: str
+    exhibitor: str
+    organizer: str
+    speaker:str 
+    sponsor:str
+    last_funding_amount: str
+    employee_count: str
+    model_path: Path
+    preprocessor_obj_path: Path
    
