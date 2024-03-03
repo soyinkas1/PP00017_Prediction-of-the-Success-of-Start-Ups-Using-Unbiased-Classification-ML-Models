@@ -314,7 +314,7 @@ class DataCleaning:
             # cast the success column as INT
             backbone_ds['success'] = backbone_ds['success'].astype(int)
             # Save the backbone_ds before merging with the scraped dataset, cleaning and preparing for model training
-            backbone_ds.to_csv(self.cleaning_config.unclean_backbone_local_data_file, index=False)
+            backbone_ds.to_csv(self.cleaning_config.clean_backbone_local_data_file, index=False)
 
         except Exception as e:
             raise CustomException(e, sys)

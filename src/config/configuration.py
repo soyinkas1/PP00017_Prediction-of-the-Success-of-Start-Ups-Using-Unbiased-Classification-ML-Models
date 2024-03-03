@@ -85,6 +85,7 @@ class ConfigurationManager:
             event_appearances_column_to_drop=config.event_appearances_column_to_drop,
             funding_rounds_column_to_drop=config.funding_rounds_column_to_drop,
             ipos_column_to_drop=config.ipos_column_to_drop,
+            ipos_column_to_rename=config.ipos_column_to_rename,
             jobs_column_to_drop=config.jobs_column_to_drop,
             jobs_column_to_rename=config.jobs_column_to_rename,
             jobs_column_to_drop_na=config.jobs_column_to_drop_na,
@@ -119,7 +120,7 @@ class ConfigurationManager:
             appearance_type=config.appearance_type,
             event_group_by=config.event_group_by,
             org_uuid=config.org_uuid,
-            unclean_backbone_local_data_file=config.unclean_backbone_local_data_file,
+            clean_backbone_local_data_file=config.clean_backbone_local_data_file,
             success_column_to_drop=config.success_column_to_drop
 
         )
@@ -174,14 +175,14 @@ class ConfigurationManager:
 
         return data_enrich_config
     
-    def get_data_transfrom_config(self, ) -> DataTransformationConfig:
+    def get_data_transform_config(self, ) -> DataTransformationConfig:
         config = self.config.data_transformation
 
         create_directories([config.root_dir])
 
         data_transform_config = DataTransformationConfig(
                 root_dir= config.root_dir,
-                unclean_backbone_local_data_file=config.unclean_backbone_local_data_file,
+                clean_backbone_local_data_file=config.clean_backbone_local_data_file,
                 transformed_data_local_data_file=config.transformed_data_local_data_file,
                 train_data_local_data_file=config.train_data_local_data_file,
                 validate_data_local_data_file=config.validate_data_local_data_file,
@@ -199,7 +200,7 @@ class ConfigurationManager:
                 institution_name=config.institution_name,
                 degree_type=config.degree_type,
                 subject=config.subject,
-                degree_is_complete=config.degree_is_completed,
+                degree_is_completed=config.degree_is_completed,
                 exhibitor=config.exhibitor,
                 organizer=config.organizer,
                 speaker=config.speaker,
@@ -215,7 +216,8 @@ class ConfigurationManager:
                 num_features=config.num_features,
                 text_feature_o=config.text_feature_o,
                 text_feature_p=config.text_feature_p,
-                cat_features=config.cat_features
+                cat_features=config.cat_features,
+                preprocessor_obj_path=config.preprocessor_obj_path
                 
 
 

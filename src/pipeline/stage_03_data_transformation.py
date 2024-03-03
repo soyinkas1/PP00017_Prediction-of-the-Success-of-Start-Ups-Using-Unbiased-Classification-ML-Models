@@ -15,7 +15,7 @@ class DataTransformationPipeline:
 
     def main(self):
         config = ConfigurationManager()
-        data_transformation_config = config.get_data_transform_config()
+        data_transform_config = config.get_data_transform_config()
         data_cleaning_config = config.get_data_cleaning_config()
         data_transform = DataTransformation(config=data_transform_config, clean_data_config=data_cleaning_config)
         data_transform.data_transformation()

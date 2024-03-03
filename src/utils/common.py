@@ -13,6 +13,7 @@ from ensure import ensure_annotations
 from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_val_score, GridSearchCV
 from src.exception import CustomException
 import sys
+import dill
 
 
 
@@ -181,7 +182,7 @@ def get_analysis(score: int):
         return 'Positive'
     
 @ensure_annotations
-def save_object(file_path: Path, obj: Any):
+def save_object(file_path: str | os.PathLike, obj):
     """
     Saves the object as a pickle file on the file_path provided
     
@@ -193,7 +194,7 @@ def save_object(file_path: Path, obj: Any):
 
 
 @ensure_annotations
-def load_object(file_path: Path):
+def load_object(file_path: str | os.PathLike):
     try:
         with open(file_path, "rb") as file_obj:
             return dill.load(file_obj)
