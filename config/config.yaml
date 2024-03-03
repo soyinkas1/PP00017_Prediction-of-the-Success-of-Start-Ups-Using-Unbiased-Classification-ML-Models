@@ -90,7 +90,7 @@ data_cleaning:
                                  'logo_url', 'alias1', 'alias2', 'alias3', 'num_exits',
                                  'email', 'phone', 'short_description', 'legal_name', 'domain',
                                  'homepage_url', 'country_code', 'state_code', 'region', 'city',
-                                 'address', 'postal_code']
+                                 'address', 'postal_code', 'type']
   organizations_column_to_drop_na: ['twitter_url', 'facebook_url', 'founded_on']
   organization_descriptions_column_to_drop: [ 'type', 'permalink', 'cb_url', 'created_at','updated_at',
                                               'name', 'rank']
@@ -124,7 +124,7 @@ data_cleaning:
   participant_uuid: participant_uuid
   appearance_type: appearance_type
   org_uuid: org_uuid
-  unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+  clean_backbone_local_data_file: artifacts/data_cleaning/clean_backbone.csv
   success_column_to_drop: [ 'acquirer_uuid', 'acquirer_name', 'acquired_on','price_usd', 'investment_type',
                             'announced_on', 'raised_amount_usd', 'post_money_valuation_usd', 'investor_count',
                             'went_public_on', 'share_price_usd', 'valuation_price_usd', 'money_raised_usd']
@@ -159,15 +159,15 @@ data_enrich:
 
 data_transformation:
     root_dir: artifacts/data_transformation
-    unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+    clean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
     transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
     train_data_local_data_file: artifacts/data_transformation/train_data.csv
     validate_data_local_data_file: artifacts/data_transformation/validate_data.csv
     test_data_local_data_file: artifacts/data_transformation/test_data.csv
-    per_exp_at_coy_start: er_exp_at_coy_start
+    per_exp_at_coy_start: per_exp_at_coy_start
     founded_on: founded_on
     closed_on: closed_on
-    degree_completed_on: completed_on
+    degree_completed_on: degree_completed_on
     degree_length: degree_length
     yrs_since_last_funding: yrs_since_last_funding
     yrs_of_operation: yrs_of_operation
@@ -177,13 +177,13 @@ data_transformation:
                'founded_on','last_funding_on', 'first_name','last_name', 'featured_job_organization_uuid', 'featured_job_organization_name',
                'people_facebook_url', 'people_linkedin_url', 'people_twitter_url', 'institution_uuid',
                'degree_started_on', 'degree_completed_on', 'org_uuid']
-    columns_rearrangement: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start','sponsor','speaker',
+    columns_rearrangement: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 'sponsor','speaker',
                 'organizer','exhibitor', 'employee_count', 'total_funding_usd','rank','uuid',
                 'name', 'type', 'roles', 'status', 'category_list', 'category_groups_list', 'primary_role',
                 'organization_description',  'gender', 'featured_job_title', 'people_description', 'institution_name', 'degree_type', 
                 'subject', 'degree_is_completed','success']
     institution_name: institution_name
-    degree_type: degree_typ
+    degree_type: degree_type
     subject: subject
     degree_is_completed: degree_is_completed
     exhibitor: exhibitor
@@ -197,11 +197,12 @@ data_transformation:
     uuid: uuid
     train_percent: 0.6
     validate_percent: 0.2
+    test_percent: 0.2
     # Create a list of feature categorisations
     num_features: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 
                       'sponsor', 'speaker', 'organizer', 'exhibitor', 'employee_count', 'total_funding_usd', 'rank']
-    text_features_o: 'organization_description'
-    text_features_p: 'people_description'
+    text_feature_o: 'organization_description'
+    text_feature_p: 'people_description'
     cat_features: ['uuid', 'name', 'type', 'roles', 'status', 'category_list', 
                       'category_groups_list', 'primary_role', 'gender', 
                       'featured_job_title', 'institution_name', 'degree_type',

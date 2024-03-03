@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
 # Import the reuired internal classes and methods
-from entity.config_entity import DataTransformationConfig, DataCleaningConfig
+from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.common import save_object
@@ -36,7 +36,7 @@ class DataTransformation:
     def data_transformation(self):
         
         try:
-            df = pd.read_csv(self.clean_data_config.unclean_backbone_local_data_file,
+            df = pd.read_csv(self.clean_data_config.clean_backbone_local_data_file,
                             parse_dates=self.transform_config.columns_to_parse_dates)
             
             logging.info("Data uploaded from data cleaning stage......")
@@ -99,7 +99,7 @@ class DataTransformation:
             df[self.transform_config.yrs_of_operation] = ((df[self.transform_config.yrs_of_operation].dt.days)/365).astype(int)
 
             # Drop the columns that are no longer required
-            df.drop([self.transform_config.columns_to_drop],axis=1,inplace=True)
+            df.drop(self.transform_config.columns_to_drop,axis=1,inplace=True)
 
             # rearrange the dataset features
             df = df[self.transform_config.columns_rearrangement]
@@ -127,6 +127,7 @@ class DataTransformation:
                     if df.loc[idx, self.transform_config.uuid] == coy :
                         df.loc[idx, self.transform_config.success] = 1
             
+            df[self.transform_config.cat_features] = df[self.transform_config.cat_features].astype(str) 
             
             # Save the updated final dataset at this stage
             df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
@@ -142,6 +143,7 @@ class DataTransformation:
             text_feature_o =  self.transform_config.text_feature_o
             text_feature_p = self.transform_config.text_feature_p
             cat_features = self.transform_config.cat_features
+            
 
             # Define individual pipelines
             num_pipeline = Pipeline(
@@ -168,8 +170,8 @@ class DataTransformation:
             # Create the preprocessing pipeline
             preprocessor = ColumnTransformer(
                     transformers=[
-                        ("text_o", text_pipeline, text_features_o),
-                        ("text_p", text_pipeline, text_features_p),
+                        ("text_o", text_pipeline, text_feature_o),
+                        ("text_p", text_pipeline, text_feature_p),
                         ("num", num_pipeline, num_features),
                         ("cat", cat_pipeline, cat_features)
                     ]

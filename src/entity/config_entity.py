@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+import os
 
 
 @dataclass(frozen=True)
@@ -103,7 +104,7 @@ class DataCleaningConfig:
     appearance_type: str
     event_group_by: list
     org_uuid: str
-    unclean_backbone_local_data_file: Path
+    clean_backbone_local_data_file: Path
     success_column_to_drop: list
 
 
@@ -178,7 +179,7 @@ class DataTransformationConfig:
     text_feature_o: str
     text_feature_p: str
     cat_features: list
-    preprocessor_obj_path: Path
+    preprocessor_obj_path: str | os.PathLike
 
 
 @dataclass(frozen=True)
