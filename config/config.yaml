@@ -214,26 +214,31 @@ model_trainer:
     train_data_path: artifacts/data_transformation/train_arr.csv
     validation_data_path: artifacts/data_transformation/val_arr.csv
     test_data_path: artifacts/data_transformation/test_arr.csv
-    best_model_path: artifacts/model_trainer/best_model.pkl
-    # models: 
-    # models:
-    #   Logistic Regression: LogisticRegression()
-    #   SVM: SVC()
-    #   Random Forest: RandomForestClassifier()
-    #   XGB: XGBClassifier()
-    #   LightGBM: lgb.LGBMClassifier()
-    
+    best_model_path: artifacts/model_trainer/best_model.pkl   
     models:
         Logistic Regression: sklearn.linear_model.LogisticRegression
         SVM: sklearn.svm.SVC
         Random Forest: sklearn.ensemble.RandomForestClassifier
         XGB: xgboost.XGBClassifier
         LightGBM: lightgbm.LGBMClassifier
-        
-        
-        # {Logistic Regression : 'LogisticRegression()', SVM : 'SVC()', Random Forest : 'RandomForestClassifier()',
-        #    XGB : 'XGBClassifier()', LightGBM : 'lgb.LGBMClassifier()' }
-
+ 
+prediction_pipeline:
+      per_exp_at_coy_start: per_exp_at_coy_start 
+      degree_length: degree_length
+      yrs_since_last_funding: yrs_since_last_funding
+      yrs_of_operation: yrs_of_operation
+      institution_name: institution_name
+      degree_type: degree_type
+      subject: subject
+      degree_is_completed: degree_is_completed
+      exhibitor: exhibitor
+      organizer: organizer
+      speaker: speaker
+      sponsor: sponsor
+      last_funding_amount: last_funding_amount
+      employee_count: mployee_count
+      model_path: artifacts/model_trainer/best_model.pkl
+      preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
 
 
     
