@@ -194,7 +194,7 @@ class ModelTrainerConfig:
 
 
 @dataclass(frozen=True)
-class PredictPipelineConfig:
+class PredictionPipelineConfig:
 
     per_exp_at_coy_start: str 
     degree_length: str

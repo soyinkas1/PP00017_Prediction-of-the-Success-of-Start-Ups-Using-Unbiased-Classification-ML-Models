@@ -1,6 +1,6 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig
+from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig
 
 
 class ConfigurationManager:
@@ -244,5 +244,30 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_prediction_pipeline_config(self, ) -> PredictionPipelineConfig:
+        config = self.config.prediction_pipeline
+
+        predition_pipeline_config = PredictionPipelineConfig(
+                degree_length=config.degree_length,
+                yrs_since_last_funding=config.yrs_since_last_funding,
+                yrs_of_operation=config.yrs_of_operation,
+                institution_name=config.institution_name,
+                degree_type=config.degree_type,
+                subject=config.subject,
+                degree_is_completed=config.degree_is_completed,
+                exhibitor=config.exhibitor,
+                organizer=config.organizer,
+                speaker=config.speaker,
+                sponsor=config.sponsor,
+                last_funding_amount=config.last_funding_amount,
+                employee_count=config.employee_count,
+                model_path=config.artifacts/model_trainer/best_model.pkl,
+                preprocessor_obj_path=config.artifacts/data_transformation/preprocessor.pkl
+                
+                
+        )
+
+        return predition_pipeline_config
 
 

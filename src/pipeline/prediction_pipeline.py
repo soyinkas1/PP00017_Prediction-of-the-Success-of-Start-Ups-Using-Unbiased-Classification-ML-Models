@@ -49,6 +49,25 @@ class CustomData:
 
         self.writing_score = writing_score
 
+
+            per_exp_at_coy_start: str 
+            degree_length: str
+            yrs_since_last_funding: str
+            yrs_of_operation: str
+            institution_name: str
+            degree_type: str
+            subject: str
+            degree_is_completed: str
+            exhibitor: str
+            organizer: str
+            speaker:str 
+            sponsor:str
+            last_funding_amount: str
+            employee_count: str
+            model_path: Path
+            preprocessor_obj_path: Path
+
+
     def get_data_as_data_frame(self):
         try:
             custom_data_input_dict = {
