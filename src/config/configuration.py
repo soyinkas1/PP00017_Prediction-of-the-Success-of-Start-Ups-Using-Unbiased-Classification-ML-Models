@@ -262,8 +262,8 @@ class ConfigurationManager:
                 sponsor=config.sponsor,
                 last_funding_amount=config.last_funding_amount,
                 employee_count=config.employee_count,
-                model_path=config.artifacts/model_trainer/best_model.pkl,
-                preprocessor_obj_path=config.artifacts/data_transformation/preprocessor.pkl
+                model_path=config.model_path
+                preprocessor_obj_path=config.preprocessor_obj_path
                 
                 
         )

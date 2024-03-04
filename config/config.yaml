@@ -236,7 +236,7 @@ prediction_pipeline:
       speaker: speaker
       sponsor: sponsor
       last_funding_amount: last_funding_amount
-      employee_count: mployee_count
+      employee_count: employee_count
       model_path: artifacts/model_trainer/best_model.pkl
       preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
 
