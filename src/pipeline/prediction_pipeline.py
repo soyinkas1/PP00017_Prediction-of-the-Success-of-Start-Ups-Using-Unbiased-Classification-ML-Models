@@ -32,44 +32,21 @@ class PredictPipeline:
 
 
 class CustomData:
-    def __init__(  self,
-        gender: str,
-        race_ethnicity: str,
-        parental_level_of_education,
-        lunch: str,
-        test_preparation_course: str,
-        reading_score: int,
-        writing_score: int):
-
-        self.gender = gender
-
-        self.race_ethnicity = race_ethnicity
-
-        self.parental_level_of_education = parental_level_of_education
-
-        self.lunch = lunch
-
-        self.test_preparation_course = test_preparation_course
-
-        self.reading_score = reading_score
-
-        self.writing_score = writing_score
-
-
-        per_exp_at_coy_start: str 
-        degree_length: str
-        yrs_since_last_funding: str
-        yrs_of_operation: str
-        institution_name: str
-        degree_type: str
-        subject: str
-        degree_is_completed: str
-        exhibitor: str
-        organizer: str
-        speaker:str 
-        sponsor:str
-        last_funding_amount: str
-        employee_count: str
+    def __init__(  self, 
+                 per_exp_at_coy_start: str,
+                degree_length: str,
+                yrs_since_last_funding: str,
+                yrs_of_operation: str,
+                institution_name: str,
+                degree_type: str,
+                subject: str,
+                degree_is_completed: str,
+                exhibitor: str,
+                organizer: str,
+                speaker:str, 
+                sponsor:str,
+                last_funding_amount: str,
+                employee_count: str):
 
         self.per_exp_at_coy_start=per_exp_at_coy_start
         self.degree_length=degree_length
