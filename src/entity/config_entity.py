@@ -198,7 +198,7 @@ class PredictionPipelineConfig:
 
     per_exp_at_coy_start: str 
     degree_length: str
-    yrs_since_last_funding: str
+    yrs_since_last_funding: str 
     yrs_of_operation: str
     institution_name: str
     degree_type: str

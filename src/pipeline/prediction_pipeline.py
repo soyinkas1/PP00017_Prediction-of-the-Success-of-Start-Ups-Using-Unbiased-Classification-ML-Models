@@ -8,13 +8,23 @@ from src.logger import logging
 
 
 class PredictPipeline:
-    def __init__(self, config: PredictionPipelineConfig):
+    def __init__(self, config: PredictionPipelineConfig):    
+        """
+        configures the attributes of each instance of the class
+        Arg: 
+            Config: configuration of the attribute (configBox)
+        """
         self.prediction_config = config
 
         logging.info('Prediction Configuration loaded...')
         
 
     def predict(self,features):
+        """
+        Carries out prediction on the features provided
+        Arg: 
+            Features: Features from web app on which prediction is done (DataFrame)
+        """
         try:
             model_path=self.prediction_config.model_path
             preprocessor_path=self.prediction_config.preprocessor_obj_path
