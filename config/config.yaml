@@ -176,11 +176,11 @@ data_transformation:
     columns_to_drop: ['founded_on','closed_on','facebook_url','linkedin_url','twitter_url','person_uuid',
                'founded_on','last_funding_on', 'first_name','last_name', 'featured_job_organization_uuid', 'featured_job_organization_name',
                'people_facebook_url', 'people_linkedin_url', 'people_twitter_url', 'institution_uuid',
-               'degree_started_on', 'degree_completed_on', 'org_uuid']
+               'degree_started_on', 'degree_completed_on', 'org_uuid','rank','uuid','name','type', 'roles']
     columns_rearrangement: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 'sponsor','speaker',
-                'organizer','exhibitor', 'employee_count', 'total_funding_usd','rank','uuid',
-                'name', 'type', 'roles', 'status', 'category_list', 'category_groups_list', 'primary_role',
-                'organization_description',  'gender', 'featured_job_title', 'people_description', 'institution_name', 'degree_type', 
+                'organizer','exhibitor', 'employee_count', 'total_funding_usd', 'organization_description','people_description',
+                 'status', 'category_list', 'category_groups_list', 'primary_role',
+                 'gender', 'featured_job_title', 'institution_name', 'degree_type', 
                 'subject', 'degree_is_completed','success']
     institution_name: institution_name
     degree_type: degree_type
@@ -200,10 +200,10 @@ data_transformation:
     test_percent: 0.2
     # Create a list of feature categorisations
     num_features: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 
-                      'sponsor', 'speaker', 'organizer', 'exhibitor', 'employee_count', 'total_funding_usd', 'rank']
+                      'sponsor', 'speaker', 'organizer', 'exhibitor', 'employee_count', 'total_funding_usd']
     text_feature_o: 'organization_description'
     text_feature_p: 'people_description'
-    cat_features: ['uuid', 'name', 'type', 'roles', 'status', 'category_list', 
+    cat_features: [  'status', 'category_list', 
                       'category_groups_list', 'primary_role', 'gender', 
                       'featured_job_title', 'institution_name', 'degree_type',
                       'subject', 'degree_is_completed']
