@@ -43,20 +43,20 @@ class PredictPipeline:
 
 class CustomData:
     def __init__(  self, 
-                 per_exp_at_coy_start: str,
-                degree_length: str,
-                yrs_since_last_funding: str,
-                yrs_of_operation: str,
+                 per_exp_at_coy_start: int,
+                degree_length: int,
+                yrs_since_last_funding: int,
+                yrs_of_operation: int,
                 institution_name: str,
                 degree_type: str,
                 subject: str,
                 degree_is_completed: str,
-                exhibitor: str,
-                organizer: str,
-                speaker:str, 
-                sponsor:str,
-                last_funding_amount: str,
-                employee_count: str):
+                exhibitor: int,
+                organizer: int,
+                speaker: int, 
+                sponsor:int,
+                last_funding_amount: int,
+                employee_count: int):
 
         self.per_exp_at_coy_start=per_exp_at_coy_start
         self.degree_length=degree_length
@@ -91,9 +91,6 @@ class CustomData:
                 "sponsor": [self.sponsor],
                 "last_funding_amount": [self.last_funding_amount],
                 "employee_count": [self.employee_count],
-
-
-
 
             }
 
