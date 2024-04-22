@@ -1,9 +1,13 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
 from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig
+import os
 
-
+basedir = os.path.abspath(os.path.dirname(__file__))
 class ConfigurationManager:
+   
+
+    SECRET_KEY=os.environ.get('SECRET_KEY')
 
     def __init__(self,
                  config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH):
@@ -269,5 +273,8 @@ class ConfigurationManager:
         )
 
         return predition_pipeline_config
+    
+
+
 
 

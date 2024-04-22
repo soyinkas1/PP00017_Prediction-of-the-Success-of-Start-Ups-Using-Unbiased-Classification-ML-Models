@@ -1,4 +1,10 @@
 from flask import Flask, request, render_template
+from flask_bootstrap import Bootstrap
+from datetime import datetime, UTC
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+
 import numpy as np
 import pandas as pd
 
@@ -6,6 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 
 app =  Flask(__name__)
+app.config['SECRET_KEY'] = "kokoroasiri"
 
 ## Route for a home page
 
