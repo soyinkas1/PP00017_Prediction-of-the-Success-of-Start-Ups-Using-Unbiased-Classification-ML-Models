@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
 from datetime import datetime, UTC
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, BooleanField, FloatField, IntegerField, SelectField
 from wtforms.validators import DataRequired
 
 import numpy as np
