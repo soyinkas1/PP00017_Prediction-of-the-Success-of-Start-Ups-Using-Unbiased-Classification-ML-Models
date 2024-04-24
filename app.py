@@ -12,6 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 
 app =  Flask(__name__)
+boot
 app.config['SECRET_KEY'] = "kokoroasiri"
 
 ## Route for a home page
