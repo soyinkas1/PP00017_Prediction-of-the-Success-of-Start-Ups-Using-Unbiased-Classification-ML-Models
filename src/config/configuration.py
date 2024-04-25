@@ -266,7 +266,7 @@ class ConfigurationManager:
                 sponsor=config.sponsor,
                 last_funding_amount=config.last_funding_amount,
                 employee_count=config.employee_count,
-                model_path=config.model_path
+                model_path=config.model_path,
                 preprocessor_obj_path=config.preprocessor_obj_path
                 
                 
