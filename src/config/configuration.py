@@ -1,9 +1,10 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig
+from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig, WebFormConfig
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+
 class ConfigurationManager:
    
 
@@ -273,6 +274,21 @@ class ConfigurationManager:
         )
 
         return predition_pipeline_config
+    
+    def get_webform_config(self, ) -> WebFormConfig:
+        config = self.config.WebForm
+
+        webform_config = WebFormConfig(
+                  category_list=config.category_list,
+                category_groups_list=config.category_groups_list,
+                featured_job_title_list=config.featured_job_title_list,
+                institution_name_list=config.institution_name_list,
+                degree_type_list=config.degree_type_list,
+                subject_list=config.subject_list      
+                
+        )
+
+        return webform_config
     
 
 
