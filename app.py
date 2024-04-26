@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 
 app =  Flask(__name__)
-boot
+Bootstrap = Bootstrap(app)
 app.config['SECRET_KEY'] = "kokoroasiri"
 
 ## Route for a home page
@@ -29,16 +29,16 @@ class WebForm(FlaskForm):
     total_funding_usd = FloatField('total_funding_usd', validators=[DataRequired()])
     organization_description = StringField('organization_description', validators=[DataRequired()])
     people_description = StringField('people_description', validators=[DataRequired()])
-    status = SelectField(u'status', choices=[('active', 'active'), ('closed', 'closed'), ('acquired', 'acquired')], validate_choice=True)
-    category_list=request.form.get('category_list'),
-    category_groups_list=request.form.get('category_groups_list'),
-    primary_role=request.form.get('primary_role'),
-    gender=request.form.get('gender'),
-    featured_job_title=request.form.get('gender'),
-    institution_name=request.form.get('gender'),
-    degree_type=request.form.get('gender'),
-    subject=request.form.get('subject'),
-    degree_is_completed=request.form.get('degree_is_completed')
+    status = SelectField('status', choices=[], validate_choice=True)
+    category_list = SelectField('category_list', choices=[], validate_choice=True)
+    category_groups_list = SelectField('category_groups_list', choices=[], validate_choice=True)
+    primary_role = SelectField('primary_role', choices=['company', 'investor', 'school'], validate_choice=True)
+    gender = SelectField('gender', choices=['Male', 'Female'], validate_choice=True)
+    featured_job_title = SelectField('featured_job_title', choices=[], validate_choice=True)
+    institution_name = SelectField('institution_name', choices=[], validate_choice=True)
+    degree_type = SelectField('degree_type', choices=[], validate_choice=True)
+    subject = SelectField('subject', choices=[], validate_choice=True)
+    degree_is_completed = SelectField('degree_is_completed', choices=['True', 'False'], validate_choice=True)
 
 
 @app.route('/')

@@ -212,4 +212,14 @@ class PredictionPipelineConfig:
     employee_count: str
     model_path: Path
     preprocessor_obj_path: Path
+
+@dataclass(frozen=True)
+class WebFormConfig:
+    category_list: list
+    category_groups_list: list
+    featured_job_title_list: list
+    institution_name_list: list
+    degree_type_list: list
+    subject_list: list
+   
    
