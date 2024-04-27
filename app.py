@@ -22,27 +22,35 @@ app.config['SECRET_KEY'] = "kokoroasiri"
 class WebForm(FlaskForm):
     config = ConfigurationManager()
     webform_config = config.get_webform_config()
-    yrs_of_operation = IntegerField('yrs_of_operation', validators=[DataRequired()])
-    yrs_since_last_funding = IntegerField('yrs_since_last_funding', validators=[DataRequired()])
-    per_exp_at_coy_start = IntegerField('per_exp_at_coy_start', validators=[DataRequired()])
-    sponsor = IntegerField('sponsor', validators=[DataRequired()])
-    speaker = IntegerField('speaker', validators=[DataRequired()])
-    organizer = IntegerField('organizer', validators=[DataRequired()])
-    exhibitor = IntegerField('exhibitor', validators=[DataRequired()])
-    employee_count = IntegerField('employee_count', validators=[DataRequired()])
-    total_funding_usd = FloatField('total_funding_usd', validators=[DataRequired()])
-    organization_description = StringField('organization_description', validators=[DataRequired()])
+    yrs_of_operation = IntegerField('Years of Operation', validators=[DataRequired()])
+    yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', validators=[DataRequired()])
+    per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", validators=[DataRequired()])
+    sponsor = IntegerField('Number of Events as a sponsor', validators=[DataRequired()])
+    speaker = IntegerField('Number of Events as a speaker', validators=[DataRequired()])
+    organizer = IntegerField('Number of Events as an organizer', validators=[DataRequired()])
+    exhibitor = IntegerField('Number of Events as a exhibitor', validators=[DataRequired()])
+    employee_count = IntegerField('Company Employee Count', validators=[DataRequired()])
+    total_funding_usd = FloatField('Total Funding in USD', validators=[DataRequired()])
+    organization_description = StringField('Organization Description', validators=[DataRequired()])
     people_description = StringField('people_description', validators=[DataRequired()])
-    status = SelectField('status', choices=['acquired', 'operating', 'ipo', 'closed'], validate_choice=True)
-    category_list = SelectField('category_list', choices=[webform_config.category_list], validate_choice=True)
-    category_groups_list = SelectField('category_groups_list', choices=[webform_config.category_groups_list], validate_choice=True)
-    primary_role = SelectField('primary_role', choices=['company', 'investor', 'school'], validate_choice=True)
-    gender = SelectField('gender', choices=['Male', 'Female'], validate_choice=True)
-    featured_job_title = SelectField('featured_job_title', choices=[webform_config.featured_job_title_list], validate_choice=True)
-    institution_name = SelectField('institution_name', choices=[webform_config.institution_name_list], validate_choice=True)
-    degree_type = SelectField('degree_type', choices=[webform_config.degree_type_list], validate_choice=True)
-    subject = SelectField('subject', choices=[webform_config.subject_list], validate_choice=True)
-    degree_is_completed = SelectField('degree_is_completed', choices=['True', 'False'], validate_choice=True)
+    status = SelectField('status', choices=[('acquired', 'acquired'), ('operating', 'operating'), ('ipo', 'ipo'), ('closed','closed')], 
+                         validate_choice=True)
+    category_list = SelectField('Category', choices=list(zip(webform_config.category_list, 
+                                                                  webform_config.category_list)), validate_choice=True)
+    category_groups_list = SelectField('Category Group', choices=list(zip(webform_config.category_groups_list, 
+                                                                                webform_config.category_groups_list)), validate_choice=True)
+    primary_role = SelectField('Company Primary Role', choices=[('company', 'company'), ('investor', 'investor'), ('school', 'school')], 
+                               validate_choice=True)
+    gender = SelectField('Promoter Gender', choices=[('Male', 'Male'), ('Female', 'Female')], validate_choice=True)
+    featured_job_title = SelectField('Job Title', choices=list(zip(webform_config.featured_job_title_list, 
+                                                                            webform_config.featured_job_title_list)), validate_choice=True)
+    institution_name = SelectField("Promoter's Institution Name", choices=list(zip(webform_config.institution_name_list, 
+                                                                        webform_config.institution_name_list)), validate_choice=True)
+    degree_type = SelectField("Promoter's Degree Type", choices=list(zip(webform_config.degree_type_list, 
+                                                              webform_config.degree_type_list)), validate_choice=True)
+    subject = SelectField("Promoter's Degree subject", choices=list(zip(webform_config.subject_list, 
+                                                      webform_config.subject_list)), validate_choice=True)
+    degree_is_completed = SelectField('Degree is completed?', choices=[('Yes'), ('No')], validate_choice=True)
 
 
 @app.route('/')
