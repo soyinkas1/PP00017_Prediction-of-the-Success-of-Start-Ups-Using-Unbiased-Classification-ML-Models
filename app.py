@@ -51,9 +51,29 @@ def index():
 
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
-    name = None
-            form = NameForm()
-            if form.validate_on_submit():
-            name = form.name.data
-            form.name.data = ''
-return render_template('index.html', form=form, name=name)
+    form = WebForm()
+    if form.validate_on_submit():
+        # name = form.name.data
+        # form.name.data = ''
+        yrs_of_operation = form.yrs_of_operation.data
+        yrs_since_last_funding = form.yrs_since_last_funding.data
+        per_exp_at_coy_start = form.per_exp_at_coy_start.data
+        sponsor = form.sponsor.data
+        speaker = form.speaker.data
+        organizer = form.organizer.data
+        exhibitor = form.exhibitor.data
+        employee_count = form.employee_count.data
+        total_funding_usd = form.total_funding_usd.data
+        organization_description = form.organization_description.data
+        people_description = form.people_description.data
+        status = form.status.data
+        category_list = form.category_list.data
+        category_groups_list = form.category_groups_list.data
+        primary_role = form.primary_role.data
+        gender = form.gender.data
+        featured_job_title = form.featured_job_title.data
+        institution_name = form.institution_name.data
+        degree_type = form.degree_type.data
+        subject = form.subject.data
+        degree_is_completed = form.degree_is_completed.data
+    return render_template('predictor.html', form=form)
