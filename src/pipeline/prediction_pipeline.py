@@ -43,54 +43,77 @@ class PredictPipeline:
 
 class CustomData:
     def __init__(  self, 
-                 per_exp_at_coy_start: int,
-                degree_length: int,
-                yrs_since_last_funding: int,
-                yrs_of_operation: int,
-                institution_name: str,
-                degree_type: str,
-                subject: str,
-                degree_is_completed: str,
-                exhibitor: int,
-                organizer: int,
-                speaker: int, 
-                sponsor:int,
-                last_funding_amount: int,
-                employee_count: int):
+                 yrs_of_operation: int,
+        yrs_since_last_funding: int,
+        per_exp_at_coy_start: int,
+        sponsor: int,
+        speaker: int,
+        organizer: int,
+        exhibitor: int,
+        employee_count: int,
+        total_funding_usd: int,
+        organization_description: str,
+        people_description: str,
+        status: str,
+        category_list: str,
+        category_groups_list: str,
+        primary_role: str,
+        gender: str,
+        featured_job_title: str,
+        institution_name: str,
+        degree_type: str,
+        subject: str,
+        degree_is_completed: str):
 
-        self.per_exp_at_coy_start=per_exp_at_coy_start
-        self.degree_length=degree_length
-        self.yrs_since_last_funding=yrs_since_last_funding
         self.yrs_of_operation=yrs_of_operation
+        self.yrs_since_last_funding=yrs_since_last_funding
+        self.per_exp_at_coy_start=per_exp_at_coy_start
+        self.sponsor=sponsor
+        self.speaker=speaker
+        self.organizer=organizer
+        self.exhibitor=exhibitor
+        self.employee_count=employee_count
+        self.total_funding_usd=total_funding_usd
+        self.organization_description=organization_description
+        self.people_description=people_description
+        self.status=status
+        self.category_list=category_list
+        self.category_groups_list=category_groups_list
+        self.primary_role=primary_role
+        self.gender=gender
+        self.featured_job_title=featured_job_title
         self.institution_name=institution_name
         self.degree_type=degree_type
         self.subject=subject
         self.degree_is_completed=degree_is_completed
-        self.exhibitor=exhibitor
-        self.organizer=organizer
-        self.speaker=speaker
-        self.sponsor=sponsor
-        self.last_funding_amount=last_funding_amount
-        self.employee_count=employee_count
         
 
     def get_data_as_data_frame(self):
         try:
             custom_data_input_dict = {
                 "per_exp_at_coy_start": [self.per_exp_at_coy_start],
-                "degree_length": [self.degree_length],
+                "self.yrs_of_operation": [self.yrs_of_operation],
                 "yrs_since_last_funding": [self.yrs_since_last_funding],
-                "yrs_of_operation": [self.yrs_of_operation],
+                "per_exp_at_coy_start": [self.per_exp_at_coy_start],
+                "sponsor": [self.sponsor],
+                "speaker": [self.speaker],
+                "organizer": [self.organizer],
+                "exhibitor": [self.exhibitor],
+                "employee_count": [self.employee_count],
+                "total_funding_usd": [self.total_funding_usd],
+                "organization_description": [self.organization_description],
+                "people_description": [self.people_description],
+                "status": [self.status],
+                "category_list": [self.category_list],
+                "category_groups_list": [self.category_groups_list],
+                "primary_role": [self.primary_role],
+                "gender": [self.gender],
+                "featured_job_title": [self.featured_job_title],
                 "institution_name": [self.institution_name],
                 "degree_type": [self.degree_type],
                 "subject": [self.subject],
-                "degree_is_completed": [self.degree_is_completed],
-                "exhibitor": [self.exhibitor],
-                "organizer": [self.organizer],
-                "speaker": [self.speaker],
-                "sponsor": [self.sponsor],
-                "last_funding_amount": [self.last_funding_amount],
-                "employee_count": [self.employee_count],
+                "degree_is_completed": [self.degree_is_completed]
+                
 
             }
 

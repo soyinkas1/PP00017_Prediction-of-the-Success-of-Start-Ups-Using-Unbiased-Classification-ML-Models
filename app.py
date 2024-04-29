@@ -63,37 +63,36 @@ def predict_datapoint():
     if form.validate_on_submit():
         # name = form.name.data
         # form.name.data = ''
-        yrs_of_operation = form.yrs_of_operation.data
-        yrs_since_last_funding = form.yrs_since_last_funding.data
-        per_exp_at_coy_start = form.per_exp_at_coy_start.data
-        sponsor = form.sponsor.data
-        speaker = form.speaker.data
-        organizer = form.organizer.data
-        exhibitor = form.exhibitor.data
-        employee_count = form.employee_count.data
-        total_funding_usd = form.total_funding_usd.data
-        organization_description = form.organization_description.data
-        people_description = form.people_description.data
-        status = form.status.data
-        category_list = form.category_list.data
-        category_groups_list = form.category_groups_list.data
-        primary_role = form.primary_role.data
-        gender = form.gender.data
-        featured_job_title = form.featured_job_title.data
-        institution_name = form.institution_name.data
-        degree_type = form.degree_type.data
-        subject = form.subject.data
-        degree_is_completed = form.degree_is_completed.data
+        data = CustomData(
+        yrs_of_operation = form.yrs_of_operation.data,
+        yrs_since_last_funding = form.yrs_since_last_funding.data,
+        per_exp_at_coy_start = form.per_exp_at_coy_start.data,
+        sponsor = form.sponsor.data,
+        speaker = form.speaker.data,
+        organizer = form.organizer.data,
+        exhibitor = form.exhibitor.data,
+        employee_count = form.employee_count.data,
+        total_funding_usd = form.total_funding_usd.data,
+        organization_description = form.organization_description.data,
+        people_description = form.people_description.data,
+        status = form.status.data,
+        category_list = form.category_list.data,
+        category_groups_list = form.category_groups_list.data,
+        primary_role = form.primary_role.data,
+        gender = form.gender.data,
+        featured_job_title = form.featured_job_title.data,
+        institution_name = form.institution_name.data,
+        degree_type = form.degree_type.data,
+        subject = form.subject.data,
+        degree_is_completed = form.degree_is_completed.data,
+        
+        )
+        pred_df=data.get_data_as_data_frame()
+        print(pred_df)
 
-
-        data = [yrs_of_operation, yrs_since_last_funding, per_exp_at_coy_start, sponsor, speaker,
-                    organizer, exhibitor, employee_count, total_funding_usd, organization_description, people_description,
-                    status, category_list, category_groups_list, primary_role, gender, featured_job_title, institution_name,
-                    degree_type, subject, degree_is_completed]
-        data = np.array(data).reshape(1, 21)
 
         obj = PredictPipeline()
-        predict = obj.predict(data)
+        predict = obj.predict(pred_df)
 
         return render_template('results.html', prediction=str(predict))
     
