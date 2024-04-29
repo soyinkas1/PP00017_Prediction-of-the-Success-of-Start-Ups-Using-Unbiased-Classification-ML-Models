@@ -1,39 +1,20 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{% block title %} Company Predictor- About{% endblock %}
+{% block title %} Company Predictor- Results{% endblock %}
 
 {% block page_content %}
 
 <div class="'page-header">
-     <h1>About</h1>
+     <h1>Prediction Results</h1>
 </div>
 {{super()}}
 <main>
     <section>
-        <h2>Introduction</h2>
-        <p>This project, originally undertaken as dissertation research work for the award of M.Sc Data Science from Cardiff Metropolitan University, has received an A grade.</p>
+        <h2>Prediction</h2>
+        <p>Based on the data provided, the model predicts that the company will be {{predict}}</p>
     </section>
-    <section>
-        <h2>Project Overview</h2>
-        <p>The current version of the project aims to enhance the approach and experiments conducted during the initial research phase. Additionally, it will implement additional best practices to further improve the project's outcomes.</p>
-    </section>
-    <section>
-        <h2>Key Objectives</h2>
-        <ul>
-            <li>Enhance the approach used in the initial research.</li>
-            <li>Improve upon the experiments conducted.</li>
-            <li>Implement additional best practices in project implementation.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Project Details</h2>
-        <p>The project will focus on refining existing methodologies, exploring new techniques, and incorporating the latest advancements in data science. This will involve rigorous analysis, experimentation, and validation to ensure the project's success.</p>
-    </section>
-    <section>
-        <h2>Expected Outcomes</h2>
-        <p>By enhancing the project's approach and experiments, as well as implementing additional best practices, we anticipate achieving superior results compared to the initial research phase. The refined project aims to contribute significantly to the field of data science.</p>
-    </section>
+    
 </main>
 
 
