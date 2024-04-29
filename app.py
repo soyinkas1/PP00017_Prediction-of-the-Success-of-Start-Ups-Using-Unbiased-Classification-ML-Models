@@ -84,4 +84,19 @@ def predict_datapoint():
         degree_type = form.degree_type.data
         subject = form.subject.data
         degree_is_completed = form.degree_is_completed.data
-    return render_template('predictor.html', form=form)
+
+
+        data = [yrs_of_operation, yrs_since_last_funding, per_exp_at_coy_start, sponsor, speaker,
+                    organizer, exhibitor, employee_count, total_funding_usd, organization_description, people_description,
+                    status, category_list, category_groups_list, primary_role, gender, featured_job_title, institution_name,
+                    degree_type, subject, degree_is_completed]
+        data = np.array(data).reshape(1, 21)
+
+        obj = PredictPipeline()
+        predict = obj.predict(data)
+
+        return render_template('results.html', prediction=str(predict))
+    
+    else:
+
+        return render_template('predictor.html', form=form)
