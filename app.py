@@ -17,11 +17,13 @@ Bootstrap = Bootstrap(app)
 app.config['SECRET_KEY'] = "kokoroasiri"
 
 
-## Route for a home page
+
+config = ConfigurationManager()
+predict_config = config.get_prediction_pipeline_config()
+webform_config = config.get_webform_config()
 
 class WebForm(FlaskForm):
-    config = ConfigurationManager()
-    webform_config = config.get_webform_config()
+    
     yrs_of_operation = IntegerField('Years of Operation', validators=[DataRequired()])
     yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', validators=[DataRequired()])
     per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", validators=[DataRequired()])
@@ -51,6 +53,7 @@ class WebForm(FlaskForm):
     subject = SelectField("Promoter's Degree subject", choices=list(zip(webform_config.subject_list, 
                                                       webform_config.subject_list)), validate_choice=True)
     degree_is_completed = SelectField('Degree is completed?', choices=[('Yes'), ('No')], validate_choice=True)
+    submit = SubmitField('Submit', validators=[DataRequired()])
 
 
 @app.route('/')
@@ -90,8 +93,8 @@ def predict_datapoint():
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
 
-
-        obj = PredictPipeline()
+     
+        obj = PredictPipeline(config=predict_config)
         predict = obj.predict(pred_df)
 
         return render_template('results.html', prediction=str(predict))
