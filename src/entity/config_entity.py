@@ -199,6 +199,7 @@ class PredictionPipelineConfig:
 
     yrs_of_operation: int 
     yrs_since_last_funding: int
+    degree_lenght: int
     per_exp_at_coy_start: int 
     sponsor:int
     speaker:int 

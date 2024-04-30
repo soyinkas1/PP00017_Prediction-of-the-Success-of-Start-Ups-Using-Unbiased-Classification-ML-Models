@@ -26,6 +26,7 @@ class WebForm(FlaskForm):
     
     yrs_of_operation = IntegerField('Years of Operation', validators=[DataRequired()])
     yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', validators=[DataRequired()])
+    degree_lenght = IntegerField('Degree Lenght', validators=[DataRequired()])
     per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", validators=[DataRequired()])
     sponsor = IntegerField('Number of Events as a sponsor', validators=[DataRequired()])
     speaker = IntegerField('Number of Events as a speaker', validators=[DataRequired()])
@@ -69,6 +70,7 @@ def predict_datapoint():
         data = CustomData(
         yrs_of_operation = form.yrs_of_operation.data,
         yrs_since_last_funding = form.yrs_since_last_funding.data,
+        degree_lenght = form.degree_lenght.data,
         per_exp_at_coy_start = form.per_exp_at_coy_start.data,
         sponsor = form.sponsor.data,
         speaker = form.speaker.data,

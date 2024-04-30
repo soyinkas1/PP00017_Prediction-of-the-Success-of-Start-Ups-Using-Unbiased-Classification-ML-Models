@@ -32,7 +32,7 @@ class PredictPipeline:
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading model and preprosessor")
-            data_scaled=preprocessor.transform(features)
+            data_scaled=preprocessor.fit_transform(features)
             preds=model.predict(data_scaled)
             return preds
         
@@ -45,6 +45,7 @@ class CustomData:
     def __init__(  self, 
                  yrs_of_operation: int,
         yrs_since_last_funding: int,
+        degree_lenght: int,
         per_exp_at_coy_start: int,
         sponsor: int,
         speaker: int,
@@ -67,6 +68,7 @@ class CustomData:
 
         self.yrs_of_operation=yrs_of_operation
         self.yrs_since_last_funding=yrs_since_last_funding
+        self.degree_lenght=degree_lenght
         self.per_exp_at_coy_start=per_exp_at_coy_start
         self.sponsor=sponsor
         self.speaker=speaker

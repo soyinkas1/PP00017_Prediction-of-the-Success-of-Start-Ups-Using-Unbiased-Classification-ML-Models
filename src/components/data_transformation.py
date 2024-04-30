@@ -219,7 +219,7 @@ class DataTransformation:
             y_val_df = y_val.to_frame()
             y_val_df.reset_index(drop=True, inplace=True)
 
-            # Combine X_train and y_train_df
+            # Combine X_val and y_val_df
             val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
 
             # Save to CSV file
@@ -233,7 +233,7 @@ class DataTransformation:
             y_test_df = y_test.to_frame()
             y_test_df.reset_index(drop=True, inplace=True)
 
-            # Combine X_train and y_train_df
+            # Combine X_test and y_test_df
             test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)
 
             # Save to CSV file
