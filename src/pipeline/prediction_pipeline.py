@@ -7,6 +7,7 @@ from src.entity.config_entity import PredictionPipelineConfig
 from src.logger import logging
 
 
+
 class PredictPipeline:
     def __init__(self, config: PredictionPipelineConfig):    
         """
@@ -25,6 +26,8 @@ class PredictPipeline:
         Arg: 
             Features: Features from web app on which prediction is done (DataFrame)
         """
+        configuration = ConfigurationManager()
+        transform_config=configuration.get_data_transform_config()
         try:
             model_path=self.prediction_config.model_path
             preprocessor_path=self.prediction_config.preprocessor_obj_path
@@ -32,7 +35,13 @@ class PredictPipeline:
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading model and preprosessor")
-            data_scaled=preprocessor.fit_transform(features)
+
+            # Create a list of feature categorisations
+            num_features = transform_config.num_features
+            text_feature_o =  transform_config.text_feature_o
+            text_feature_p = transform_config.text_feature_p
+            cat_features = transform_config.cat_features
+            data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
             return preds
         

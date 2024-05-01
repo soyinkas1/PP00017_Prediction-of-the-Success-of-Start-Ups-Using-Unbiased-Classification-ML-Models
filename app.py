@@ -11,6 +11,8 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 from src.config.configuration import ConfigurationManager
+from src.entity.config_entity import DataTransformationConfig
+
 
 app =  Flask(__name__)
 Bootstrap = Bootstrap(app)
@@ -21,6 +23,7 @@ app.config['SECRET_KEY'] = "kokoroasiri"
 config = ConfigurationManager()
 predict_config = config.get_prediction_pipeline_config()
 webform_config = config.get_webform_config()
+
 
 class WebForm(FlaskForm):
     
@@ -95,6 +98,7 @@ def predict_datapoint():
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
 
+        
      
         obj = PredictPipeline(config=predict_config)
         predict = obj.predict(pred_df)
