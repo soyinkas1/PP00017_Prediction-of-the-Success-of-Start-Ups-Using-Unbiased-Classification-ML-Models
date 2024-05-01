@@ -6,6 +6,12 @@ from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import PredictionPipelineConfig
 from src.logger import logging
 
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder 
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 
 class PredictPipeline:
@@ -36,11 +42,7 @@ class PredictPipeline:
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading model and preprosessor")
 
-            # Create a list of feature categorisations
-            num_features = transform_config.num_features
-            text_feature_o =  transform_config.text_feature_o
-            text_feature_p = transform_config.text_feature_p
-            cat_features = transform_config.cat_features
+            
             data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
             return preds
@@ -103,7 +105,8 @@ class CustomData:
         try:
             custom_data_input_dict = {
                 "per_exp_at_coy_start": [self.per_exp_at_coy_start],
-                "self.yrs_of_operation": [self.yrs_of_operation],
+                "yrs_of_operation": [self.yrs_of_operation],
+                "degree_length": [self.degree_lenght],
                 "yrs_since_last_funding": [self.yrs_since_last_funding],
                 "per_exp_at_coy_start": [self.per_exp_at_coy_start],
                 "sponsor": [self.sponsor],
