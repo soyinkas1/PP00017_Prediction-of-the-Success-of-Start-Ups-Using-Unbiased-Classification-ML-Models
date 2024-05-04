@@ -132,7 +132,7 @@ data_cleaning:
 data_scrapping:
   root_dir: artifacts/data_scrapping
   chrome_driver_path: src/chromedriver.exe
-  unclean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+  unclean_backbone_local_data_file: artifacts/data_cleaning/clean_backbone.csv
   twitter_url: twitter_url
   facebook_url: facebook_url
   twitter_username: SoyinkaSoy
@@ -159,7 +159,7 @@ data_enrich:
 
 data_transformation:
     root_dir: artifacts/data_transformation
-    clean_backbone_local_data_file: artifacts/data_cleaning/unclean_backbone.csv
+    clean_backbone_local_data_file: artifacts/data_cleaning/clean_backbone.csv
     transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
     train_data_local_data_file: artifacts/data_transformation/train_data.csv
     validate_data_local_data_file: artifacts/data_transformation/validate_data.csv
@@ -247,7 +247,7 @@ prediction_pipeline:
       subject: subject
       degree_is_completed: degree_is_completed
       model_path: artifacts/models/model.pkl
-      preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
+      preprocessor_obj_path: artifacts/data_transformation/preprocessor_jp.pkl
 
 WebForm:
     category_list: ['Content and Publishing,Internet Services,Media and Entertainment,Sales and Marketing', 

@@ -177,7 +177,8 @@ class DataTransformation:
                         ("text_o", text_pipeline, text_feature_o),
                         ("text_p", text_pipeline, text_feature_p),
                         ("num", num_pipeline, num_features),
-                        ("cat", cat_pipeline, cat_features)
+                        ("cat", cat_pipeline, cat_features),
+                    remainder='passthrough'  # Pass through any columns not specified in transformers
                     ]
             )
 
