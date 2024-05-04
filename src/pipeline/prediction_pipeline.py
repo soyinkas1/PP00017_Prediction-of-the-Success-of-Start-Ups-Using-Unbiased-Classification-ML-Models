@@ -6,11 +6,7 @@ from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import PredictionPipelineConfig
 from src.logger import logging
 
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder 
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 
 
@@ -42,7 +38,8 @@ class PredictPipeline:
             print("After Loading model and preprosessor")
 
             
-            data_scaled=preprocessor.transform(features)
+            data_scaled=preprocessor.fit_transform(features)
+            print(data_scaled)
             preds=model.predict(data_scaled)
             return preds
         

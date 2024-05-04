@@ -176,8 +176,8 @@ data_transformation:
     columns_to_drop: ['founded_on','closed_on','facebook_url','linkedin_url','twitter_url','person_uuid',
                'founded_on','last_funding_on', 'first_name','last_name', 'featured_job_organization_uuid', 'featured_job_organization_name',
                'people_facebook_url', 'people_linkedin_url', 'people_twitter_url', 'institution_uuid',
-               'degree_started_on', 'degree_completed_on', 'org_uuid','rank','uuid','name','type', 'roles']
-    columns_rearrangement: ['yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 'sponsor','speaker',
+               'degree_started_on', 'degree_completed_on', 'org_uuid', 'rank', 'name', 'type', 'roles']
+    columns_rearrangement: ['uuid', 'yrs_of_operation', 'yrs_since_last_funding', 'degree_length', 'per_exp_at_coy_start', 'sponsor','speaker',
                 'organizer','exhibitor', 'employee_count', 'total_funding_usd', 'organization_description','people_description',
                  'status', 'category_list', 'category_groups_list', 'primary_role',
                  'gender', 'featured_job_title', 'institution_name', 'degree_type', 

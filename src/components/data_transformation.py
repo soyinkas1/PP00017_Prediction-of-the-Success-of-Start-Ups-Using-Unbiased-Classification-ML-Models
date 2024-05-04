@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
-# Import the reuired internal classes and methods
+# Import the required internal classes and methods
 from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig
 from src.exception import CustomException
 from src.logger import logging
@@ -95,7 +95,7 @@ class DataTransformation:
             # Convert the negative values to 0 days
             df[self.transform_config.yrs_of_operation] = df[self.transform_config.yrs_of_operation].apply(
                 lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
-            # Covert the days to years 
+            # Convert the days to years 
             df[self.transform_config.yrs_of_operation] = ((df[self.transform_config.yrs_of_operation].dt.days)/365).astype(int)
 
             # Drop the columns that are no longer required
@@ -129,6 +129,10 @@ class DataTransformation:
             
             df[self.transform_config.cat_features] = df[self.transform_config.cat_features].astype(str) 
             
+            # drop company ID
+            df.drop('uuid',axis=1, inplace=True)
+
+
             # Save the updated final dataset at this stage
             df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
 
