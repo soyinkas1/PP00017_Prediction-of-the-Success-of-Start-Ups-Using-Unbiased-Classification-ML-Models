@@ -173,13 +173,13 @@ class DataTransformation:
 
             # Create the preprocessing pipeline
             preprocessor = ColumnTransformer(
-                    transformers=[
-                        ("text_o", text_pipeline, text_feature_o),
-                        ("text_p", text_pipeline, text_feature_p),
-                        ("num", num_pipeline, num_features),
-                        ("cat", cat_pipeline, cat_features),
-                    remainder='passthrough'  # Pass through any columns not specified in transformers
-                    ]
+            transformers=[
+                ("text_o", text_pipeline, text_feature_o),
+                ("text_p", text_pipeline, text_feature_p),
+                ("num", num_pipeline, num_features),
+                ("cat", cat_pipeline, cat_features)
+                ],
+            remainder='passthrough'  # Pass through any columns not specified in transformers
             )
 
             # Save the preprocessor
@@ -250,7 +250,6 @@ class DataTransformation:
         
         except Exception as e:
             raise CustomException(e, sys)
-
 
 
 

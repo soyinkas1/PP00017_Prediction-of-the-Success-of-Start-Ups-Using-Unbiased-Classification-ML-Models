@@ -247,7 +247,7 @@ prediction_pipeline:
       subject: subject
       degree_is_completed: degree_is_completed
       model_path: artifacts/models/model.pkl
-      preprocessor_obj_path: artifacts/data_transformation/preprocessor_jp.pkl
+      preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
 
 WebForm:
     category_list: ['Content and Publishing,Internet Services,Media and Entertainment,Sales and Marketing', 
