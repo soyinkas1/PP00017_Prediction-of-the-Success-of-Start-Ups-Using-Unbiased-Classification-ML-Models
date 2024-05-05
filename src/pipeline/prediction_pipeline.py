@@ -39,7 +39,7 @@ class PredictPipeline:
 
             
             data_scaled=preprocessor.fit_transform(features)
-            print(data_scaled)
+            data_scaled.shape
             preds=model.predict(data_scaled)
             return preds
         

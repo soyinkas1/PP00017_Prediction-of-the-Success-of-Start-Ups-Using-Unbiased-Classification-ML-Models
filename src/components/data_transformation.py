@@ -184,6 +184,7 @@ class DataTransformation:
 
             # Save the preprocessor
             save_object(self.transform_config.preprocessor_obj_path, preprocessor)
+            logging.info("Saved preprocessor ......")
 
             # Spilt the train, validate and test data into features and labels before applying the preprocessor
             X_train = train.drop('success', axis=1)
@@ -250,8 +251,6 @@ class DataTransformation:
         
         except Exception as e:
             raise CustomException(e, sys)
-
-
 
 
 

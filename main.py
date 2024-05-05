@@ -61,13 +61,13 @@ except Exception as e:
     logging.exception(e)
     raise e
 
-STAGE_NAME = 'Model Trainer'
+# STAGE_NAME = 'Model Trainer'
 
-try:
-    logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
-    model_trainer = ModelTrainerPipeline()
-    model_trainer.main()
-    logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
-except Exception as e:
-    logging.exception(e)
-    raise e
+# try:
+#     logging.info(f'>>>>> stage {STAGE_NAME} started <<<<<<')
+#     model_trainer = ModelTrainerPipeline()
+#     model_trainer.main()
+#     logging.info(f'>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x')
+# except Exception as e:
+#     logging.exception(e)
+#     raise e
