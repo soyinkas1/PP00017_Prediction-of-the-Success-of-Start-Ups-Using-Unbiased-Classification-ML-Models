@@ -142,7 +142,7 @@ class DataTransformation:
             train, validate, test = np.split(df.sample(frac=1), [int(self.transform_config.train_percent*len(df)), 
                         int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
             
-            train.to_csv('train_audit.csv', index=False)
+            # train.to_csv('train_audit.csv', index=False)
             
             # Create a list of feature categorisations
             num_features = self.transform_config.num_features
@@ -200,19 +200,19 @@ class DataTransformation:
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
-            print(f'transformed shape of X_train:{X_train.shape}')
+            # print(f'transformed shape of X_train:{X_train.shape}')
             # Transform the Validation input features data
             X_val = preprocessor.transform(X_val)
-            print(f'transformed shape of X_val:{X_val.shape}')
+            # print(f'transformed shape of X_val:{X_val.shape}')
             # Transform the Test input features data set
             X_test = preprocessor.transform(X_test)
-            print(f'transformed shape of X_test:{X_val.shape}')
+            # print(f'transformed shape of X_test:{X_val.shape}')
             # Combine the X and y of the train, validate and test dataset and save to complete the transformation
 
-            test_audit = pd.read_csv('train_audit.csv')
-            test_audit = test_audit.drop('success', axis=1)
-            tran_test_audit = preprocessor.fit_transform(test_audit)
-            print(f'transformed shape of test_audit:{tran_test_audit.shape}')
+            # test_audit = pd.read_csv('train_audit.csv', nrows=1)
+            # test_audit = test_audit.drop('success', axis=1)
+            # tran_test_audit = preprocessor.transform(test_audit)
+            # print(f'transformed shape of test_audit:{tran_test_audit.shape}')
 
                 # Train dataset
             # Convert to DataFrame and reset index
