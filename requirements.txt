@@ -8,15 +8,12 @@ selenium
 geopandas
 matplotlib
 seaborn
-box
-yaml
-ensure
 lightgbm
 xgboost
 dill
 flask
 flask-wtf
-falsk-bootstrap
+flask-bootstrap
 
 
 -e .

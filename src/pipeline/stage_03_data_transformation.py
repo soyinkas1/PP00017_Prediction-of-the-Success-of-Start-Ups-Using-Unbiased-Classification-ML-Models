@@ -21,13 +21,13 @@ class DataTransformationPipeline:
         data_transform.data_transformation()
 
 
-# if __name__ == '__main__':
-#     try:
-#         logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
-#         obj = DataTransformationPipeline()
-#         obj.main()
-#         logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
+if __name__ == '__main__':
+    try:
+        logging.info(f'>>>>>stage {STAGE_NAME} started <<<<<<')
+        obj = DataTransformationPipeline()
+        obj.main()
+        logging.info(f'>>>>>stage {STAGE_NAME} completed <<<<<<\n\n x===========x')
 
-#     except Exception as e:
-#         raise CustomException(e, sys)
-# #
+    except Exception as e:
+        raise CustomException(e, sys)
+#

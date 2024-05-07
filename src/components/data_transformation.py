@@ -79,7 +79,7 @@ class DataTransformation:
             # Convert the negative values to 0 days
             df[self.transform_config.degree_length] = df[self.transform_config.degree_length].apply(
                 lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
-            # Covert the days to years 
+            # Convert the days to years 
             df[self.transform_config.degree_length] = ((df[self.transform_config.degree_length].dt.days)/365).astype(int)
 
             # Create a column for the years since the last funding received by the organisation
@@ -142,6 +142,8 @@ class DataTransformation:
             train, validate, test = np.split(df.sample(frac=1), [int(self.transform_config.train_percent*len(df)), 
                         int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
             
+            train.to_csv('train_audit.csv', index=False)
+            
             # Create a list of feature categorisations
             num_features = self.transform_config.num_features
             text_feature_o =  self.transform_config.text_feature_o
@@ -178,8 +180,7 @@ class DataTransformation:
                 ("text_p", text_pipeline, text_feature_p),
                 ("num", num_pipeline, num_features),
                 ("cat", cat_pipeline, cat_features)
-                ],
-            remainder='passthrough'  # Pass through any columns not specified in transformers
+                ],remainder='passthrough'  
             )
 
             # Save the preprocessor
@@ -199,13 +200,19 @@ class DataTransformation:
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
+            print(f'transformed shape of X_train:{X_train.shape}')
             # Transform the Validation input features data
             X_val = preprocessor.transform(X_val)
-
+            print(f'transformed shape of X_val:{X_val.shape}')
             # Transform the Test input features data set
             X_test = preprocessor.transform(X_test)
-
+            print(f'transformed shape of X_test:{X_val.shape}')
             # Combine the X and y of the train, validate and test dataset and save to complete the transformation
+
+            test_audit = pd.read_csv('train_audit.csv')
+            test_audit = test_audit.drop('success', axis=1)
+            tran_test_audit = preprocessor.fit_transform(test_audit)
+            print(f'transformed shape of test_audit:{tran_test_audit.shape}')
 
                 # Train dataset
             # Convert to DataFrame and reset index
@@ -251,7 +258,5 @@ class DataTransformation:
         
         except Exception as e:
             raise CustomException(e, sys)
-
-
 
 
