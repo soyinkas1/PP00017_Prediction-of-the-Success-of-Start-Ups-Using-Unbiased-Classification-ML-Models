@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from datetime import datetime, UTC
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, BooleanField, FloatField, IntegerField, SelectField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, InputRequired
 
 import numpy as np
 import pandas as pd
@@ -27,16 +27,16 @@ webform_config = config.get_webform_config()
 
 class WebForm(FlaskForm):
     
-    yrs_of_operation = IntegerField('Years of Operation', validators=[DataRequired()])
-    yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', validators=[DataRequired()])
-    degree_lenght = IntegerField('Degree Lenght', validators=[DataRequired()])
-    per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", validators=[DataRequired()])
-    sponsor = IntegerField('Number of Events as a sponsor', validators=[DataRequired()])
-    speaker = IntegerField('Number of Events as a speaker', validators=[DataRequired()])
-    organizer = IntegerField('Number of Events as an organizer', validators=[DataRequired()])
-    exhibitor = IntegerField('Number of Events as a exhibitor', validators=[DataRequired()])
-    employee_count = IntegerField('Company Employee Count', validators=[DataRequired()])
-    total_funding_usd = FloatField('Total Funding in USD', validators=[DataRequired()])
+    yrs_of_operation = IntegerField('Years of Operation',default=0 ,validators=[InputRequired()])
+    yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', default=0 ,validators=[InputRequired()])
+    degree_lenght = IntegerField('Degree Lenght', default=0 ,validators=[InputRequired()])
+    per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", default=0 ,validators=[InputRequired()])
+    sponsor = IntegerField('Number of Events as a sponsor', default=0 ,validators=[InputRequired()])
+    speaker = IntegerField('Number of Events as a speaker', default=0 ,validators=[InputRequired()])
+    organizer = IntegerField('Number of Events as an organizer', default=0 ,validators=[InputRequired()])
+    exhibitor = IntegerField('Number of Events as a exhibitor', default=0 ,validators=[InputRequired()])
+    employee_count = IntegerField('Company Employee Count', default=1 ,validators=[InputRequired()])
+    total_funding_usd = FloatField('Total Funding in USD', default=0.00 ,validators=[InputRequired()])
     organization_description = StringField('Organization Description', validators=[DataRequired()])
     people_description = StringField('people_description', validators=[DataRequired()])
     status = SelectField('status', choices=[('acquired', 'acquired'), ('operating', 'operating'), ('ipo', 'ipo'), ('closed','closed')], 

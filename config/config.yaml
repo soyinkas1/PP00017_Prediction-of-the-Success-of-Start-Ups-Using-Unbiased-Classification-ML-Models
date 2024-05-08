@@ -2250,7 +2250,8 @@ WebForm:
                   'Small and Medium Businesses,Software',
                   'Advertising,Enterprise Software,SaaS,Social Media,Social Media Advertising,Social Media Marketing',
                   'Collaboration,Enterprise Software,Online Portals,SaaS,Software']
-    featured_job_title_list: ['Co-Founder',
+    featured_job_title_list: ['not known',
+                  'Co-Founder',
                   'Team Member',
                   'Chief Evangelist',
                   'VP Business Development',
@@ -3250,7 +3251,8 @@ WebForm:
                   'VP Development & Co-Exec. Producer',
                   'Co-Founder and Investment Director',
                   'Member of the Corporation']
-    institution_name_list: ['AGH University of Science and Technology',
+    institution_name_list: ['not known',
+                      'AGH University of Science and Technology',
                       'AMA Computer University',
                       'AWH Engineering College',
                       'Aalborg University',
@@ -4250,7 +4252,8 @@ WebForm:
                       'University of Redlands',
                       'University of Regensburg',
                       'University of Rhode Island']
-    degree_type_list: ['MS',
+    degree_type_list: ['not known',
+                      'MS',
                       'BA',
                       'BS',
                       'Bachelor of Science',
@@ -5250,7 +5253,8 @@ WebForm:
                       'BEEE',
                       'PhD, M.Sc',
                       'M.S. and B.S.']
-    subject_list: ['Accounting',
+    subject_list: ['not known',
+                'Accounting',
                 'Administration in Management/Marketing',
                 'Aerospace Engineering',
                 'Anthropology, English',
