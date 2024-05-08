@@ -103,7 +103,7 @@ def predict_datapoint():
         obj = PredictPipeline(config=predict_config)
         predict = obj.predict(pred_df)
 
-        return render_template('results.html', prediction=str(predict))
+        return render_template('results.html', predict=predict)
     
     else:
 

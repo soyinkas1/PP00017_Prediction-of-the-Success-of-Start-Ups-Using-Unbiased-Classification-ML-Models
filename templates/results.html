@@ -11,8 +11,14 @@
 {{super()}}
 <main>
     <section>
-        <h2>Prediction</h2>
-        <p>Based on the data provided, the model predicts that the company will be {{predict}}</p>
+        <h2>. . . . . . .</h2>
+        <p>Based on the data provided, the model predicts that the company will be :
+            {% if predict == 1 %}
+                Successful 
+            {% else %}
+                Not Successful
+            {% endif %}
+        </p>
     </section>
     
 </main>
