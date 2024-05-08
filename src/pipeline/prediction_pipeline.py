@@ -38,10 +38,28 @@ class PredictPipeline:
             print("After Loading model and preprosessor")
 
             
-            data_scaled=preprocessor.fit_transform(features)
+            data_scaled=preprocessor.transform(features)
             data_scaled.shape
             preds=model.predict(data_scaled)
             return preds
+             # Load the preprocessor and fit it with features
+            print(features.shape)
+            # preprocessor_path = self.prediction_config.preprocessor_obj_path
+            # preprocessor = load_object(file_path=preprocessor_path)
+            # preprocessor.fit(features)
+
+            # # Load the model
+            # model_path = self.prediction_config.model_path
+            # model = load_object(file_path=model_path)
+            
+            # # Transform features using the fitted preprocessor
+            # data_scaled = preprocessor.transform(features)
+            print(data_scaled.shape)
+            
+            # # Make predictions
+            # preds = model.predict(data_scaled)
+            
+            # return preds
         
         except Exception as e:
             raise CustomException(e,sys)

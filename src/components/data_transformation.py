@@ -183,9 +183,6 @@ class DataTransformation:
                 ],remainder='passthrough'  
             )
 
-            # Save the preprocessor
-            save_object(self.transform_config.preprocessor_obj_path, preprocessor)
-            logging.info("Saved preprocessor ......")
 
             # Spilt the train, validate and test data into features and labels before applying the preprocessor
             X_train = train.drop('success', axis=1)
@@ -200,19 +197,21 @@ class DataTransformation:
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
-            # print(f'transformed shape of X_train:{X_train.shape}')
+            save_object(self.transform_config.preprocessor_obj_path, preprocessor)
+            logging.info("Saved preprocessor ......")
+
+            print(f'transformed shape of X_train:{X_train.shape}')
             # Transform the Validation input features data
             X_val = preprocessor.transform(X_val)
-            # print(f'transformed shape of X_val:{X_val.shape}')
+            print(f'transformed shape of X_val:{X_val.shape}')
             # Transform the Test input features data set
             X_test = preprocessor.transform(X_test)
-            # print(f'transformed shape of X_test:{X_val.shape}')
+            print(f'transformed shape of X_test:{X_val.shape}')
+            
             # Combine the X and y of the train, validate and test dataset and save to complete the transformation
-
-            # test_audit = pd.read_csv('train_audit.csv', nrows=1)
-            # test_audit = test_audit.drop('success', axis=1)
-            # tran_test_audit = preprocessor.transform(test_audit)
-            # print(f'transformed shape of test_audit:{tran_test_audit.shape}')
+            
+           
+          
 
                 # Train dataset
             # Convert to DataFrame and reset index
