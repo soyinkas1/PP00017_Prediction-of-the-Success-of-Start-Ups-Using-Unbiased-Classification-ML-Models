@@ -70,7 +70,7 @@ class CustomData:
     def __init__(  self, 
                  yrs_of_operation: int,
         yrs_since_last_funding: int,
-        degree_lenght: int,
+        degree_length: int,
         per_exp_at_coy_start: int,
         sponsor: int,
         speaker: int,
@@ -93,7 +93,7 @@ class CustomData:
 
         self.yrs_of_operation=yrs_of_operation
         self.yrs_since_last_funding=yrs_since_last_funding
-        self.degree_lenght=degree_lenght
+        self.degree_length=degree_length
         self.per_exp_at_coy_start=per_exp_at_coy_start
         self.sponsor=sponsor
         self.speaker=speaker
@@ -120,7 +120,7 @@ class CustomData:
             custom_data_input_dict = {
                 "per_exp_at_coy_start": [self.per_exp_at_coy_start],
                 "yrs_of_operation": [self.yrs_of_operation],
-                "degree_length": [self.degree_lenght],
+                "degree_length": [self.degree_length],
                 "yrs_since_last_funding": [self.yrs_since_last_funding],
                 "per_exp_at_coy_start": [self.per_exp_at_coy_start],
                 "sponsor": [self.sponsor],

@@ -256,7 +256,7 @@ class ConfigurationManager:
         predition_pipeline_config = PredictionPipelineConfig(
                 yrs_of_operation=config.yrs_of_operation,
                 yrs_since_last_funding=config.yrs_since_last_funding,
-                degree_lenght=config.degree_lenght,
+                degree_length=config.degree_length,
                 per_exp_at_coy_start=config.per_exp_at_coy_start, 
                 sponsor=config.sponsor,
                 speaker=config.speaker,

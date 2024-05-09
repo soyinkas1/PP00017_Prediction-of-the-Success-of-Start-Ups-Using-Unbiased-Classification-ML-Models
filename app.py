@@ -14,9 +14,9 @@ from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import DataTransformationConfig
 
 
-app =  Flask(__name__)
-Bootstrap = Bootstrap(app)
-app.config['SECRET_KEY'] = "kokoroasiri"
+application =  Flask(__name__)
+Bootstrap = Bootstrap(application)
+application.config['SECRET_KEY'] = "kokoroasiri"
 
 
 
@@ -29,7 +29,7 @@ class WebForm(FlaskForm):
     
     yrs_of_operation = IntegerField('Years of Operation',default=0 ,validators=[InputRequired()])
     yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', default=0 ,validators=[InputRequired()])
-    degree_lenght = IntegerField('Degree Lenght', default=0 ,validators=[InputRequired()])
+    degree_length = IntegerField('Degree Length', default=0 ,validators=[InputRequired()])
     per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", default=0 ,validators=[InputRequired()])
     sponsor = IntegerField('Number of Events as a sponsor', default=0 ,validators=[InputRequired()])
     speaker = IntegerField('Number of Events as a speaker', default=0 ,validators=[InputRequired()])
@@ -37,8 +37,8 @@ class WebForm(FlaskForm):
     exhibitor = IntegerField('Number of Events as a exhibitor', default=0 ,validators=[InputRequired()])
     employee_count = IntegerField('Company Employee Count', default=1 ,validators=[InputRequired()])
     total_funding_usd = FloatField('Total Funding in USD', default=0.00 ,validators=[InputRequired()])
-    organization_description = StringField('Organization Description', validators=[DataRequired()])
-    people_description = StringField('people_description', validators=[DataRequired()])
+    organization_description = StringField("Organization's Description (text)", validators=[DataRequired()])
+    people_description = StringField("Promoter's description (text)", validators=[DataRequired()])
     status = SelectField('status', choices=[('acquired', 'acquired'), ('operating', 'operating'), ('ipo', 'ipo'), ('closed','closed')], 
                          validate_choice=True)
     category_list = SelectField('Category', choices=list(zip(webform_config.category_list, 
@@ -60,11 +60,11 @@ class WebForm(FlaskForm):
     submit = SubmitField('Submit', validators=[DataRequired()])
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/predictdata', methods=['GET', 'POST'])
+@application.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
     form = WebForm()
     if form.validate_on_submit():
@@ -73,7 +73,7 @@ def predict_datapoint():
         data = CustomData(
         yrs_of_operation = form.yrs_of_operation.data,
         yrs_since_last_funding = form.yrs_since_last_funding.data,
-        degree_lenght = form.degree_lenght.data,
+        degree_length = form.degree_length.data,
         per_exp_at_coy_start = form.per_exp_at_coy_start.data,
         sponsor = form.sponsor.data,
         speaker = form.speaker.data,

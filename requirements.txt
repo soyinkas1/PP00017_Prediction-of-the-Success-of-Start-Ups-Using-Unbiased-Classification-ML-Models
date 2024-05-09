@@ -14,7 +14,9 @@ dill
 flask
 flask-wtf
 flask-bootstrap
+ensure
 
 
--e .
+
+#-e .
 setuptools

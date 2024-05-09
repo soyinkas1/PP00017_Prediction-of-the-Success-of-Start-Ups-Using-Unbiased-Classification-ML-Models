@@ -226,7 +226,7 @@ prediction_pipeline:
       
       yrs_of_operation: yrs_of_operation
       yrs_since_last_funding: yrs_since_last_funding
-      degree_lenght: degree_lenght
+      degree_length: degree_length
       per_exp_at_coy_start: per_exp_at_coy_start 
       sponsor: sponsor
       speaker: speaker
