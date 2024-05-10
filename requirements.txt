@@ -15,6 +15,7 @@ flask
 flask-wtf
 flask-bootstrap
 ensure
+python-box
 
 
 
