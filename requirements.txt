@@ -16,6 +16,7 @@ flask-wtf
 flask-bootstrap
 ensure
 python-box
+pyYAML
 
 
 
