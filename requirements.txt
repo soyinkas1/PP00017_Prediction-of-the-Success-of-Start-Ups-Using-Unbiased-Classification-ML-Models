@@ -1,4 +1,3 @@
-
 pandas
 numpy
 scikit-learn
@@ -20,5 +19,4 @@ pyYAML
 
 
 
-#-e .
-setuptools
+-e .
