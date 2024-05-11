@@ -29,16 +29,18 @@ class WebForm(FlaskForm):
     
     yrs_of_operation = IntegerField('Years of Operation',default=0 ,validators=[InputRequired()])
     yrs_since_last_funding = IntegerField('Number of Years Since Last Funding', default=0 ,validators=[InputRequired()])
-    degree_length = IntegerField('Degree Length', default=0 ,validators=[InputRequired()])
+    degree_length = IntegerField("Promoter's Degree Length (Years)", default=0 ,validators=[InputRequired()])
     per_exp_at_coy_start = IntegerField("Promoter's Years of Experience at Start of Company", default=0 ,validators=[InputRequired()])
     sponsor = IntegerField('Number of Events as a sponsor', default=0 ,validators=[InputRequired()])
     speaker = IntegerField('Number of Events as a speaker', default=0 ,validators=[InputRequired()])
     organizer = IntegerField('Number of Events as an organizer', default=0 ,validators=[InputRequired()])
-    exhibitor = IntegerField('Number of Events as a exhibitor', default=0 ,validators=[InputRequired()])
+    exhibitor = IntegerField('Number of Events as an exhibitor', default=0 ,validators=[InputRequired()])
     employee_count = IntegerField('Company Employee Count', default=1 ,validators=[InputRequired()])
     total_funding_usd = FloatField('Total Funding in USD', default=0.00 ,validators=[InputRequired()])
-    organization_description = StringField("Organization's Description (text)", validators=[DataRequired()])
-    people_description = StringField("Promoter's description (text)", validators=[DataRequired()])
+    organization_description = StringField("Organization's Description (text)", validators=[DataRequired()], 
+                                          render_kw={"placeholder": "Give a short description of the company"})
+    people_description = StringField("Promoter's description (text)", validators=[DataRequired()], 
+                                          render_kw={"placeholder": "Give a short description of the promoter"})
     status = SelectField('status', choices=[('acquired', 'acquired'), ('operating', 'operating'), ('ipo', 'ipo'), ('closed','closed')], 
                          validate_choice=True)
     category_list = SelectField('Category', choices=list(zip(webform_config.category_list, 

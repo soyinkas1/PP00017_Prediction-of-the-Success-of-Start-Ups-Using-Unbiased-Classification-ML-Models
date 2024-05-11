@@ -1,0 +1,20 @@
+.form-control {
+    width: 70%;
+    max-width: 500px; /* Optionally, you can set a maximum width */
+    border-radius: 10px; /* Adjust the value as needed for rounded corners */
+}
+
+.form-control::placeholder {
+    color: #999; /* Adjust the color of the placeholder text */
+}
+
+.container {
+    padding: 10px;
+}
+
+.btn-default.custom-submit-btn {
+    background-color: black;
+    color: white;
+    border: none; /* Optionally, to remove default button border */
+    border-radius: 5px; /* Optionally, add border radius for rounded corners */
+}
