@@ -14,9 +14,9 @@ from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import DataTransformationConfig
 
 
-application =  Flask(__name__)
-Bootstrap = Bootstrap(application)
-application.config['SECRET_KEY'] = "kokoroasiri"
+app =  Flask(__name__)
+Bootstrap = Bootstrap(app)
+app.config['SECRET_KEY'] = "kokoroasiri"
 
 
 
@@ -60,11 +60,11 @@ class WebForm(FlaskForm):
     submit = SubmitField('Submit', validators=[DataRequired()])
 
 
-@application.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@application.route('/predictdata', methods=['GET', 'POST'])
+@app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
     form = WebForm()
     if form.validate_on_submit():
