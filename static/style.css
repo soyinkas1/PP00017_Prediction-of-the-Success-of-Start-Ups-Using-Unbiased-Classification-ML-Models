@@ -12,7 +12,7 @@
     padding: 10px;
 }
 
-.btn-default.custom-submit-btn {
+#submit {
     background-color: black;
     color: white;
     border: none; /* Optionally, to remove default button border */
