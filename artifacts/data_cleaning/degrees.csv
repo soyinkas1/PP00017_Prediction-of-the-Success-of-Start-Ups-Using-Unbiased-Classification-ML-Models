@@ -1,0 +1,612 @@
+person_uuid,institution_uuid,institution_name,degree_type,subject,degree_started_on,degree_completed_on,degree_is_completed
+4897dba9-3141-ecc0-2c4b-c9d844e6440f,1eab62d2-15d9-0db7-930f-2aa77d4688e1,Boston University,MS,Mass Communication,1988-01-01,1992-01-01,True
+4897dba9-3141-ecc0-2c4b-c9d844e6440f,6ae9957a-8fb4-0ab1-73fa-dd547c4d3da4,Washington University in St. Louis,BA,"English, French",1986-01-01,1990-01-01,True
+29ea5efc-fd7a-402b-3a5d-b8660ac105ea,b5ea73f6-12a3-576d-ae9b-f4169147f974,University of Greenwich,MS,Internet Technology,2002-01-01,2006-01-01,True
+45e29113-19f9-c828-68d0-42ad2ef04da0,5f84d9fa-78fd-14b0-d335-5ac3561cdc0a,Northeastern University,BS,Computer Science,1984-01-01,1988-01-01,True
+b3b4ec6b-86fe-dd6e-ec8a-e8e7e999f274,1a380593-fb9d-7f7b-ae67-784ce3ff3690,Rochester Institute of Technology,BS,Computer Science,1998-01-01,2002-01-01,True
+d79f466b-da07-63d4-b111-2d6be126dd2f,9cb593c9-f5ad-c361-d2d9-8138b313e592,University of Oregon,BA,International Business & Marketing,1993-01-01,1997-01-01,True
+5eb1057d-07a4-4e7c-0c69-650f37c9c7ce,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,Bachelor of Science,Economics,1985-09-04,1989-05-01,True
+99966e52-84f3-7513-0121-9a112a4833fa,56f86337-7a4b-3139-9c69-19a1fb79c538,Bournemouth University,unknown,Computing and Internet Technology,2004-01-01,2008-01-01,True
+bd3fa39c-d594-2f49-ddbc-6ca6200313c3,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,M.A.,Physics & Philosophy,2000-01-01,2003-01-01,True
+66328620-d48a-26a9-f4a9-72b002796ced,b04638d7-4484-6527-e98c-d97fa4856b47,University of Toronto Faculty of Law,LL.B,Law,1989-01-01,1993-01-01,True
+66328620-d48a-26a9-f4a9-72b002796ced,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BA,Economics,1986-01-01,1990-01-01,True
+b6a5d257-f111-0e1a-d274-b9acc1a8e5cf,116b9768-64c3-7533-a7e8-a3c573816c4e,Delft University of Technology,MS,Media & Knowledge Engineering,2003-01-01,2007-01-01,True
+080271bd-1a07-aeea-e587-34c01d9de5bb,e3a55987-fdbb-cb79-fcb2-7261461b43a5,Tel Aviv University,Ph.D,Finance,1995-01-01,1999-01-01,True
+f6643e09-9f1d-09b5-f04a-acd938e1868c,c75eddad-161a-e58c-b87b-e75d1ed5f75d,Louisiana State University,BA,"History, Political Science",1992-01-01,1996-01-01,True
+f6643e09-9f1d-09b5-f04a-acd938e1868c,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,MBA,unknown,2000-01-01,2004-01-01,True
+ee2a8a69-b155-a24a-a0bc-9eaf23e6a875,5d711469-1dbb-3bbd-8a2d-3b6d16b14c1e,New York University,BFA,"Computer Science, Photography",2001-01-01,2005-01-01,True
+45e29113-19f9-c828-68d0-42ad2ef04da0,c1104246-ce96-71f5-bd39-8f9bca126006,Babson College,MBA,"Entrepreneurship, Finance",1991-01-01,1995-01-01,True
+8aaa422d-b364-06de-2952-4b302005b4e5,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BA,Political Science,2000-01-01,2005-01-01,True
+e80881c8-9b9b-94e9-dcd2-137b54927e08,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,B.A.,Social Studies,2001-01-01,2005-01-01,True
+77ad1373-389e-8415-615f-ddae0d371e24,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BS,Computer Science & Engineering,1993-01-01,1997-01-01,True
+77ad1373-389e-8415-615f-ddae0d371e24,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",MS,Computer Science Software Engineering,1995-01-01,1999-01-01,True
+cd54216e-320e-765e-b8e8-4d27e5c75f94,7e8a2a93-7577-0744-9097-39b55ab4c38c,Bangalore University,Bachelor Engineering,Electronics Engineering,1988-08-01,1993-03-01,True
+d1e34ead-8b92-5a1a-393e-4c30501e8b36,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,unknown,Entrepreneurial Management,2004-01-01,2008-01-01,True
+7b276e11-1f8d-7f66-1f8a-6e852c213171,882b5335-962f-ea61-69f3-90f81f534e51,The Johns Hopkins University,MBA,Business Administration,2002-01-01,2006-01-01,True
+34cf05a8-2882-3054-2e4f-58cfb3e886c6,4c942c9c-88f1-65fc-0caf-ea1566d06ef7,University of Maryland,Ph.D,Electrical Engineering,1986-01-01,1990-01-01,True
+ba4224d5-c85c-51c3-d3f7-9a7454dbab33,f5ce3e37-7959-d604-71c7-90e860644052,Lehigh University,BS,Computer Science & Business,2002-01-01,2006-01-01,True
+5a43fcfe-2881-44bb-0d31-79e6158899b3,13a61110-deae-f8e4-13de-94997c26a29f,Long Island University,BS,Administration in Management/Marketing,1999-01-01,2003-01-01,True
+330a1ad6-f460-91f7-f0b1-fbf3ab18cb5c,1b483736-ba8b-3bcc-df47-403f4ac73848,University of Waterloo,BS,Computer Engineering,1990-01-01,1994-01-01,True
+39883307-e4f8-99ee-1b41-abd31722d90d,55fce8a2-bfd1-fbaf-0708-6a05a12ceddc,Hunter College,BA,"Anthropology, English",1996-01-01,2000-01-01,True
+7df7afdd-48b0-a0ac-ec25-68b126c10ac4,e3a55987-fdbb-cb79-fcb2-7261461b43a5,Tel Aviv University,BS,Physics,1984-01-01,1988-01-01,True
+f2ff09b3-343c-67b1-2469-6ab0cfed43b9,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,ISF,1993-01-01,1998-01-01,True
+7a0b7be9-cf6c-db9a-c0fb-ae62c8ceb254,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,BS,Social Studies,1987-01-01,1991-01-01,True
+7a0b7be9-cf6c-db9a-c0fb-ae62c8ceb254,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,Business,1994-01-01,1996-01-01,True
+23a09baf-6ccc-a821-2678-fb0cbd45a0c7,8168d6cf-4795-2847-43a7-e347c26186a1,University of Central Florida,BS,Political Science,1990-01-01,1994-01-01,True
+996628cb-19f6-fda2-3eee-9f8d94fed268,213d8152-ef6b-d2f3-091a-220e153d9e17,University of North Carolina at Chapel Hill,B.S,Computer Science,2000-01-01,2004-01-01,True
+221a6064-52c2-ff74-9224-d9a692b31397,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,BA,Computer Science,2000-01-01,2003-01-01,True
+96540be6-9be6-7ab3-1678-47cca686c72d,b9259508-942a-c515-7e26-28c2c5359a45,Gustavus Adolphus College,BA,Physics,2001-01-01,2005-01-01,True
+c593e641-f739-d1e1-7edb-188362ec91b4,054fc978-4459-159c-c679-059bfcf1a9be,Finance Department - Kellogg School of Management,MBA,unknown,2002-01-01,2006-01-01,True
+24c40898-63f7-159f-5217-b1c649748636,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,BS,Business Administration,1996-01-01,2000-01-01,True
+52eb18a6-4440-1876-cd0c-75e330d6a57a,efd934fe-d692-29a0-54f4-4a61864f5afd,Whittier College,BS,English Lit,2001-01-01,2005-01-01,True
+88209b76-25e7-a3e3-1ff1-c8c2556733c9,7ecfb287-70fd-44ef-188d-d243f7c3c4e6,Bates College,BS,Mathematics,1992-01-01,1996-01-01,True
+f6c173bd-ec5d-d034-e69e-e7419ecf35ef,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,Business,1994-01-01,1998-01-01,True
+f6c173bd-ec5d-d034-e69e-e7419ecf35ef,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Industrial Engineering & Engineering Management,1989-01-01,1993-01-01,True
+18334b16-c840-1f1e-bd46-75507b560826,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BA,History & Political Science,2000-01-01,2005-01-01,True
+e72a119e-2a7f-a81a-deb1-bcf8757ed594,4c942c9c-88f1-65fc-0caf-ea1566d06ef7,University of Maryland,BS,Computer Science + Business Management,1999-01-01,2003-01-01,True
+249f2e0a-4cc7-0a70-b653-326fd379a6c8,ff22c55d-3240-f5a0-1c37-90d26149743f,The Open University,BA,Computer Science,2002-01-01,2006-01-01,True
+a3f04492-c5ad-4d15-43e2-5aef7aaf443c,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,Computer Science,1982-09-01,1985-06-01,True
+690307ab-b4b5-cc56-3b62-7180bdb98b4f,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,BA,"Math, Physics",2001-01-01,2005-01-01,True
+44912db6-5c0c-317c-02ea-c2d5283d9d65,fea6ac10-37e4-7299-ad74-523df3c91386,University of Massachusetts,BA,environmental policy and communications,1971-01-01,1975-01-01,True
+82df15d9-49b4-ea97-2d63-a7b8e084e56f,b6a118a6-de98-0af5-3c6f-9209f70da732,Western University,BA,Business Administration,1988-01-01,1992-01-01,True
+82df15d9-49b4-ea97-2d63-a7b8e084e56f,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MBA,unknown,1993-01-01,1997-01-01,True
+4328f0d9-7372-1b36-935e-dca9d7b95154,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Aerospace Engineering,1978-01-01,1982-01-01,True
+4328f0d9-7372-1b36-935e-dca9d7b95154,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MS,MBA,1982-01-01,1986-01-01,True
+3efa129a-a0d2-c639-e458-ae0ec64b4db0,1eab62d2-15d9-0db7-930f-2aa77d4688e1,Boston University,BA,"International Relations, Business & Economics",1986-01-01,1990-01-01,True
+25fa60c0-3f55-0091-70e6-bf11e79730f6,df6b265f-9304-17ec-51f0-609ec8e5f7fd,Washington College,BS,Psychology,1990-01-01,1994-01-01,True
+29e14d01-3ed4-83e5-8c95-3b45048434f2,29cc430b-aa60-6f52-a62f-34805e3b848f,University of Toronto,BASc,Electrical Engineering,2003-01-01,2007-01-01,True
+d1e34ead-8b92-5a1a-393e-4c30501e8b36,441d1da0-fe67-f247-8dc6-3adccfc09a34,Weizmann Institute of Science,Ph.D,Physics,1998-01-01,2002-01-01,True
+e317626b-3893-d06b-fb4c-e10034243cfe,7c93ee09-edee-68a9-41e7-3d924dfda730,University of California Irvine,BS,Information & Computer Science,1984-01-01,1988-01-01,True
+1cb04252-1011-0d6a-6532-d60dc6dc18f2,0fe9f1e9-84cf-eb5e-fc38-1eff1b5299b8,University of Redlands,BA,Entrepreneurship,2002-01-01,2006-01-01,True
+9583d816-a83f-b87a-ad8b-61538e189fcc,140874e6-89db-3551-c8b2-48ee85fcc285,Pepperdine Graziadio Business School,MBA,Business,2003-01-01,2005-01-01,True
+9583d816-a83f-b87a-ad8b-61538e189fcc,c6caddd3-9342-a332-040e-fb94fe607fbb,"University of California, Santa Barbara",BA,Political Science,1996-01-01,2000-01-01,True
+c71c342e-0d4f-815b-8609-676b48445655,ea148ca6-363d-04e4-c6eb-4219a3c5a076,Technion,BS,Computer Science,1991-01-01,1995-01-01,True
+e720c8d2-ab45-49bb-e3b7-df2b1885cfac,59a0dacf-a6bf-2dab-901b-f60ec3fd2fea,Southern Polytechnic State University,BS,Computer Science,2003-01-01,2007-01-01,True
+cc9abc4f-66a4-85f1-bd6f-4f8949210375,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,MBA,"Marketing, Entrepreneur Studie",1980-01-01,1984-01-01,True
+8548323b-c139-3bd4-ba07-b137fc33d56e,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,MS,Physics,1997-01-01,2001-01-01,True
+fae1d08c-47cd-7da0-b8ff-4b24deab76b6,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,BS,Computer Science,2001-01-01,2005-01-01,True
+6addd93e-f07c-1291-b244-7df3f582c4ff,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,B.A.,Psychology,1991-01-01,1995-01-01,True
+6addd93e-f07c-1291-b244-7df3f582c4ff,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,Business,1997-01-01,1999-01-01,True
+9e048aad-8a25-c677-556c-eb64ff1f9b61,eead9d83-f93e-5ecf-d943-851069bab5b2,London Business School,MBA,unknown,2003-01-01,2005-01-01,True
+2ab58572-99a6-f6fc-6d4b-c4ca3467d259,37c4091f-340b-424a-c446-36ee930a6af2,Widener University,JD,unknown,1992-01-01,1995-01-01,True
+2ab58572-99a6-f6fc-6d4b-c4ca3467d259,4c942c9c-88f1-65fc-0caf-ea1566d06ef7,University of Maryland,BA,Criminal Justice and Criminology,1988-01-01,1992-01-01,True
+4c1a15ad-54b0-8f02-6987-ca8fcec1ca40,eba7687d-481a-4164-6ab3-ca39d430478e,University of Cape Town,BS,"Computer Science, Electrical Engineering",2000-01-01,2004-01-01,True
+0c071777-6bd2-13e5-cc90-84acd8b3caff,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1989-01-01,1993-01-01,True
+f9b800af-f288-bcf0-aa41-397f2de17c3e,ea148ca6-363d-04e4-c6eb-4219a3c5a076,Technion,BS,"Computers, Electrical Engineering",1974-01-01,1977-01-01,True
+19a90bf0-3882-e093-296e-9be405da8564,a508ca2e-d8c1-af60-e71f-480a22848a3e,University of the Arts Bremen,MS,unknown,1998-01-01,2002-01-01,True
+0023bf7f-5417-04f4-85cf-5bb078576a57,7c6801ef-3f4b-c0a1-c35a-0569fd6281d1,Wellesley College,B.A.,unknown,1972-01-01,1976-01-01,True
+c3a01eda-9add-c10d-f49c-e3f56ce45d53,9cb593c9-f5ad-c361-d2d9-8138b313e592,University of Oregon,BS,Psychology,1974-01-01,1978-01-01,True
+9a8b588d-04c9-3d42-962c-274f01c2e17c,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BA,English,1966-01-01,1970-01-01,True
+9a8b588d-04c9-3d42-962c-274f01c2e17c,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1976-01-01,1980-01-01,True
+11a58fd1-cfef-55b6-f5c8-157935bb87bb,fd106684-755c-7fd0-ae4e-fe77f5959278,Iona College,BS,Business Administration in Finance,1971-01-01,1975-01-01,True
+11a58fd1-cfef-55b6-f5c8-157935bb87bb,fd106684-755c-7fd0-ae4e-fe77f5959278,Iona College,MBA,Finance,1975-01-01,1979-01-01,True
+477fadba-9290-c08e-bbdd-3e1c63bad165,1f3bca1f-6d6b-00ea-4ec9-c4f46849448c,Columbia Business School,MBA,Finance,1979-01-01,1983-01-01,True
+477fadba-9290-c08e-bbdd-3e1c63bad165,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,BS,Business Administration,1979-01-01,1983-01-01,True
+d3daee3b-3dc1-6c2b-152e-8198a9d0dfa1,4463c2d7-3901-347d-7fe8-4ddd2d55f5be,Purdue University College of Engineering,unknown,unknown,2001-01-01,2005-01-01,True
+137ca793-1410-3e8c-67cb-9e782dc00963,e3a55987-fdbb-cb79-fcb2-7261461b43a5,Tel Aviv University,unknown,Security Studies,2003-01-01,2007-01-01,True
+a23c5845-a517-149d-3264-73318daf489f,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BE,Mechanical and Aerospace Engineering,1996-01-01,2000-01-01,True
+a23c5845-a517-149d-3264-73318daf489f,b052eecd-4c29-c1c6-3157-591011af2a0c,MIT - Sloan School of Management,MBA,"Finance, Entrepreneurship",2000-01-01,2004-01-01,True
+9ec5df38-9236-a9eb-4baa-74964093aa26,bfb3bfda-03e1-7b65-8f46-7fca786f26ed,San Francisco State University,MS,Business/Marketing,1994-01-01,1998-01-01,True
+9ec5df38-9236-a9eb-4baa-74964093aa26,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,BA,Business/Marketing,1991-01-01,1995-01-01,True
+f9c96c90-5bb4-6ba0-bd38-04823b1d5b08,72b46519-8a02-28e2-b6c4-e2c92c1ebb69,University of Victoria,B.A,Philosophy,1992-01-01,1996-01-01,True
+f9c96c90-5bb4-6ba0-bd38-04823b1d5b08,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,M.Phil,Philosophy,1997-01-01,1998-01-01,True
+c5583027-2c93-45e2-ac30-1789a5e757c2,b052eecd-4c29-c1c6-3157-591011af2a0c,MIT - Sloan School of Management,MBA,Entrepreneurship,1999-01-01,2003-01-01,True
+c5583027-2c93-45e2-ac30-1789a5e757c2,9ce45237-a82d-80e8-b4d4-2a2b7dd8d9db,Bowdoin College,BA,Economics & Government,1993-01-01,1997-01-01,True
+ba830365-13f8-903a-3037-461bff86d31a,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,MS,Electrical Engineering,1984-01-01,1988-01-01,True
+ba830365-13f8-903a-3037-461bff86d31a,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,unknown,1993-01-01,1997-01-01,True
+88297373-2f8a-0a8d-2470-cf367c68389a,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1988-01-01,1992-01-01,True
+88297373-2f8a-0a8d-2470-cf367c68389a,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,unknown,"Economics, Political Science",1982-01-01,1986-01-01,True
+ecb87fa8-80fb-02bf-030d-27b6d5e8a9f7,3c8b6322-0b7b-6b8b-cb86-5467c1608a77,University of Arizona,BA,Management Information Systems,1992-01-01,1996-01-01,True
+86cb7178-5b10-4dd9-a5d1-0c7b877b1ce3,1b483736-ba8b-3bcc-df47-403f4ac73848,University of Waterloo,BS,Computer Science,2002-01-01,2007-01-01,True
+f53763f9-640f-e01d-39dd-8f41487b4489,208fca08-b131-9527-1033-4c433760531a,Duke University,BA,Public Policy and Computer Science,1993-01-01,1997-01-01,True
+76b921f9-3784-b3c2-0b0f-a7758c113268,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science w/ Distinction,1998-01-01,2002-01-01,True
+76b921f9-3784-b3c2-0b0f-a7758c113268,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,1999-01-01,2003-01-01,True
+06f1f5f9-e9c2-6209-5c6f-b0fa1d769059,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science,1998-01-01,2002-01-01,True
+06f1f5f9-e9c2-6209-5c6f-b0fa1d769059,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,1999-01-01,2003-01-01,True
+17edfd49-5cc3-ab2c-4f19-52cc629908af,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science,1993-01-01,1996-01-01,True
+5b3a8c9f-20a1-7035-4fa8-3976723abbf9,abe280d4-62fa-5213-1367-a718472cb1fa,Wake Forest University,BS,Mathematical Economics,2002-01-01,2006-01-01,True
+a45e5441-d975-8853-19fb-9f11e67091a6,2434aac2-75d3-8005-9b44-3cb5ddb71d31,Loras College,BS,"Matthematics, Computer Science",1988-01-01,1992-01-01,True
+fe73e532-a1e3-7bbf-cc69-5df480427e51,882b5335-962f-ea61-69f3-90f81f534e51,The Johns Hopkins University,B.S.,Applied Mathematics & Engineering,1982-01-01,1988-01-01,True
+c1dae3e2-0de7-e47e-612d-1a8433b3d372,c6a0db4d-344b-7f77-e8c5-89864d3ee85b,University of Bologna,Master,Computer Science,1989-01-01,1993-01-01,True
+74a28ec8-c7e4-0810-2785-25e25cea88be,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,B.A.,Political Science,1987-01-01,1991-05-01,True
+77d5871f-f84c-8bd1-38f5-ce36ea09ed55,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,History,1988-01-01,1992-01-01,True
+77d5871f-f84c-8bd1-38f5-ce36ea09ed55,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,MA,History,1992-01-01,1993-01-01,True
+7b4b680c-22b6-2ff0-a983-b190a74d83f6,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,Business,2001-01-01,2005-01-01,True
+7b4b680c-22b6-2ff0-a983-b190a74d83f6,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,unknown,Computer Science,1995-01-01,1999-01-01,True
+9186632a-a35f-0819-64c0-4979c1ad95b2,208fca08-b131-9527-1033-4c433760531a,Duke University,BA,"Psychology, English",1970-01-01,1974-01-01,True
+9186632a-a35f-0819-64c0-4979c1ad95b2,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,Entrepreneurial Finance,1980-01-01,1982-01-01,True
+d0da66f8-b2f0-9fd0-d487-56cbf8de9ec8,a5b8d51a-d271-0af8-caf0-68005513984c,Brock University,BS,Computer Science,1996-01-01,2000-01-01,True
+d0da66f8-b2f0-9fd0-d487-56cbf8de9ec8,1b483736-ba8b-3bcc-df47-403f4ac73848,University of Waterloo,M.Math,Computer Science,1998-01-01,2002-01-01,True
+b86322f6-e382-098e-47f5-ccc6e3aa04e1,1ae6e7e0-0530-429a-a882-bf3f88779c9a,University of Kent,BA,Sociology & British Government and Politics,1974-08-30,1978-06-01,True
+bf4fb2a1-d454-3f2f-da9f-9f69f281b52a,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Management Science & Engineering,2000-01-01,2004-01-01,True
+dd74d74b-9445-3426-2cf8-de69d250bfef,893f5bc2-2fbf-f531-8597-ec1ea91bb431,Durham University,BS,Physics,2000-01-01,2004-01-01,True
+e8c7080b-a002-c664-b787-3e77f4faba33,9be92397-63a5-53a3-7502-3ed2a49d6b7f,ETH Zurich,MSCS,Computer Science,2001-01-01,2006-01-01,True
+4e01b3df-fab2-33ee-98ec-d3fc3fa2f2ed,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,B.S.,Electrical Engineering,1972-01-01,1976-01-01,True
+7bc1a9e5-fb35-2463-90ed-06ca73127259,882b5335-962f-ea61-69f3-90f81f534e51,The Johns Hopkins University,MBA,Finance,2003-01-01,2007-01-01,True
+0cf220fa-a10a-db6c-155c-9ef5535adf9e,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,BS,Computer Science,2001-01-01,2005-01-01,True
+b807523a-ba49-0bcc-d635-e2f62b3487ad,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,Ph.D,Public Policy,1976-01-01,1980-01-01,True
+b807523a-ba49-0bcc-d635-e2f62b3487ad,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MA,Philosophy (ethics),1975-01-01,1979-01-01,True
+b807523a-ba49-0bcc-d635-e2f62b3487ad,1497cdca-2d82-4c14-0928-638f21c9fa42,Weber State University,BA,Philosophy and English Literature,1966-01-01,1970-01-01,True
+b1b005e8-b4ff-e70f-9347-2413e90a7e79,a0ec6b50-fbac-ec3a-6154-6016f5f470ae,University of San Diego,BA,Communication Studies,1994-01-01,1998-01-01,True
+cc253d2a-d4c2-337e-caf8-d2e175ba4c00,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,BA,Communications,1995-01-01,1999-01-01,True
+db7ba2a3-18be-d572-7b69-a5fd6f29c95b,29cc430b-aa60-6f52-a62f-34805e3b848f,University of Toronto,unknown,B.A.Sc,2003-01-01,2007-01-01,True
+96f2da6d-7a91-fcfd-970b-cb9204c62744,7c93ee09-edee-68a9-41e7-3d924dfda730,University of California Irvine,BS,Computer Science,1980-01-01,1984-01-01,True
+d37cfa1b-d84f-da8a-eb3e-dc069d75a858,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BS,Engineering Sciences,1999-01-01,2003-01-01,True
+83d11fe7-64b2-fb97-7abe-3ff808ecf0c9,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,unknown,1995-01-01,1999-01-01,True
+83d11fe7-64b2-fb97-7abe-3ff808ecf0c9,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Industrial Engineering,1989-01-01,1993-01-01,True
+dbe24724-4a09-ed97-627f-3da5e4061c03,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,MBA,Business Administration and Management,1999-01-01,2001-01-01,True
+ad6e35c9-aa46-23ec-4ede-a5e01f58bfb6,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,BA,Biology,1984-01-01,1988-01-01,True
+ad6e35c9-aa46-23ec-4ede-a5e01f58bfb6,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,MA,Sociology,1992-01-01,1996-01-01,True
+ad6e35c9-aa46-23ec-4ede-a5e01f58bfb6,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,Ph.D,Clinical Psychology,1990-01-01,1994-01-01,True
+77ff3a23-7993-b457-4140-0a777cf98232,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,MA,Journalism,1985-01-01,1989-01-01,True
+77ff3a23-7993-b457-4140-0a777cf98232,e3f96969-e9da-73bf-537c-7c9e5de008b2,Aligarh Muslim University,B.Tech,Computer Engineering,1992-01-01,1996-01-01,True
+bd7fe9d0-90c2-516b-3475-89bd3d9e1756,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science,1987-01-01,1991-01-01,True
+bd7fe9d0-90c2-516b-3475-89bd3d9e1756,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,1989-01-01,1993-01-01,True
+37c6e4c4-65fc-2855-f87e-1f5ff3cb21fb,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,B.S,General Engineering: Industrial Economics,1985-01-01,1989-01-01,True
+fcc77915-8022-4d59-7301-2d2661c2a098,c89de999-8028-0b79-3a79-567a71075c4b,Hampshire College,BA,Economics,1976-01-01,1980-01-01,True
+b9973ee6-76c3-b064-8620-7a3571549a1c,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BS,Computer Engineering,2002-01-01,2006-01-01,True
+3f9a1ab5-8a93-512f-5d04-f36951b007fa,4463c2d7-3901-347d-7fe8-4ddd2d55f5be,Purdue University College of Engineering,BS,Computer Engineering,1997-01-01,2001-01-01,True
+01dffd0f-aedc-a233-1d43-c68b52955372,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BS,Economics & Computer Science,1998-01-01,2002-01-01,True
+a2403a15-2d58-fbed-5eff-138e16e61b36,1f5c4762-8a39-7638-d675-0f2d93f52327,University of Notre Dame,BA,Business,1986-01-01,1990-01-01,True
+f0840837-298a-f4e1-ff8c-d9582fb8b381,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,Ph.D,Cell Biology,1989-01-01,1993-01-01,True
+f0840837-298a-f4e1-ff8c-d9582fb8b381,d4adf883-2236-7292-1585-62da4be16d5d,Columbia College,BA,Chemistry,1979-01-01,1983-01-01,True
+b9a99253-7f40-da5d-b5b5-6861e969a360,8d297d1e-3e3d-fadd-2963-57e0a40bff2a,Columbia University,MS,Computer Science,1997-01-01,2001-01-01,True
+b9a99253-7f40-da5d-b5b5-6861e969a360,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,Ph.D,Media Arts & Sciences,2001-01-01,2005-01-01,True
+f39ec508-8ca0-e20d-e9db-bf42625783c2,c94f54f4-637d-2653-c899-ba4117149c0f,Paris Diderot University,MS,Computer Science & Engineering,2002-01-01,2006-01-01,True
+1e51e601-9784-12c1-a202-5d2ffa3598ad,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,Ph.D.,Cognitive Science,2000-01-01,2004-01-01,True
+dda38e83-13da-381f-d091-fa85c284df0f,e815ec6f-6caf-8f6a-85bb-5cdcb09752ac,Elmhurst College,BS,Economics & Finance,1989-01-01,1993-01-01,True
+d10c70aa-f4ef-8f65-ddc2-8bdda12cd2bb,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,BA,Computer Science,1987-01-01,1991-01-01,True
+fa983487-c998-ad72-2436-17cb15cd6921,1a380593-fb9d-7f7b-ae67-784ce3ff3690,Rochester Institute of Technology,MBA,Finance,2005-01-01,2006-01-01,True
+d661b451-6cfd-876c-416f-742892c1c5c2,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,MS,Computer Science and Electrical Engineering,1986-01-01,1990-01-01,True
+d70b6da4-32a4-2767-5912-4d4018e9411c,1e3fbe3c-f54e-67fb-d061-a46014688186,State University of New York College at Oswego,B.A.,Communications,1994-01-01,1998-01-01,True
+fb07bdb9-b842-2d92-410a-9447e0a67026,ad99ee5e-336c-51ec-a7e8-b701e72ed2ac,Allegheny College,BA,BA,1985-01-01,1989-01-01,True
+fb07bdb9-b842-2d92-410a-9447e0a67026,1eab62d2-15d9-0db7-930f-2aa77d4688e1,Boston University,MBA,MBA,1977-01-01,1981-01-01,True
+100fab16-4426-7bd6-596a-7391c132cc01,d914e869-2cd2-09b1-3d8e-b671b91171ee,Penn State University,BS,Marketing,1994-01-01,1998-01-01,True
+1b81d9b0-6228-0f39-613d-c35cfbcbb188,8b23ba01-62ef-39e4-b481-132c021d9ab5,University of Sussex,B.Eng,Computer System Engineering,2000-01-01,2004-01-01,True
+1b81d9b0-6228-0f39-613d-c35cfbcbb188,8b23ba01-62ef-39e4-b481-132c021d9ab5,University of Sussex,unknown,Computer Science and Artificial Intelligence,2001-01-01,2005-01-01,True
+a3579276-8c10-9240-c29b-3ae7a40bd2c2,6e53090d-0b3f-e8cd-649a-cf9dc46be09f,SUNY College at Geneseo,BA,Philosophy,1996-01-01,2000-01-01,True
+36cb504a-5063-925d-183e-2929dc7e7780,52db625d-e7b1-752d-17d3-d0118d1240ea,Pacific Union College,BBA,Finance,2003-01-01,2007-01-01,True
+4a088998-8049-bf05-df83-ddf928562439,247ed874-6501-031e-0cce-39d6d0757e36,Manchester University,BA,Modern Languages,1989-01-01,1993-01-01,True
+0b6b4654-4116-605d-08a1-ccdb1ad8107b,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BA,English & Psychology,1989-01-01,1993-01-01,True
+0b6b4654-4116-605d-08a1-ccdb1ad8107b,8d297d1e-3e3d-fadd-2963-57e0a40bff2a,Columbia University,MPA,Telecom & New Media Policy,1994-01-01,1998-01-01,True
+431a14fb-286e-db17-c18c-0a85cc2e8d59,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,M.S.,Computer Science,1991-01-01,1995-01-01,True
+31100103-37da-00bf-2880-592ddc890098,f45f25a5-c2de-3cd7-3657-4ff292069cb4,Alliance Manchester Business School,MBA,unknown,2001-01-01,2005-01-01,True
+31100103-37da-00bf-2880-592ddc890098,efb8b3c9-60de-dc37-60c1-9437f32eabe9,University of Brighton,B.Eng,Electronics Engineering,1988-01-01,1992-01-01,True
+3ca2607c-1480-546d-3d85-acfbde15845c,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,MA,History,1978-01-01,1982-01-01,True
+d24f19eb-2284-1dba-93ef-53fd76321ea7,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,M.A,Mathematics,2004-01-01,2007-01-01,True
+7d3a41b6-f3ce-7766-5303-14040d32f4a0,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,BS,Business Administration,2000-01-01,2003-01-01,True
+c75b2e8b-fc29-730c-2197-f450b9fac503,3eecd7de-745f-8fc7-92e3-6925293eedf7,Auburn University,BS,Wireless Engineering,2002-01-01,2006-01-01,True
+3479e306-d553-ebd9-9dd6-4012854a194a,1739831f-34f2-f2cc-31ed-f88744496802,New York University Tandon School of Engineering,MS,Business Management,2003-01-01,2007-01-01,True
+ca49534e-9a45-934e-52fb-7c8e3b7a437f,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,MBA,1976-01-01,1980-01-01,True
+ca49534e-9a45-934e-52fb-7c8e3b7a437f,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,Economics,1972-01-01,1976-01-01,True
+5a6ddea3-1ac9-f49c-1552-75e352181d7c,466ae3b4-06c1-de3c-5956-594a4b059a08,Haverford College,BA,Physics,1990-01-01,1994-01-01,True
+6421313b-5586-e207-f9da-3d01172376c9,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MBA,unknown,1995-01-01,1999-01-01,True
+6421313b-5586-e207-f9da-3d01172376c9,208fca08-b131-9527-1033-4c433760531a,Duke University,BE,Electrical Engineering,1990-01-01,1994-01-01,True
+ac494ed5-6abe-2482-3119-7cf6795dc1e4,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,B.A.,History,1987-01-01,1991-01-01,True
+9b3c5167-443d-d0a2-5e9b-b5b7610d8fde,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,BA,unknown,1974-01-01,1978-01-01,True
+4d2d26c3-5514-1fa3-c0c6-71e703944e32,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,MS,Mechanical Engineering,1988-01-01,1992-01-01,True
+fcadaffb-9396-ced5-e55b-5013e20a5689,31e40fb6-b6c5-843e-2eeb-c8d7b1a515bf,University of Warwick,LL.B,Law,1996-01-01,2000-01-01,True
+c63dea04-19aa-fa08-2f04-a04148b16540,9542ac68-8db5-147b-fb0b-a70ab78db75d,University College Cork,unknown,MBA,1980-01-01,1984-01-01,True
+14be1bbc-279b-7d6a-c547-7036c59933ad,46a977e6-c82b-bb1f-e88c-f6734e01772e,Cardiff University,unknown,BSc (Econ),1987-01-01,1991-01-01,True
+b29cd7fb-983c-e63e-8063-a02bb97ec453,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,M.S.,Computer Science,1993-01-01,1995-01-01,True
+b29cd7fb-983c-e63e-8063-a02bb97ec453,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,B.S.,Computer Systems Engineering,1989-01-01,1993-01-01,True
+7a547476-f957-b41e-6c7d-13a85dfca1e1,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,BA,Archaeology & Social Anthropology,1984-01-01,1988-01-01,True
+1b8290b8-c62f-6368-def2-1cfa16e939ea,2a179f2a-993e-f6c0-3d0d-f9b9daf2e710,ESADE,CEMS Master,International Management,1995-09-01,1996-06-01,True
+1b8290b8-c62f-6368-def2-1cfa16e939ea,9850bb11-7d5a-85c7-349c-a8977ef7fbac,HEC Paris,MBA,Management / Strategy,1992-09-01,1996-06-01,True
+ec74f209-e3bc-7a68-a9db-b8c9df13890e,04e69884-7181-c49a-bd5e-602f907a329f,University of New England,B.Com,Marketing/ eCommerce,2002-01-01,2006-01-01,True
+13bb3423-342b-64d1-2014-c7c94501edaa,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,BA,"College Scholar, Government",1989-01-01,1993-01-01,True
+f88b42c1-8a40-2652-ad2a-cdc79463005a,6cca2a58-6c3c-9abb-5380-6de702a56710,Carnegie Mellon University,BS,Electrical and Computer Engineering,1992-01-01,1996-01-01,True
+8dd0ea63-d835-3057-5d5d-074468b770e3,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,unknown,2003-01-01,2005-01-01,True
+dbb20aeb-aa46-e2f9-c267-de164a1cead7,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,B.A.,Political Economy of Industrial Societies,1992-01-01,1996-01-01,True
+dbb20aeb-aa46-e2f9-c267-de164a1cead7,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,Global Corporate Development,1998-01-01,2002-01-01,True
+ef52b3c5-3517-3223-8252-7404146fb1fd,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,unknown,1998-01-01,2002-01-01,True
+d39e6f7b-b830-cd57-89be-b0123c29850f,81dcd984-1e64-dbfb-71b8-5e5a84e477c1,Franklin University,BS,Computer Science,1997-01-01,2001-01-01,True
+bea83301-0588-4710-341f-301373ff62c9,eca8e0ec-e909-e976-7128-1a278b8a8254,University of Aberdeen,Ph.D,Computer Science,1985-01-01,1989-01-01,True
+bea83301-0588-4710-341f-301373ff62c9,893f5bc2-2fbf-f531-8597-ec1ea91bb431,Durham University,BS,Computer Science and Electronics,1981-01-01,1985-01-01,True
+bc774d54-c192-b726-0c05-af5240d0e44d,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,M.B.A.,unknown,1988-01-01,1992-01-01,True
+c910993c-7695-24aa-1fe7-5e686b2ac402,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,Finance,1976-01-01,1980-01-01,True
+4be9ac5d-b222-5f45-4c1d-1b17a39ce550,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BA,"Political Science, Business",1993-01-01,1997-01-01,True
+0ecfb839-aef6-0899-160e-2120a4617a27,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BS,Biomedical Engineering,2004-01-01,2008-01-01,True
+5b9f2bc3-df98-a448-6088-b612ee528467,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,MBA,Business,1992-01-01,1996-01-01,True
+587c72c7-6d79-f12b-89f7-d63a5ba4fba3,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,BA,Urban Studies,1984-01-01,1988-01-01,True
+587c72c7-6d79-f12b-89f7-d63a5ba4fba3,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,unknown,1990-01-01,1994-01-01,True
+587c72c7-6d79-f12b-89f7-d63a5ba4fba3,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MPA,International Affairs,1996-01-01,2000-01-01,True
+c1dcceeb-9574-4665-01a5-0fc8d9732787,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,Certificate,"Finance, Entrepreneurship",1984-01-01,1988-01-01,True
+e83dc06b-6311-cb24-426e-21a00c1191b5,ed3b60a6-3045-7e5f-b265-45b88b1b6224,Carleton University,unknown,unknown,1994-01-01,1998-01-01,True
+12bb6a69-18f4-15ed-4f05-3eecc4d19220,6e2f186a-f81d-4cb6-c8c5-5bea8b676ed6,University of Virginia,BS,Business,1992-01-01,1997-01-01,True
+64837d3a-9266-ab20-b2fb-b3138310878c,ea148ca6-363d-04e4-c6eb-4219a3c5a076,Technion,BS,Electronic Engineering,1973-01-01,1977-01-01,True
+64837d3a-9266-ab20-b2fb-b3138310878c,c1104246-ce96-71f5-bd39-8f9bca126006,Babson College,MBA,"Entrepreneurship, Finance",1996-01-01,2000-01-01,True
+d91d2fbf-60bf-cb78-c6f6-2dbb452e559a,89b9eb4b-d4d9-a1c5-f79f-a564669ba089,University of Sydney,unknown,"Accounting, Finance, business law",2000-01-01,2004-01-01,True
+47b86f1d-58ab-7afd-3882-1fe276e00909,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BA,History,1997-01-01,2001-01-01,True
+b40469a4-1619-6966-9725-a588f6d307ee,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BA,History,1988-01-01,1992-01-01,True
+77c6dc35-7853-6efa-5aec-1e908530d5c8,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,1996-01-01,2000-01-01,True
+0257508b-0080-b260-d872-e5568f557cd1,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,BS,Computer Science and Mathematics,1992-01-01,1996-01-01,True
+50e9ddfe-b2bb-2272-edcc-4d92a2cdf393,5f84d9fa-78fd-14b0-d335-5ac3561cdc0a,Northeastern University,BS,Journalism,1980-01-01,1984-01-01,True
+4b47ec41-5ec6-a67b-d63b-03d6701fe161,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,Certificate,Computer Science,1998-01-01,2002-01-01,True
+546671a5-dada-d084-317e-03ea33d6acde,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BS,"Physics, Math",1998-01-01,2002-01-01,True
+546671a5-dada-d084-317e-03ea33d6acde,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,MBA,Finance and Strategy,2002-01-01,2006-01-01,True
+9ba154dd-dd84-d6ce-94e5-b72e28d4b40f,04547730-a420-8df5-85f5-b1fb68e8d0eb,University of Puget Sound,BA,English Literature,1994-01-01,1998-01-01,True
+37983020-2997-2281-3f78-4e495ae37b8b,c7fd957d-3372-b263-433a-d431c9257d4a,The College of New Jersey,BS,Computer Sciences,1985-01-01,1989-01-01,True
+ee0c97c4-d45d-b56d-308b-2e27fd33b12a,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,MBA,Marketing and management,1984-01-01,1988-01-01,True
+ee0c97c4-d45d-b56d-308b-2e27fd33b12a,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BA,Economics,1982-01-01,1986-01-01,True
+86f1effb-af33-a214-16a0-d56b622891a7,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,BA,Telecommunications,1999-01-01,2003-01-01,True
+c1c77604-8c3a-996f-a9b4-bd29ccdffbbf,84d0d286-6031-9003-9098-26f375f9d100,University OF Chicago,MBA,unknown,2001-01-01,2005-01-01,True
+c1c77604-8c3a-996f-a9b4-bd29ccdffbbf,1eab62d2-15d9-0db7-930f-2aa77d4688e1,Boston University,BA,Literature,1988-01-01,1992-01-01,True
+c1c77604-8c3a-996f-a9b4-bd29ccdffbbf,a8210770-d2fa-bdf4-c54b-6dd9fa58b7db,University of New Hampshire,MA,Literature,2000-01-01,2004-01-01,True
+c3a9403e-4117-f804-3ed4-c684174f513e,bfb6b99d-2893-163d-f845-acd3957a4fe8,Tamilnadu College of Engineering,B.Eng,Computer Science & Engineering,1995-01-01,1998-01-01,True
+7251c862-56fc-1122-ff4b-64e9350ceb70,098357fe-bd13-ec50-d63f-58b52497ca26,Ryerson University,unknown,unknown,2004-01-01,2008-01-01,True
+2abbcb89-a49e-42ab-b3d4-7e142f0f62eb,2e2121dd-b564-2e65-5df5-83dd6ad329b9,Saint Michaels College,BS,Computer Science,1982-01-01,1986-01-01,True
+2abbcb89-a49e-42ab-b3d4-7e142f0f62eb,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,MS,Computer Science,1983-01-01,1987-01-01,True
+2725a74a-dcd8-93d3-4594-3aa7e9c5b877,2e2121dd-b564-2e65-5df5-83dd6ad329b9,Saint Michaels College,BS,Mathematics,1961-01-01,1965-01-01,True
+26602204-bf63-467f-582f-552a4b72461a,02c555fb-f3fe-cc96-312c-d61bebcde5a2,Miami University,BA,Marketing,1985-01-01,1989-01-01,True
+62a1f6f5-efc6-4223-e14a-a63733225fcf,882b5335-962f-ea61-69f3-90f81f534e51,The Johns Hopkins University,MSE,Electrical and Computer Engineering,2007-01-01,2011-01-01,True
+9a359739-c540-aab7-e38d-46a3dfaec8c4,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,BA,Classics,1985-01-01,1989-01-01,True
+c3b964bd-a549-fd42-5698-6db82ad1516b,ba41dfcf-d4e2-e826-ad6c-045a2539be27,Simon Fraser University,MA,Economics,1995-01-01,1997-01-01,True
+c3b964bd-a549-fd42-5698-6db82ad1516b,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,Executive Education,CDO Pricing,2003-01-01,2003-01-01,True
+85d2ce1a-bdfe-3907-58f7-190a492501ad,8d297d1e-3e3d-fadd-2963-57e0a40bff2a,Columbia University,BS,unknown,1988-01-01,1992-01-01,True
+b046ed22-3463-4f93-b06c-3de168822ee9,d596538a-9b3d-ca42-1794-16bb73055311,Pepperdine University,BA,unknown,1997-01-01,2001-01-01,True
+8b767b09-db28-0968-097e-3efb8e398c96,fdae3e0c-48ce-fe66-7127-71a18db8d64b,University of South Africa,unknown,Business Economics,1978-01-01,1982-01-01,True
+5f572fe4-41aa-28a6-05fa-d7af4b8958eb,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1998-01-01,2000-01-01,True
+5f572fe4-41aa-28a6-05fa-d7af4b8958eb,d61d93b4-3a6d-a1ac-7d50-8e297af8774e,Australian National University,BA,Linguistics and Pure Mathematics,1989-01-01,1993-01-01,True
+9732b378-018a-da3c-2104-16d599be11e4,69baf3f5-52a2-ccef-13aa-52f9b4d11480,Utica College,BS,Computer Science,1981-01-01,1985-01-01,True
+210dd1e2-4777-2d8c-33c4-427301c73349,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BS,electrical engineering,1985-01-01,1989-01-01,True
+d5524b66-2811-cb67-0266-8cd40cd0ddd7,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,MBA,unknown,1987-01-01,1991-01-01,True
+d5524b66-2811-cb67-0266-8cd40cd0ddd7,a27f8f6c-3970-49df-7535-037bac724ffc,Hebrew University of Jerusalem,BS,computer science,1982-01-01,1986-01-01,True
+9f30edba-7353-0ec3-fb34-4d7eb3c21913,d596538a-9b3d-ca42-1794-16bb73055311,Pepperdine University,MBA,unknown,1995-01-01,1999-01-01,True
+9f30edba-7353-0ec3-fb34-4d7eb3c21913,95179ed9-db80-e1e5-3e82-566d7e4a8073,Bar-Ilan University,BS,"Math, Computer Science",1982-01-01,1986-01-01,True
+1182fbb6-4dad-fbbf-811a-c70dc913c898,52e0322d-5e37-8ca5-9baf-93e0e02fb5a7,Brown University,BA,unknown,1985-01-01,1990-01-01,True
+97e0243d-9d76-275c-7167-3f28a90531fd,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BA,American Studies,1986-01-01,1990-01-01,True
+97e0243d-9d76-275c-7167-3f28a90531fd,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,unknown,1997-01-01,1998-01-01,True
+6890790e-7504-7665-8d55-ffc7f97668ef,29cc430b-aa60-6f52-a62f-34805e3b848f,University of Toronto,B.Sc.,Cognitive Science,1984-01-01,1988-01-01,True
+7d9bf0a1-613d-817e-f21a-edb590371f8b,6cca2a58-6c3c-9abb-5380-6de702a56710,Carnegie Mellon University,BS,Information Systems/Communication Design,2000-01-01,2004-01-01,True
+7d9bf0a1-613d-817e-f21a-edb590371f8b,6cca2a58-6c3c-9abb-5380-6de702a56710,Carnegie Mellon University,MS,Information Systems Management,2001-01-01,2005-01-01,True
+90d343b0-1b06-6f46-b831-75db0cfa155d,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,B.S.,Economics,1994-01-01,1997-01-01,True
+1f529727-54da-d4ae-8cc1-636a9ff3dd07,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Electrical Engineering,1992-01-01,1996-01-01,True
+1f529727-54da-d4ae-8cc1-636a9ff3dd07,52e0322d-5e37-8ca5-9baf-93e0e02fb5a7,Brown University,Sc.B,Electrical Engineering,1990-01-01,1994-01-01,True
+b030cf7a-8cd2-6c31-928b-57c5deae7db8,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,General Management,1994-01-01,1996-01-01,True
+60b3c64f-f8f3-92cc-7595-813e169ddf69,ab588ecb-9698-9009-de26-f4a57a3756c2,DePaul University,MS,Information Systems,1994-01-01,1998-01-01,True
+60b3c64f-f8f3-92cc-7595-813e169ddf69,458fb769-c97f-f91d-d56a-bd3151ef55ee,Bradley University,BS,Marketing,1989-01-01,1993-01-01,True
+b85f75a3-e2a5-2983-6dc0-1aa3cf7f39f2,462fbd8d-7c58-73c7-e230-78d773c7dd1f,University of Connecticut,BS,Computer Science,1974-09-01,1978-08-01,True
+785dee57-ebf9-4a75-2be0-330727574a89,d2b9fa41-e55e-b5e6-7247-787f4f98e4ee,Peking University,MS,MIS,1989-09-01,1992-07-01,True
+e25ea751-0a8d-8303-389f-44b5b7a54cd6,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,MS,Nuclear Engineering,1991-01-01,1995-01-01,True
+1ef86f93-8e58-f233-5cd3-4dc44432b210,5a1a33b8-6d12-8ed5-1dd8-942ab9786186,National Autonomous University of Mexico,unknown,Mathematics,1985-01-01,1989-01-01,True
+1ef86f93-8e58-f233-5cd3-4dc44432b210,1b483736-ba8b-3bcc-df47-403f4ac73848,University of Waterloo,unknown,Computer Science,1992-01-01,1996-01-01,True
+1ef86f93-8e58-f233-5cd3-4dc44432b210,1b483736-ba8b-3bcc-df47-403f4ac73848,University of Waterloo,unknown,Computer Science,1986-01-01,1990-01-01,True
+730244fe-2cf7-2c3e-f815-190852373f20,6ae9957a-8fb4-0ab1-73fa-dd547c4d3da4,Washington University in St. Louis,BA,Anthropology,2000-01-01,2004-01-01,True
+4b8db60c-4e93-7027-e2a6-8a0d57504c7f,ba41dfcf-d4e2-e826-ad6c-045a2539be27,Simon Fraser University,BBA,"Marketing, Economics",2002-01-01,2006-01-01,True
+360ef962-fec4-546d-e341-55d060505d9e,cb94794e-ffeb-7d89-b1b4-74013f52ac31,Rutgers University,BS,Mechanical Engineering,1988-01-01,1992-01-01,True
+360ef962-fec4-546d-e341-55d060505d9e,9e049c7e-1219-bdb0-9f55-76f4c45d6ba6,Cornell Johnson Graduate School of Management,MBA,Business,1996-01-01,2000-01-01,True
+360ef962-fec4-546d-e341-55d060505d9e,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,MSE,Robotics,1991-01-01,1995-01-01,True
+84d18f1e-7e93-a7cb-a0f6-dea2c85ad18e,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BA,Classical Civilizations,1989-01-01,1993-01-01,True
+42561288-7086-7393-900b-e0c74d7d6314,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,AB,Computer Science,1989-01-01,1993-01-01,True
+e0ba8b46-ff1b-46e4-1b4c-19cd011a271a,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,BA,Government,1965-01-01,1969-01-01,True
+927224f9-c4c6-87ae-9adf-d165d9c51246,ccd3b3d0-044a-274e-e680-2ea6461dcd16,Olivet College,BS,Business,1995-01-01,1999-01-01,True
+04b739ba-e0ae-ad6b-13b1-cc1844073936,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,BS,Computer Science,1997-01-01,2001-01-01,True
+ed13cd36-fe2b-3707-197b-0c2d56e37a71,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BS,Electrical Engineering/Computer Science,1990-01-01,1994-01-01,True
+ed13cd36-fe2b-3707-197b-0c2d56e37a71,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BS,Applied Mathematics,1990-01-01,1994-01-01,True
+cd0a1fdf-230f-ca40-c2bc-28fcd44da137,9ce45237-a82d-80e8-b4d4-2a2b7dd8d9db,Bowdoin College,B.A,Computer Science,1997-01-01,2001-01-01,True
+b0a083f2-34b4-6233-1269-988d816e41f6,28b0336f-4f5a-8227-ebde-c3e1f726841a,Iowa State University,BS,Marketing,1991-01-01,1995-01-01,True
+66e8f3b9-8a30-d2e6-94a8-278cf114ce4b,e8e7cc87-bca7-dbbf-84a1-7087fa319430,University of Portsmouth,MS,Internet Systems Development,2002-01-01,2006-01-01,True
+e15a7433-6abe-7596-35ee-36a1f00d4f03,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,Business Administration,1989-01-01,1993-01-01,True
+e15a7433-6abe-7596-35ee-36a1f00d4f03,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,"English, Math/Computer Science",1989-01-01,1993-01-01,True
+3ba9203f-c79b-3166-2183-c1d690f00bcb,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,BS,Computer Science,1989-01-01,1993-01-01,True
+26a7a1bd-ae04-a3fe-d05f-6b12fcb64d41,eba7687d-481a-4164-6ab3-ca39d430478e,University of Cape Town,Bachelors,"Actuarial Science, Economics & Statistics",1991-01-01,1994-01-01,True
+26a7a1bd-ae04-a3fe-d05f-6b12fcb64d41,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,M.B.A.,Business,1998-01-01,2000-01-01,True
+94f0c753-e73f-36dc-7964-03d6f09a4c1d,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Symbolic Systems,1993-01-01,1997-01-01,True
+94f0c753-e73f-36dc-7964-03d6f09a4c1d,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,1995-01-01,1999-01-01,True
+029ebde3-3a1f-14ed-ad16-6344bd248e48,593ffca0-634d-477c-91fb-7045f514075c,University of Southern California Marshall School of Business,MBA,Business,1993-01-01,1997-01-01,True
+44d004ac-0f2f-72ce-8828-03709e7a38be,5423dc71-d3cc-f43a-8c62-eabe7a8495db,University of Exeter,BA,Business Management,1996-01-01,2000-01-01,True
+44d004ac-0f2f-72ce-8828-03709e7a38be,adc008d9-c19a-c41f-6f37-b96510645031,Nottingham Trent University,MS,Law,1999-01-01,2003-01-01,True
+630c69bf-2ff7-c492-7df4-56bc5ccd41dc,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BS,Engineering,1998-01-01,2002-01-01,True
+630c69bf-2ff7-c492-7df4-56bc5ccd41dc,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,MS,Engineering Management,2000-01-01,2004-01-01,True
+e8bc4eb6-cb09-5761-a67e-a8e571ad332d,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,BS,Electrical Engineering,1986-01-01,1990-01-01,True
+e8bc4eb6-cb09-5761-a67e-a8e571ad332d,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MBA,Business,1992-01-01,1994-01-01,True
+61ef9a31-f184-6c4c-0325-c8ec0ba4dcdf,1a380593-fb9d-7f7b-ae67-784ce3ff3690,Rochester Institute of Technology,BA,unknown,1990-01-01,1994-01-01,True
+e33d9d45-1dfa-4015-08f1-e6c275e5cad7,bfa1f88d-050b-9298-13fa-3888c3190fe5,Rensselaer Polytechnic Institute,BS,Information Technology,1998-01-01,2002-01-01,True
+1dfbc8d2-e184-a06d-9dbc-a3e6c0714766,f5ce3e37-7959-d604-71c7-90e860644052,Lehigh University,BS,unknown,1994-01-01,1998-01-01,True
+5130ae81-baaf-fd8e-7a21-129967ff6f4a,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,MBA,unknown,1986-01-01,1990-01-01,True
+8fe74f4e-6f44-be96-289b-7876d9f02208,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Engineering Economic Systems & Operations Research,1990-01-01,1994-01-01,True
+8fe74f4e-6f44-be96-289b-7876d9f02208,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,Economics,2003-01-01,2007-01-01,True
+d65f657e-4f2e-0675-c94a-aa03f6cc6e16,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,BSE,Computer Engineering,1999-01-01,2003-01-01,True
+6c23f23f-8582-7f1b-9d01-9127658c2d54,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,BA,Economics,2003-01-01,2006-01-01,True
+bba08143-6b49-ac22-589c-e366e2ea911d,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,B.S.,Electrical Engineering & Computer Science,1994-01-01,1998-01-01,True
+bba08143-6b49-ac22-589c-e366e2ea911d,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,unknown,2003-01-01,2005-01-01,True
+40e56bf5-c8cd-d12b-104c-b04408645dd9,5f84d9fa-78fd-14b0-d335-5ac3561cdc0a,Northeastern University,B.S,International Business Adminitration and Finance,1982-01-01,1987-01-01,True
+167ff660-cbdb-0de7-911c-86086a14d098,0503e361-f5de-7503-93e2-a6863fcf6349,Boston College Law School,JD,Law Magna Cum Laude,1979-01-01,1983-01-01,True
+167ff660-cbdb-0de7-911c-86086a14d098,fd3759ee-9f14-b6d9-03fb-173ce84dc70d,Tufts University,MA,American Government & Public Policy,1976-01-01,1980-01-01,True
+167ff660-cbdb-0de7-911c-86086a14d098,fd3759ee-9f14-b6d9-03fb-173ce84dc70d,Tufts University,BA,Political Science Magna Cum Laude,1975-01-01,1979-01-01,True
+042392a1-d946-6b7b-4d3f-219b54aa47f8,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,BS,Radio-Television-Film,1994-01-01,1998-01-01,True
+339ca0ca-d12c-a5ae-ff92-d66c715eefe4,fd3759ee-9f14-b6d9-03fb-173ce84dc70d,Tufts University,BS,Engineering,1993-01-01,1997-01-01,True
+339ca0ca-d12c-a5ae-ff92-d66c715eefe4,0f6f5605-0991-02a7-85d9-2c5cad9e0e8b,Yale Law School,JD,unknown,2002-01-01,2006-01-01,True
+686c5956-e031-8bfb-4681-40a8e1794e42,8bf7bdb1-944f-b59c-33e0-f2f06b2d19cc,Swarthmore College,BA,Sociology & Anthropology,1996-01-01,2000-01-01,True
+686c5956-e031-8bfb-4681-40a8e1794e42,269fb558-6dab-3525-c28c-f6c1bb2f9687,Emory University,MD,Medicine,2001-01-01,2007-01-01,True
+c1b1eb77-1761-6c2f-fb9e-9022fb96dfe6,1f3bca1f-6d6b-00ea-4ec9-c4f46849448c,Columbia Business School,MBA,"Entrepreneurship, Marketing & Management",2004-01-01,2008-01-01,True
+c1b1eb77-1761-6c2f-fb9e-9022fb96dfe6,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,Economics,1998-01-01,2002-01-01,True
+2a8ff05d-923b-9b2e-3726-90627182a2e1,8466a999-e63f-bf97-e508-e039f9262819,University of Denver,MBA,Marketing,2001-01-01,2005-01-01,True
+2a8ff05d-923b-9b2e-3726-90627182a2e1,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BA,Communications - School of Journalism,1997-01-01,2001-01-01,True
+d598d150-1f74-515b-5114-8cf65a6a34fd,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,BS,Computer Science,1975-01-01,1979-01-01,True
+442497e6-43ea-3883-1981-0466192047a5,7b184184-fa91-a76e-ef51-9d6bb4baa880,Boston College,BA,"Romance Languages (French), International Relations, Philosophy",1983-01-01,1987-01-01,True
+c2bfaa69-3a01-1250-19ac-3fd14dbb91e1,cb94794e-ffeb-7d89-b1b4-74013f52ac31,Rutgers University,B.A.,Psychology,1972-01-01,1976-01-01,True
+41d3acbb-9d68-ba0b-ee46-2e24f24bad62,b6a118a6-de98-0af5-3c6f-9209f70da732,Western University,B.Sc.,Microbiology & Immunology,1984-01-01,1988-01-01,True
+e229d3d3-2e7b-7df0-082e-1d70fcd025fa,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,BA,Computer Science,1985-01-01,1989-01-01,True
+14a7e65f-a951-7ae0-4ab9-3b8ae2720d09,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BS,Computer Science,1998-01-01,2002-01-01,True
+e35fe922-112b-73da-9a39-530197ea111f,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,BS,Computer Science,1999-01-01,2003-01-01,True
+2293e905-2d73-3677-24a5-718de9706c89,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,BA,Computer science,1999-09-01,2003-06-01,True
+6ea66924-c3d2-4064-8237-bda3bbb56c02,3cce261e-0d26-1949-2e12-d729cd3c5e11,Technical University of Košice,unknown,unknown,1993-01-01,1997-01-01,True
+0c4e004f-513a-8c55-66af-19a2c264c928,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,unknown,Electrical Engineering & Computer Science,1996-01-01,2000-01-01,True
+aab300f0-1a85-f529-962e-d95799cb88b1,02f57eff-5a7e-2493-0d2d-2d61d3186ce7,Oregon State University,BS,Computer Science,1993-01-01,1997-01-01,True
+07fbcc5a-6182-853c-9ee4-e8ab3eb7b657,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,East Asian Languages (Japanese),1988-01-01,1992-01-01,True
+d1520373-855d-d284-81eb-f7e54ad2f631,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,BA,English and American Literature & Language,1978-01-01,1982-01-01,True
+a8ca271d-5488-c34c-71b9-1869dfb8c678,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,BS,Economics,1998-01-01,2002-01-01,True
+c811d889-6b0b-4633-7d39-6a4932d43d2c,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BS,"Computer Science, Mathematics, Physics",1979-01-01,1983-01-01,True
+c811d889-6b0b-4633-7d39-6a4932d43d2c,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,MS,Computer Science,1980-01-01,1984-01-01,True
+8a8c2de6-d763-8906-5089-769a55124f77,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Mathematics and Comparative Literature,1970-01-01,1974-01-01,True
+8a8c2de6-d763-8906-5089-769a55124f77,27d93feb-18cc-29f9-2991-f478b42a3577,University of Rochester,Ph.D,Computer Science,1976-01-01,1980-01-01,True
+97ad04c7-7e75-c95a-d2ed-491fe629087d,6cca2a58-6c3c-9abb-5380-6de702a56710,Carnegie Mellon University,Ph.D,Computer Science,1973-01-01,1977-01-01,True
+88cb5b9c-a755-2267-0d5d-e41b8236c9b1,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,M.A.,History,1973-01-01,1976-01-01,True
+1238a987-c794-c476-fb9d-54267498e9c5,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,French Economics and Literature,1981-01-01,1985-01-01,True
+45a46cfb-1e5f-168b-fe39-14dcd55f4d7e,f2f5edca-be20-45cd-14a3-9b297ad8e0a3,University of Missouri,BS,Computer Science,1993-01-01,1997-01-01,True
+78ae5462-896b-7180-9d8b-3298f7d54ff8,a0ec6b50-fbac-ec3a-6154-6016f5f470ae,University of San Diego,JD,JD,1992-01-01,1996-01-01,True
+78ae5462-896b-7180-9d8b-3298f7d54ff8,c6caddd3-9342-a332-040e-fb94fe607fbb,"University of California, Santa Barbara",BA,Law and Society,1986-01-01,1990-01-01,True
+1da8076f-e34e-c982-480e-6c7a558a0c01,25fc63c8-4e27-a505-fbc5-9da1cc47f24c,International Academy of Design and Technology,AS,Interactive Media,1997-01-01,2001-01-01,True
+45a46cfb-1e5f-168b-fe39-14dcd55f4d7e,64762349-1a0d-1df5-b568-0a3efd2340d5,"University of Missouri, St Louis",BS,Computer Science,1991-01-01,1995-01-01,True
+029ebde3-3a1f-14ed-ad16-6344bd248e48,99228a79-a265-bd1e-9fd6-f060080e302a,University of Washington,BA,Finance,1984-01-01,1988-01-01,True
+f38a9287-bb0f-1f1b-966e-f81d667e831c,6a85b4e2-3b34-b306-f457-786c8dc06dc6,Ecole centrale de Lyon,MS,Computer Science,1989-01-01,1993-01-01,True
+cff637f6-c07b-0472-de50-45a8203094e5,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,BS,Digital Media Design (Computer Science),2003-01-01,2007-01-01,True
+cff637f6-c07b-0472-de50-45a8203094e5,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,BS,Finance,2003-01-01,2007-01-01,True
+b9448703-297f-3510-d706-b60b4b74825d,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,MBA,2004-01-01,2006-01-01,True
+c6f40d57-ab69-36dc-0e34-47488ffdebb0,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MBA,Business,1995-01-01,1999-01-01,True
+538e6097-768e-0471-59c6-01bc955a9531,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BA,Computer Science,1991-01-01,1995-01-01,True
+f69e4268-659a-c795-a6e9-7ec0b044e3e8,7b184184-fa91-a76e-ef51-9d6bb4baa880,Boston College,BS,unknown,1987-01-01,1991-01-01,True
+cff7df90-4bd4-5657-e088-9344e38d2826,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,Economics,1984-01-01,1988-01-01,True
+9b92e54d-9b7c-ddf0-4c02-7b965c5f065d,157cca5f-effb-518b-56bc-861365679fb4,University of Central Florida,BA,Technical Writing,1990-01-01,1994-01-01,True
+fe5bdadc-2512-5429-c0f2-6e2f4853f53d,72b46519-8a02-28e2-b6c4-e2c92c1ebb69,University of Victoria,B.Com,Business,1991-01-01,1995-01-01,True
+f5e49291-3aef-7f5e-cef4-b006fee04729,6c7f7d63-3950-a6b1-3b02-d15d0f0e93dd,Moscow State University,Ph.D,Mathematics,1990-01-01,1994-01-01,True
+f5e49291-3aef-7f5e-cef4-b006fee04729,6c7f7d63-3950-a6b1-3b02-d15d0f0e93dd,Moscow State University,unknown,Mathematics,1977-01-01,1981-01-01,True
+6ceab1c0-b65b-3b6d-8df4-3fd3802ec468,04686bfd-4744-0676-9364-2fea83e8ea0d,Hamilton College,BA,Computer Science,1997-01-01,2001-01-01,True
+83408029-c562-654b-f274-9ee1eeb5c3cc,8979e1d4-d20d-4ff3-d16f-b79ea5efffb1,UCLA Anderson School of Management,MBA,Technology Marketing,1993-01-01,1997-01-01,True
+746537db-9846-e4d7-9cc0-1f5db25eb255,6a64a9ba-0bac-2722-8cd4-7b0b664880a1,Grinnell College,BA,Computer Science,1996-01-01,2000-01-01,True
+c5c101fe-7ca2-f1a6-f3d0-d374e21b06d6,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,2003-01-01,2007-01-01,True
+897f2c62-661b-77ba-9390-9be28551ffbb,2aeecd9f-85bb-d12e-f6a0-1ac882e8f058,London School of Economics and Political Science,M.Sc,Management,1995-01-01,1996-01-01,True
+897f2c62-661b-77ba-9390-9be28551ffbb,4b1db5cc-229f-b6bb-3522-28ef091ac27a,Leiden University,M.Sc,Political Science and Philosophy,1988-01-01,1994-01-01,True
+cfe66fe6-aaac-0720-ef64-7d774f045b50,213d8152-ef6b-d2f3-091a-220e153d9e17,University of North Carolina at Chapel Hill,BA,English,1991-01-01,1993-01-01,True
+05b9fb67-3f57-de64-f034-0e70675fe730,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,MBA,Marketing & Strategy,1991-01-01,1995-01-01,True
+05b9fb67-3f57-de64-f034-0e70675fe730,3ca7c90d-f719-aec9-9e53-253fec6e6380,Queens University of Charlotte,BA,Economics,1984-01-01,1988-01-01,True
+928ca459-b885-727a-1e3d-e4a6a97be8e4,208fca08-b131-9527-1033-4c433760531a,Duke University,BA,Public Policy,2004-01-01,2008-01-01,True
+c785f0f2-014c-b78d-85bb-165c78c31099,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BS,Applied Math,1983-01-01,1987-01-01,True
+804576ce-c93c-92de-9c40-2b99940dfc18,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,M.E.,"Engineering, Economics & Management",1988-01-01,1992-01-01,True
+4ddd10a7-5685-5e49-a212-8ead3320846b,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,BA,Computer Science,1997-01-01,2001-01-01,True
+9dcee0ed-0f21-ee21-025d-a9fb9936e442,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,BA,"Economics, Philosophy, Politics",1990-01-01,1994-01-01,True
+3fc3cda3-928b-c673-8115-daf49df58eb2,cb94794e-ffeb-7d89-b1b4-74013f52ac31,Rutgers University,BA,Human Communication,1970-01-01,1974-01-01,True
+dc070875-7376-e50b-5bf4-dc816385b38d,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,BA,CS & Psychology,1985-01-01,1989-01-01,True
+a4ebe18f-184e-768f-066d-a0487391a988,aa0af5a5-5c4f-a38e-e7d9-6bb3d4b626c8,Reichman University (IDC Herzliya),B.A,"Finance, Entrepreneurship",2000-01-01,2003-01-01,True
+a4ebe18f-184e-768f-066d-a0487391a988,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,Strategy,2006-01-01,2008-01-01,True
+e12a9134-adda-341c-f7de-63af797a4536,6cca2a58-6c3c-9abb-5380-6de702a56710,Carnegie Mellon University,BS,Mechanical Engineering,1981-06-01,1985-06-01,True
+e12a9134-adda-341c-f7de-63af797a4536,24e6ef4e-ee05-9455-54c7-0311a3ee992c,Stevens Institute of Technology,MS,Computer Science,1985-06-01,1989-06-01,True
+8c8bb441-f6be-35b9-86de-8a5608dacba2,99228a79-a265-bd1e-9fd6-f060080e302a,University of Washington,B.A.,Finance & International Studies,1990-01-01,1994-01-01,True
+8c8bb441-f6be-35b9-86de-8a5608dacba2,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,M.B.A.,unknown,2001-01-01,2003-01-01,True
+0e0834a6-e4f7-ca1b-783a-77168f590ade,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Engineering,1992-01-01,1996-01-01,True
+8048d56a-167f-fe8e-e09f-2dda0143895f,604aad3e-8e03-150a-e9e3-cd4381649612,XLRI- Xavier School of Management,MBA,Personnel Management,1980-06-01,1982-06-15,True
+8048d56a-167f-fe8e-e09f-2dda0143895f,b47664d4-1282-2012-ecfa-c2b0b70aef30,Indian Institute of Technology Roorkee,BS Engineering,Industrial Engineering,1975-06-01,1979-06-15,True
+b54565d9-c8e8-178c-4fef-8281136113f2,8c1c34dd-037c-5c09-e9d4-780223bcc0bd,Eastern Michigan University,BS,unknown,1999-01-01,2003-01-01,True
+81de14d4-01c0-78da-ac8a-f053c193481e,fd765cbb-5254-9f96-bde9-5205dbbfd8d0,University of Technology of Compiègne,MS,Computer Science,2004-01-01,2008-01-01,True
+67f1cb7e-889a-d6db-3377-909f5e6fe7e0,009ac667-d0a9-f378-66ce-e117123517c8,University of Alabama,MS,Finance,1987-06-01,1991-06-01,True
+67f1cb7e-889a-d6db-3377-909f5e6fe7e0,3eecd7de-745f-8fc7-92e3-6925293eedf7,Auburn University,BS,Finance,1985-06-01,1989-06-01,True
+79373f02-45ca-67e4-5b5d-9d3d7c862d00,30b6ccf0-7481-8230-b06a-0c9a128ee7a1,Lancaster University,unknown,Culture & Communication,1990-01-01,1994-01-01,True
+60d223a3-bd17-a0ec-08c0-3ec9c419eb3e,58dd8c05-5958-5728-4b7b-322bf9fc38a6,Chhatrapati Shahu Ji Maharaj University,BS,Mathematics & Statistics,1981-01-01,1985-01-01,True
+60d223a3-bd17-a0ec-08c0-3ec9c419eb3e,ad9debea-6cfe-44b7-928b-190347a7e0fb,Savitribai Phule Pune University,MS,Computer Science,1984-01-01,1988-01-01,True
+b35f2226-1c6d-7b92-f24b-6ec380d7ee42,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BS,Economics with Specialization in Computing,1987-01-01,1991-01-01,True
+b35f2226-1c6d-7b92-f24b-6ec380d7ee42,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,MBA,Entrepreneurial Management,1992-01-01,1996-01-01,True
+b35f2226-1c6d-7b92-f24b-6ec380d7ee42,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BS,Mathematics / Applied Science,1987-01-01,1991-01-01,True
+35dbecd1-40fa-a63e-2e27-9529dbb8275d,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,BA,Economics,1998-01-01,2002-01-01,True
+ef84a2db-bfd4-2d4b-24ac-59552df4871a,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,Astrophysics,1997-01-01,2001-01-01,True
+c6009310-0f43-573f-18eb-dc785dfe70c8,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,BE,Computer Science,2000-01-01,2004-01-01,True
+c6009310-0f43-573f-18eb-dc785dfe70c8,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,BA,Linguistics,2000-01-01,2004-01-01,True
+9e79456a-2e41-efce-09e5-9a56421b4e08,13a545d8-37f2-e528-bc4e-338b7d2b82e7,University of Wales,unknown,Economics,1995-01-01,1999-01-01,True
+30c525c5-2b44-c829-2f14-3ca3e3ac9952,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,MBA,unknown,2002-01-01,2006-01-01,True
+e7dac30d-ed78-1fe5-1651-168ff13e3fdb,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,unknown,Computer Science,2000-01-01,2004-01-01,True
+f2e83b07-ae2f-576c-e2f9-6a5d4441f276,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,BS,Marketing,1989-01-01,1993-01-01,True
+5ffe3d05-8430-0904-9532-897a298535ed,66b69361-7930-6046-522f-8fed254987cb,University of Calicut,unknown,"Computer, Malayalam",1996-01-01,2000-01-01,True
+edcce447-bf5b-9af3-8bbf-15d3c22a6876,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,Ph.D,Executive Education,2003-01-01,2007-01-01,True
+edcce447-bf5b-9af3-8bbf-15d3c22a6876,99228a79-a265-bd1e-9fd6-f060080e302a,University of Washington,Ph.D,unknown,1997-01-01,2001-01-01,True
+1e35767f-b97c-c163-ef0d-cfb594747c76,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,MS,Electrical Engineering,1983-01-01,1987-01-01,True
+1e35767f-b97c-c163-ef0d-cfb594747c76,6178c7bc-2aa3-051f-9aa6-45221f10d700,Franklin and Marshall College,BA,Physics,1982-01-01,1986-01-01,True
+9032bbbe-5147-6707-c82f-369bb6138c1a,86f8806c-4196-0669-505c-9fe1eb9f8d6d,Acadia University,BA,Philosophy,1980-01-01,1984-01-01,True
+eab80f38-9d44-ebba-b5a3-5b72ed39ca35,f23fd798-2cc4-426e-c670-13e81ba24806,Northwestern University,BA,Political Science,2000-01-01,2004-01-01,True
+293e0b1e-3710-d36d-a6a0-859927e5e7fa,d73b80a0-6ebe-e05c-7360-816b35b37ed2,University of Limerick,MA,International Relations,2000-01-01,2004-01-01,True
+dde0e314-d433-8ff9-1a62-6d6813823e65,a932ab48-5ee7-7ad6-fb4a-791b12ee74ac,Monash University,BS,Business (Honours),1994-01-01,1998-01-01,True
+dde0e314-d433-8ff9-1a62-6d6813823e65,a932ab48-5ee7-7ad6-fb4a-791b12ee74ac,Monash University,MS,Marketing,1998-01-01,2002-01-01,True
+972e77e3-21d3-9b00-2d41-e4f26a839541,9976fe4d-9fb2-2f93-f892-373ba335d850,Southern Illinois University,BA,Photography,1977-01-01,1981-01-01,True
+f026bbb8-2c0e-7b01-0f5d-d4f06f1fbd4b,bc5e40a4-9650-29f2-dc88-810358a5a064,University of Strathclyde,MBA,Education,2001-01-01,2005-01-01,True
+7a81ed8f-7f44-856a-f2f2-c31bd09ed894,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Engineering-Economic Systems (EES),1976-01-01,1980-01-01,True
+e5c0a6a6-59c2-109f-3fe2-38af58262113,152dcb90-c5dd-6357-2d48-0f3d0b4d880b,McMaster University,B.Eng,"Mgt., Comp Engg and Management",1982-01-01,1986-01-01,True
+fc331093-0ccb-fdf9-75a9-1e181ca1c64e,17d078ef-9571-86f4-7fe6-972cd0d7bf8e,California Polytechnic State University,BS,Computer Science,1979-01-01,1983-01-01,True
+5b142b82-9171-6ecc-75f9-b861ab22b4c2,6ea393ce-515d-c936-cf92-dd67c028e7a6,Rhode Island School of Design,unknown,Industrial Design,1991-01-01,1995-01-01,True
+5b142b82-9171-6ecc-75f9-b861ab22b4c2,6ea393ce-515d-c936-cf92-dd67c028e7a6,Rhode Island School of Design,BFA,Fine Arts,1990-01-01,1994-01-01,True
+50d4ef75-1797-f6f5-d4e9-3602bcd271ce,213d8152-ef6b-d2f3-091a-220e153d9e17,University of North Carolina at Chapel Hill,MBA,Finance,1978-01-01,1982-01-01,True
+c50b8af4-a72d-4cd4-81f7-d46a747a8a48,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,"Leadership, Entrepreneurship",2001-01-01,2005-01-01,True
+c50b8af4-a72d-4cd4-81f7-d46a747a8a48,11c65ce1-28df-4d15-8723-d68be279e267,University of Melbourne,BS,"Economics, Finance & Econometrics",1992-01-01,1996-01-01,True
+c50b8af4-a72d-4cd4-81f7-d46a747a8a48,11c65ce1-28df-4d15-8723-d68be279e267,University of Melbourne,BS,International Intellectual Property Law,1995-01-01,1999-01-01,True
+696878c0-c8a9-a448-cd78-a5a7a142f70e,32497218-677e-e776-a470-9faace34e69f,Maharishi University of Management,unknown,"Engineering, Physics",1998-01-01,2002-01-01,True
+b3fed5d2-69de-1e3b-0853-54c61c5d6feb,5bd00c6a-e281-ea0e-238e-d8c6d1001dce,Drexel University,BS,ISIS,1995-01-01,1999-01-01,True
+54ac6742-7644-e1aa-4cd9-b9c9ab04b5a4,6599f877-7c83-0c47-b05b-dbedd3db7b3a,Massachusetts Institute of Technology,Ph.D,Computer Science/Psychology/AI,1978-01-01,1982-01-01,True
+bf2921da-0fd4-d55b-bb33-8d982d692a75,99228a79-a265-bd1e-9fd6-f060080e302a,University of Washington,BS,Business and Administration,2000-01-01,2004-01-01,False
+bf2921da-0fd4-d55b-bb33-8d982d692a75,9850bb11-7d5a-85c7-349c-a8977ef7fbac,HEC Paris,MBA,unknown,2005-01-01,2006-01-01,True
+08ee85bc-31e7-22c0-ef5f-ba8b00a42a1f,2250cae8-7e4a-b513-0c33-0ad17906def6,University of Rajasthan,BS,Computers,2000-01-01,2004-01-01,True
+de39b88c-41d9-d953-de3a-b3a28e4f7990,1ab11d0c-e994-cbad-ff66-8a3620bf6d8b,"Georgetown University, McDonough School of Business",MBA,Marketing,1986-01-01,1988-01-01,True
+b9f3d790-1c38-b561-8ae5-36e0335da75c,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MBA,unknown,1997-01-01,2001-01-01,False
+1b38b8a2-210a-258d-8f24-451ccad89bbf,49f64501-50d0-96e0-2406-8da0d45b629a,Georgia Southern University,BBA,Finance,2000-01-01,2004-01-01,True
+22fa75d6-8dad-43ad-f1d6-c4f804074d52,3b4faff0-708e-8c1c-83f0-6fea01016519,Indiana University Bloomington,BA,Economics,1983-01-01,1987-01-01,True
+5a83e65e-9708-1237-27d7-b28294c28da4,f9512678-6bf3-831f-d450-9327dced53df,Vanderbilt University,BS,Computer Engineer,1998-01-01,2002-01-01,True
+30de66d4-d19b-7407-4260-4e29b3feb2a9,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BA,unknown,1982-01-01,1986-01-01,True
+ed91f06b-3647-d0ef-e8a0-8e7c5539233b,52e0322d-5e37-8ca5-9baf-93e0e02fb5a7,Brown University,BA,Religious Studies,1986-01-01,1990-01-01,True
+7794f8af-565e-e204-3274-2b48b580d624,d9fc5a3a-85e6-ba9c-fc88-ce9713a0afa3,University of Colorado,BS,Computer Science,2002-01-01,2006-01-01,True
+ffc10041-3e42-f2b7-7a43-397be4f440e2,145b3649-b049-fd29-7af4-1381c9e2e5d5,Santa Clara University,MS,Business Administration,1997-01-01,2001-01-01,True
+fb863eec-a07a-dcd5-cec4-4168cd5f4e84,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,JD,Law and Economics,1982-01-01,1986-01-01,True
+fb863eec-a07a-dcd5-cec4-4168cd5f4e84,e90c86bb-9d7e-44c6-7e5d-e637a7856555,Claremont McKenna College,BA,Economics,1978-01-01,1982-01-01,True
+27fabd4b-83a0-5883-8ace-5ff8f5ab6b18,254e48af-b80b-6735-af75-5dcb6d3cb411,University of East Anglia,LL.B,Law,1994-01-01,1998-01-01,True
+6e99bd65-9a3b-04e9-acf7-ad2020dff896,e80a8b20-ea85-88e9-92e5-f07d4ce0157b,Golden Gate University,MBA,unknown,1995-01-01,1999-01-01,True
+6e99bd65-9a3b-04e9-acf7-ad2020dff896,2f560ef1-bc6c-35b4-7305-71fa6eb3351e,San Jose State University,BA,Advertising & Mass Communication,1982-01-01,1986-01-01,True
+a728dcd4-d0e6-9ea1-fe45-2a5176bb597a,145b3649-b049-fd29-7af4-1381c9e2e5d5,Santa Clara University,MS,Engineering Management,1992-01-01,1996-01-01,True
+a728dcd4-d0e6-9ea1-fe45-2a5176bb597a,145b3649-b049-fd29-7af4-1381c9e2e5d5,Santa Clara University,BS,Computer Science,1984-01-01,1988-01-01,True
+72e7b08f-f532-f0fe-bcdd-6f722154f771,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Political Science,1989-01-01,1993-01-01,True
+298c283c-3c6e-08d4-a731-0237107dadd9,d596538a-9b3d-ca42-1794-16bb73055311,Pepperdine University,BBA,unknown,1984-01-01,1988-01-01,True
+a7c93d24-c5b8-26d4-4c83-163f21dc3917,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BS,"Int'l bus., C.S., Finance",1984-01-01,1987-01-01,True
+a7c93d24-c5b8-26d4-4c83-163f21dc3917,63165c75-96e3-b8d4-361b-add2d7569952,INSEAD,MBA,International Management,1992-01-01,1992-01-01,True
+97515227-ff0c-e9a0-7f50-fd0391a103b0,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",MBA,unknown,1989-01-01,1993-01-01,True
+d30c4143-447c-287e-c600-c0a63886e7de,5d711469-1dbb-3bbd-8a2d-3b6d16b14c1e,New York University,MBA,unknown,1997-01-01,2001-01-01,True
+281d5b6e-35c4-de1f-9839-3aacb5978a10,d914e869-2cd2-09b1-3d8e-b671b91171ee,Penn State University,BS,unknown,1980-01-01,1984-01-01,True
+d5c3b74e-e852-9bfc-e07b-cf7cfcbcfc48,d0752a48-7e88-8717-adcf-334bb3b1f539,University of Mumbai,unknown,BE in Computer Science and Masters in Marketing Management(MMM),1986-01-01,1990-01-01,True
+105f5899-a9a3-fcfa-fc1f-60379b597159,f6b31e2b-d566-a0c3-ae76-0ae9e1af49f8,New Mexico State University,BE,Electrical Engineering,1987-01-01,1991-01-01,True
+105f5899-a9a3-fcfa-fc1f-60379b597159,d145a09f-eb40-74d6-a1fb-457976f3c0e2,Chicago-Kent College of Law,JD,Intellectual Property Law,1991-01-01,1995-01-01,True
+381d8efb-c5b8-cf25-f325-d1e43a5f27a1,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science,1998-01-01,2002-01-01,True
+dc0d43cd-df87-bbe1-593d-80f8a9fb083c,ec74a4ae-156b-5cba-82be-7922964ca376,University of Oxford,BS,Mathemetics,1993-01-01,1997-01-01,True
+ae6a8e34-de52-9837-9f45-ebd3b47d31a6,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,General Management,1988-01-01,1992-01-01,True
+ae6a8e34-de52-9837-9f45-ebd3b47d31a6,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,unknown,Social Studies,1982-01-01,1986-01-01,True
+451eb7bc-0ab1-d7e9-ae54-bd3864cdb287,17505358-03d6-5504-6a4e-c0f55a58a5ae,Art Center College of Design,BFA,Advertising,1983-01-01,1987-01-01,True
+64ab71e0-a545-ae69-0e03-21308ced825f,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,BS,Aerospace Engineering,1983-01-01,1987-01-01,True
+9e8e91d8-8780-28d9-4cf0-40514692bdc8,68502b07-da87-2cfe-95ee-3301d7b3bf2d,RMIT University,unknown,"Information Management, Information Technology",2004-01-01,2008-01-01,True
+9e8e91d8-8780-28d9-4cf0-40514692bdc8,68502b07-da87-2cfe-95ee-3301d7b3bf2d,RMIT University,BBA,Information Management,1999-01-01,2003-01-01,True
+0c9fa130-1b1a-fe39-6434-a81fa332d1f9,89535898-987f-0f63-9588-482efa3ef544,North Central College,BS,Computer Science,2004-01-01,2008-01-01,True
+c8cec29b-f595-c85b-8bea-81fe54e0e279,a29500ad-9801-16dc-cd38-f02d951177d4,Fudan University - School of Management,BS,Computer Science,1980-01-01,1984-01-01,True
+c8cec29b-f595-c85b-8bea-81fe54e0e279,a29500ad-9801-16dc-cd38-f02d951177d4,Fudan University - School of Management,MS,Computer Science,1983-01-01,1987-01-01,True
+c1c05cc8-31a7-5dbc-dfb5-a24a98f4587a,c187a245-ef06-b9e4-fdec-ebd4444ef89f,Capilano University,BS,Business Administration,2004-01-01,2008-01-01,True
+99b0ec22-248c-df20-c9bb-d898faf8dd68,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,BA,"Music Theory, Computer Science, and Finance",1995-01-01,2001-01-01,True
+d88a26ef-5e6b-f0cb-b04a-37d9cfe18b84,ed3b60a6-3045-7e5f-b265-45b88b1b6224,Carleton University,BS,Electrical Engineer,1999-01-01,2003-01-01,True
+4c65b7f5-10e8-848a-daab-ed8db4241baa,d77fc89d-8647-f632-e514-3d679ce2bd64,Biola University,BS,Business/Marketing,1998-01-01,2002-01-01,True
+86dba0fb-2705-317d-b78a-c0345f8319a9,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MS,Computer Science,2000-01-01,2002-01-01,True
+86dba0fb-2705-317d-b78a-c0345f8319a9,bda6a1fb-62b4-a091-42c4-b127539e50cd,University of Cambridge,MA,Computer Science,1996-01-01,2000-01-01,True
+55653c7d-fcaf-e76b-29b6-2a070bed14bb,197a945e-3b18-3bcd-a18e-5303764af818,American International University-Bangladesh,unknown,Computer Engineering,1999-01-01,2003-01-01,True
+c733e8cd-5618-f329-6b2f-d8c5721a9bf4,8e5b475b-2157-9a28-9fcc-096f1c2f0867,Portland State University,BS,"Management, Finance",2002-01-01,2006-01-01,True
+53f84a7c-7445-71ed-d11e-162777123cf4,93b42779-a020-0f18-6cd9-378b6ccf0d51,Kyiv Polytechnic Institute,BS,Computer Science and Automation of Large Energy Manegement Systems,1988-01-01,1992-01-01,True
+53f84a7c-7445-71ed-d11e-162777123cf4,33f6ccda-fa30-8677-937a-522ecfb721eb,Thomas Edison State College,BS,Computer Science,1990-01-01,1994-01-01,True
+270bc15e-3ac8-9d68-37d8-3ba75bfbc38e,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,MS,MBA,1989-01-01,1993-01-01,True
+95ed5497-f055-d4fa-2f74-e88c206c0474,8d297d1e-3e3d-fadd-2963-57e0a40bff2a,Columbia University,BSC,Mechanical Engineering,1969-01-01,1973-01-01,True
+95ed5497-f055-d4fa-2f74-e88c206c0474,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,Finance,1977-01-01,1979-01-01,True
+483b38a9-9c36-7a9f-4e97-7ea39d0be4ad,28b0336f-4f5a-8227-ebde-c3e1f726841a,Iowa State University,MS,Computer Engineering,1986-01-01,1988-01-01,True
+651c887a-ded3-3063-2bea-cbd9d6191d0a,9cb593c9-f5ad-c361-d2d9-8138b313e592,University of Oregon,BS,Business,1995-01-01,1999-01-01,True
+e013b5ca-719f-b3c1-b85e-aea213d4cf91,228ab721-00d5-0faf-2002-fe1d618e2ab3,Shri Ramdeobaba College of Engineering and Management,BE,Electrical Engineering,1999-01-01,2003-01-01,True
+56acb886-7ceb-9c6f-38d4-e891affbde89,9850bb11-7d5a-85c7-349c-a8977ef7fbac,HEC Paris,Master,"Strategy, Marketing, Finance",1991-01-01,1995-01-01,True
+5af885b6-3bf0-a802-1a78-16fe9e2b8f92,1ae6e7e0-0530-429a-a882-bf3f88779c9a,University of Kent,BS,Accounting with Computing,1973-01-01,1977-01-01,True
+266d1b11-071d-dece-4938-ebd37a38126a,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,BA,Economics,1999-01-01,2003-01-01,True
+266d1b11-071d-dece-4938-ebd37a38126a,054fc978-4459-159c-c679-059bfcf1a9be,Finance Department - Kellogg School of Management,MBA,"Entrepreneurship, Strategic Managment, Finance",2004-01-01,2008-01-01,True
+8e18ae71-5010-50f7-3f98-10d8f451b922,90d0b3bf-da99-89c4-1f88-65c135fa502e,University of Geneva,unknown,Sustainable development,2000-01-01,2004-01-01,True
+8e18ae71-5010-50f7-3f98-10d8f451b922,65902f30-5b93-9857-8441-5e332e0c273f,ESC Lille,MS,e-business,1998-01-01,2002-01-01,True
+90ecc016-f1a4-f454-4ef7-9489c3d8b1f3,bfb3bfda-03e1-7b65-8f46-7fca786f26ed,San Francisco State University,BS,Finance,1995-01-01,1999-01-01,True
+58e3979c-4c03-25c0-2142-069b28f82bbd,1a380593-fb9d-7f7b-ae67-784ce3ff3690,Rochester Institute of Technology,BA,International Relations,1978-01-01,1982-01-01,True
+58e3979c-4c03-25c0-2142-069b28f82bbd,387494b0-4c08-dbf2-7535-449fb4aceff6,Worcester State University,MS,Applied Math & Computer Science,1982-01-01,1986-01-01,True
+4aaf25d8-7794-6029-6a6c-fbf4055a4d1a,72b46519-8a02-28e2-b6c4-e2c92c1ebb69,University of Victoria,BA,"Computer Science, Economics",1996-01-01,2000-01-01,True
+a6b96ef7-d49a-8a46-2d8a-e721572edfd4,755d2ed2-d584-d7e2-08db-6484deebecae,Vidyalankar Institute of Technology,BS,Computer Engineering,2001-01-01,2005-01-01,True
+51beffbe-2e69-d179-65b1-71bb53323769,6ae9957a-8fb4-0ab1-73fa-dd547c4d3da4,Washington University in St. Louis,MS,Computer Science,1991-01-01,1995-01-01,True
+0648fc60-5bdb-7454-5bdf-ee47603acfaf,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,MCB Neurobiology,2003-01-01,2007-01-01,True
+3acab773-f279-3db0-b8dc-dfbd47529a8a,228ab721-00d5-0faf-2002-fe1d618e2ab3,Shri Ramdeobaba College of Engineering and Management,unknown,Civil Engineering,1999-01-01,2003-01-01,True
+3d03554d-e259-d2fb-0b0e-7b82ca09f8a1,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,unknown,Philosophy,1987-01-01,1991-01-01,True
+3d03554d-e259-d2fb-0b0e-7b82ca09f8a1,c6caddd3-9342-a332-040e-fb94fe607fbb,"University of California, Santa Barbara",unknown,Philosophy,1992-01-01,1996-01-01,True
+3d03554d-e259-d2fb-0b0e-7b82ca09f8a1,9cb593c9-f5ad-c361-d2d9-8138b313e592,University of Oregon,Ph.D,unknown,1989-01-01,1993-01-01,True
+c639105c-1c71-5b28-a7ae-03c36c8797e2,0f8e0d8d-c87f-be9b-d657-623c301a976e,University of Kentucky,BS,unknown,2000-01-01,2004-01-01,True
+2e48d42c-37ed-04f5-944a-77a54e2f0063,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,unknown,1999-01-01,2003-01-01,True
+6431ce86-ad9c-ccd2-6a02-f0765aec0c58,4c942c9c-88f1-65fc-0caf-ea1566d06ef7,University of Maryland,BS,Computer Science,1996-01-01,2000-01-01,True
+b68df6e8-1586-86a6-210e-432aecb7612d,eb44a91d-6853-7b91-49f6-6af5c4e24f18,Colorado State University,Ph.D,Electrical Engineering,2002-06-01,2005-10-01,True
+6323e137-3ff9-03a5-c108-250d6885507e,8a918bc1-66c9-b6a5-9989-fdab5af37d7d,Loyola University Maryland,MBA,finance and marketing,1989-01-01,1993-01-01,True
+a92a8b37-b5f3-98d0-2245-85ef5ac89bca,da310f01-c259-108a-9b66-6b4ab4654865,"Sardar Vallabhbhai National Institute of Technology, Surat",BA,Mechanical Engineering,2001-01-01,2005-01-01,True
+98e06f45-7222-575a-81f4-bf050b42197e,cc981288-4c8f-6601-9057-853ff4c8e6d7,Lille University of Science and Technology,MS,DESS Informatique et ra©seaux,1995-01-01,1999-01-01,True
+c7a22d32-1d95-8a22-1cde-58421f1edaab,9976fe4d-9fb2-2f93-f892-373ba335d850,Southern Illinois University,MS,Interactive Multimedia,1995-01-01,1999-01-01,True
+c41ab11b-9726-4563-4112-57acd4317256,7c93ee09-edee-68a9-41e7-3d924dfda730,University of California Irvine,MS,Creative Writing,2001-01-01,2005-01-01,True
+c41ab11b-9726-4563-4112-57acd4317256,9976fe4d-9fb2-2f93-f892-373ba335d850,Southern Illinois University,MA,Interactive Multimedia,1995-01-01,1999-01-01,True
+e64b539a-331f-3a3a-8937-96965e144df7,dcb99002-9225-c513-27c6-9002b6103bc0,Yale University,B.A,"Political Science, International Relations",1997-01-01,2001-01-01,True
+e64b539a-331f-3a3a-8937-96965e144df7,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,General,2004-01-01,2005-01-01,True
+33ef1693-0edf-6dc1-a351-2175f3481294,f870359a-2f66-6a67-6264-01b23000079d,John Molson School of Business,BS,Commerce Finance,1995-01-01,1999-01-01,True
+cbf95176-8272-d9f1-3a8d-ac232ce0442d,68502b07-da87-2cfe-95ee-3301d7b3bf2d,RMIT University,unknown,unknown,2000-01-01,2004-01-01,True
+2734bc37-7b69-c3d7-b1e7-ad8ecea0083e,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BS,Politics,1992-01-01,1996-01-01,True
+7f3b4fc9-13bc-7680-2cdc-c40e0186f17c,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,Graduate,unknown,1992-01-01,1996-01-01,True
+da835a53-8f8b-6005-0388-117df55188b8,69b959af-0a63-3a4c-b83f-3167c0f88d05,Manhattanville College,MS,Human Resources,1994-01-01,1998-01-01,True
+aef180fc-ba7e-debf-0f26-041362e36010,3c8b6322-0b7b-6b8b-cb86-5467c1608a77,University of Arizona,BS,Management Information Systems,1997-01-01,2001-01-01,True
+d707f838-be8a-072d-10a0-54ceb6d23c35,060ac84c-f053-4859-43a0-a16f28136af9,The University of Texas at El Paso,BA,Major in Journalism,1973-01-01,1977-01-01,True
+0c194303-b1a4-bb6b-d779-e637dd8820b2,c0988ca5-fe6c-8e2c-a73b-a78f06444834,University of British Columbia,Ph.D,Electrical and Computer Engineering,1978-01-01,1982-01-01,True
+bfc71d3e-f198-58f5-774f-07b7988bca9c,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,BS,Commnications,1977-01-01,1981-01-01,True
+b68df6e8-1586-86a6-210e-432aecb7612d,eb44a91d-6853-7b91-49f6-6af5c4e24f18,Colorado State University,MS,Electrical Engineering,1997-08-01,1999-01-01,True
+b68df6e8-1586-86a6-210e-432aecb7612d,05fd1210-1faa-4e42-9f10-4ab71906c353,Jawaharlal Nehru Technological University,B.Tech,Electronics and Communications,1992-01-01,1996-01-01,True
+acd2046a-0af4-1ec2-19f3-95a0903b80e8,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,MBA,unknown,1998-01-01,2002-01-01,True
+acd2046a-0af4-1ec2-19f3-95a0903b80e8,f2bb356f-af6e-36e1-9a85-b83da1717a6d,Robert Gordon University,BS,Mechanical Engineering,1990-01-01,1994-01-01,True
+05fa9086-b654-d528-75aa-ab3160001e5d,eba7687d-481a-4164-6ab3-ca39d430478e,University of Cape Town,LL.B,Law,1988-01-01,1992-01-01,True
+352d1885-2c17-090a-a759-db3e555902c1,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,BS,International Relations and German,1998-01-01,2002-01-01,True
+c83aa25a-5d83-10c6-23d4-e70dd4ccfd8e,84d690d3-432f-1f30-ab79-16e78adffe52,University of Illinois Urbana-Champaign,unknown,unknown,1975-01-01,1979-01-01,True
+46319400-1ddc-2710-5580-e039593e58af,10f9a25b-9675-2281-486e-a52955c706df,University of California Berkeley,BA,unknown,1983-01-01,1987-01-01,True
+3f47be49-2e32-8118-01a0-31685a4d0fd7,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BA,Philosophy,1985-01-01,1989-01-01,True
+3f47be49-2e32-8118-01a0-31685a4d0fd7,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,JD,Law,1992-01-01,1996-01-01,False
+35cfd15e-1df7-50c7-6adf-314a5041762f,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BS,School of Business,1999-01-01,2003-01-01,True
+aed67e89-536b-affd-3a24-48c9238c1ab4,4463c2d7-3901-347d-7fe8-4ddd2d55f5be,Purdue University College of Engineering,BS,Computer Science,1992-01-01,1996-01-01,True
+aa0f5424-20ff-23a4-7f53-387501345bfe,8168d6cf-4795-2847-43a7-e347c26186a1,University of Central Florida,BE,Computer Engineering,1987-01-01,1991-01-01,True
+ca5c2253-e9a7-2643-e582-27f007d31fc0,e4f63aa2-e0e5-84ee-b066-b5ade282a24d,University of Vienna,MS,International Business,2001-01-01,2005-01-01,True
+53b105ee-a6b7-f9cd-a33b-1c573d36aee8,9090becf-00f8-c57a-37a9-4c9edf5c3c6c,Point Park University,BA,Journalism and Mass Communications,2003-01-01,2007-01-01,True
+935f73ae-428f-94f0-b1fe-f74fdec8992d,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,Ph.D,Genetics,2004-01-01,2008-01-01,True
+d3c5bb93-eb10-b60c-3d31-0ebb95a50c24,d3dce445-5961-2aec-ea77-a7e9f22c3c9b,Moscow Institute of Physics and Technology,MS,Physics and Engineering,1984-01-01,1990-01-01,True
+73720258-54ad-9b65-930a-3b40a18dcd00,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,MS,Materials Science,2003-01-01,2007-01-01,True
+73720258-54ad-9b65-930a-3b40a18dcd00,e596515e-38e2-c9c0-7584-a46a8b1ff871,Cornell University,BS,Materials Science,1995-01-01,1999-01-01,True
+3b1f7e73-aac9-de57-e8b9-c84451033d90,893f5bc2-2fbf-f531-8597-ec1ea91bb431,Durham University,unknown,Computer Science,1992-01-01,1996-01-01,True
+fdaab68b-bb50-411d-d6dc-1b631ada9119,43c5b650-485e-4311-9354-1462bb20dcc7,Northwestern University - Kellogg School of Management,MBA,"Corporate Strategy, Marketing, Organizational Behavior",1994-01-01,1998-01-01,True
+a9be1b73-3665-8e9f-b800-cad457142b49,24e6ef4e-ee05-9455-54c7-0311a3ee992c,Stevens Institute of Technology,BS,Management Information Systems,1989-01-01,1993-01-01,True
+203956c6-1571-b690-a5ee-4eac4cd3472e,2f45727b-241c-b2cd-455a-78a8c261cbc0,Texas A&M University,BA,English,1993-01-01,1997-01-01,True
+203956c6-1571-b690-a5ee-4eac4cd3472e,d9fc5a3a-85e6-ba9c-fc88-ce9713a0afa3,University of Colorado,MM,Music Composition,1996-01-01,2000-01-01,True
+944dbb2a-2dad-f406-499a-ddf3e121c688,95179ed9-db80-e1e5-3e82-566d7e4a8073,Bar-Ilan University,MBA,Information Systems,1998-01-01,2002-01-01,True
+944dbb2a-2dad-f406-499a-ddf3e121c688,95179ed9-db80-e1e5-3e82-566d7e4a8073,Bar-Ilan University,MS,"Machine Learnning, Style Based Text Categorization",1998-01-01,2002-01-01,True
+d8f0522a-3b97-f0bd-63d2-0806c224ee5b,6e2f186a-f81d-4cb6-c8c5-5bea8b676ed6,University of Virginia,BS,Aerospace Engineering,1996-01-01,2000-01-01,True
+d8f0522a-3b97-f0bd-63d2-0806c224ee5b,78c6c1ef-764b-a469-c2cc-ccab51e443b9,Virginia Tech,MS,Aerospace Engineering,1999-01-01,2003-01-01,True
+9b0775e8-363e-e85f-9bc0-7f685fede383,07c04b5e-34c9-f501-38a3-055a4f59613e,Western Washington University,BA,Journalism,2000-01-01,2004-01-01,True
+7cf9c35a-eca9-4b08-a7c3-9adf4f863d44,7a25474f-2faa-d8e2-7369-9ffe667fb7cc,National University of Singapore,unknown,Communications and Media,2004-01-01,2008-01-01,True
+15d71bf9-7b03-c461-209d-fcfc2193f696,882b5335-962f-ea61-69f3-90f81f534e51,The Johns Hopkins University,BS,Computer Science & Computer Engineering,1997-09-01,2000-05-01,True
+34a0daa8-eff8-d674-4e80-05d54248a6a3,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1996-01-01,2000-01-01,True
+bdadf9fe-ba58-6ed6-f40f-04bc2e832afb,613e734a-5517-09c2-fa0b-e5a5e9b56baf,IE Business School,unknown,Hi-Tech,1997-01-01,2001-01-01,True
+003bbe2e-18be-3c96-e327-18d2295427e0,d8b57c0e-9f0f-4dcb-d207-a12a90c64a2d,Harvard University,B.A.,Psychology,1992-09-01,1996-06-01,True
+5cb48867-c7d8-ec17-2ab8-f5753346f551,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1993-01-01,1997-01-01,True
+5cb48867-c7d8-ec17-2ab8-f5753346f551,8d297d1e-3e3d-fadd-2963-57e0a40bff2a,Columbia University,BA,"English, Pre-Med",1987-01-01,1991-01-01,True
+a13939cb-9d29-0364-8101-d150f4e40b25,bf54ec4d-b107-d735-4a05-ef8a00b10cce,James Madison University,BBA,Accounting,1988-01-01,1992-01-01,True
+c8d51084-0810-c483-fd0f-e4fa227ed3a2,11dfdd4c-1024-5651-733b-3b342efd3cfb,USC Gould School of Law,JD,unknown,1990-01-01,1994-01-01,True
+c8d51084-0810-c483-fd0f-e4fa227ed3a2,b6474ab8-1cea-e73c-54ba-36c08e357917,"University of California, Los Angeles",BS,Political Science,1987-01-01,1991-01-01,True
+d69e8d24-c5f2-b45c-580b-9561f55c1aa1,52e0322d-5e37-8ca5-9baf-93e0e02fb5a7,Brown University,BA,Public Policy & American Institutions,2001-01-01,2005-01-01,True
+4c7b556b-f632-af87-f792-30b27b10bc9a,692833eb-f832-428c-1c78-d693f0120373,Fordham University,BS,unknown,1950-01-01,1954-01-01,True
+edd97d2c-58c4-f79f-f1b1-eeda9021cc2d,d3f1f735-51c9-3306-04c0-0aa115b5ce43,McGill University,BA,History & Political Science,1990-01-01,1994-01-01,True
+480eb2db-d62b-6d04-6df5-d512fb20e0aa,8168d6cf-4795-2847-43a7-e347c26186a1,University of Central Florida,BS,Economics,1978-01-01,1982-01-01,True
+480eb2db-d62b-6d04-6df5-d512fb20e0aa,c56f2d3e-054f-0871-76da-dda3943de90f,Vanderbilt University Law School,JD,Law,1981-01-01,1985-01-01,True
+b7d012fe-f224-85cc-0282-703065d9e66a,856b65d7-1ce3-7893-96f5-9dfc88f6c741,Dartmouth College,BS,Computer Engineering,1995-01-01,1999-01-01,True
+c43a1882-e1d8-bf71-2dd8-9aa93ce105e9,94a74e17-c5e4-f996-b2b0-4c9d4db492db,Stanford Graduate School of Business,MBA,MBA,2003-01-01,2007-01-01,True
+c43a1882-e1d8-bf71-2dd8-9aa93ce105e9,9ea72a0a-d83b-922e-8760-9c818589de32,University of New South Wales,BS,"Business Information Technology, Software Engineering",1995-01-01,1999-01-01,True
+bf9a0a4d-95ab-90b2-d164-8c373521d546,c97c4039-f5c3-cdc7-45cf-3cd30421d869,Central Institute of Plastics Engineering and Technology (India),MA,MASTER PROGRAMME IN CAD/CAM/CAE & PRODUCT MOULD DESIGN,2002-01-01,2006-01-01,True
+33a070aa-96ef-2148-4290-6db833ff9fbe,7300e89a-2e8e-23d3-3e9a-8f25b2a127f0,Wharton School of the University of Pennsylvania,BS,Finance and Multinational Management,1992-01-01,1996-01-01,True
+f619bb22-3d2a-0099-a759-36499aed9ca5,13a8de96-b165-743b-6935-880ad02b3772,Rajah R.S.R.K. Ranga Rao College,MS,Computers,2000-01-01,2004-01-01,True
+6dde755e-9dde-cdd8-5ac3-eb0b51a289f8,b8c2fe41-0390-7273-f399-e09d68c6a3cd,Oklahoma City University,BFA,Theater,1986-01-01,1990-01-01,True
+6dde755e-9dde-cdd8-5ac3-eb0b51a289f8,774c3f14-1ca2-6d3c-d99f-2067019b6a8e,Temple University,MS,Acting,1993-01-01,1997-01-01,True
+51e7125a-ee82-c90a-fa8f-c4b65b1e2a2f,cfd82b12-61c2-3baf-899a-b46a936e893c,Tampere University,Ph.D,Telecommunications,2002-01-01,2006-01-01,True
+46d201a1-d4b0-09ab-c0a2-cad5433245be,9ea72a0a-d83b-922e-8760-9c818589de32,University of New South Wales,B.Com,Information Systems,1997-01-01,2001-01-01,True
+38988bc4-6e55-4379-6999-c0d8c451e67b,c7550867-3706-8bc9-de59-a103a246e2cb,The University of West Florida,BA,L.A. and S.S. Middle School Education,1981-01-01,1985-01-01,True
+eb043218-a65f-5acf-6a68-357d51b0382c,98e14ca8-80cd-abf5-d07a-dab9ac5a4996,Indian Institute of Technology Bombay (IIT),B.Tech,EE,1997-01-01,2001-01-01,True
+00651aac-c54f-eb43-6bac-d24184633b78,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,MBA,unknown,2004-01-01,2008-01-01,True
+00651aac-c54f-eb43-6bac-d24184633b78,18dcb31c-7bc3-d01d-5229-73f80edb1c0f,California State University,BS,Business Administration,1982-01-01,1986-01-01,True
+45ba5930-9808-e5aa-e9b0-68948d7258df,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,B.S.,Business Administration (Finance & Business Economics),1998-08-20,2003-05-20,True
+45ba5930-9808-e5aa-e9b0-68948d7258df,867f0af5-a1d0-143d-bbed-5cc252ca40d6,University of Southern California,B.A.,International Relations (Global Business),1998-08-20,2003-05-20,True
+fb9ebeb3-96c4-e94c-56f0-238d7fed55b5,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,unknown,1994-01-01,1998-01-01,True
+24d64c0c-9c0b-6a98-5658-21befe27d45b,692833eb-f832-428c-1c78-d693f0120373,Fordham University,BA,unknown,1989-01-01,1993-01-01,True
+24d64c0c-9c0b-6a98-5658-21befe27d45b,62892393-ccdc-b878-6bc6-fb5b1f6a5e56,Albany Law School,JD,unknown,1993-01-01,1997-01-01,True
+6e17fd04-ece0-70d1-12e2-131eb23c3627,630773ca-bbdf-bb41-2985-41a23ffdd01a,Harvard Business School,MBA,unknown,2001-01-01,2005-01-01,True
+6e17fd04-ece0-70d1-12e2-131eb23c3627,d54d7ee9-1056-7314-4997-e628290d3e7f,Indian Institute of Technology Kanpur,B.Tech,unknown,1996-01-01,2000-01-01,True
+62c72809-c838-b4f9-ebe4-e861a22d8ce4,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,MBA,Business,1979-01-01,1981-01-01,True
+62c72809-c838-b4f9-ebe4-e861a22d8ce4,9cb593c9-f5ad-c361-d2d9-8138b313e592,University of Oregon,MA,Journalism,1970-01-01,1974-01-01,True
+62c72809-c838-b4f9-ebe4-e861a22d8ce4,1f5c4762-8a39-7638-d675-0f2d93f52327,University of Notre Dame,BA,Literature,1966-01-01,1970-01-01,True
+a6c366a0-6c4a-8293-d7e1-56c39bf827b6,f44448e4-ff35-c96a-b7c0-3bd2ebcb4f72,Princeton University,BA,Politics & Economics,1986-01-01,1990-01-01,True
+1bbfa4f2-ead4-f4a1-6426-527b37b0d72e,fbaf4463-2eb5-7552-b925-1e079cf23e0f,Brigham Young University (BYU),BS,Accounting/Information Systems,1991-01-01,1995-01-01,True
+dec89326-aa60-4f3b-3e70-ef2dee8503f9,02f57eff-5a7e-2493-0d2d-2d61d3186ce7,Oregon State University,BA,Business MIS,2004-01-01,2008-01-01,True
+18399655-e527-c6f5-17d4-40c619b4e2a4,208fca08-b131-9527-1033-4c433760531a,Duke University,BA,English Literature,1989-01-01,1993-01-01,True
+2375431a-91f6-403e-98ed-e14776f57199,20135206-96eb-8be0-9ac4-670b257e532c,Stanford University,BS,Computer Science,1999-01-01,2003-01-01,True
+389ee7c8-6b42-1ed8-70f9-95c10d4d7765,1eab62d2-15d9-0db7-930f-2aa77d4688e1,Boston University,MBA,unknown,1995-01-01,1999-01-01,True
+389ee7c8-6b42-1ed8-70f9-95c10d4d7765,584e30d1-7b47-66e3-7e3a-5ae58693a356,Central European University,MA,unknown,1989-01-01,1993-01-01,True
+389ee7c8-6b42-1ed8-70f9-95c10d4d7765,fa3f04d4-1f76-4b39-8683-2d93b669bc00,Moscow State Pedagogical University,BA,unknown,1987-01-01,1991-01-01,True
+28ace79e-26a8-e2b4-594b-63b38ee3e1a1,ece061dc-edde-b3b7-380d-eefbe3b3d649,Susquehanna University,B.S.,International Political Economy,1992-01-01,1996-01-01,True
+28ace79e-26a8-e2b4-594b-63b38ee3e1a1,fbcc7ec0-cda1-f5da-4c8c-b889e660adee,University of Maryland - Robert H. Smith School of Business,MBA,Masters Of Business Administration,2003-01-01,2007-01-01,True
+70efda2b-1842-c558-991f-fd0a3c7853b2,1fe3a91c-1f94-fecb-3774-b45618c9e4fa,University of Wisconsin-Madison,BBA,"Finance, Management",1977-01-01,1981-01-01,True
+70efda2b-1842-c558-991f-fd0a3c7853b2,37e3f455-b8b2-9f5f-5e19-dcf4a247fc65,University of Chicago,MBA,"Finance, Advanced Statistical Methods",1982-01-01,1986-01-01,True
+ff7bfae5-c2d0-95c9-adaa-aeb2f4a6a723,e72aab01-fbef-7d21-ac1d-84ee1413fddd,University of Pennsylvania,BE,Computer Science Engineering,2004-01-01,2008-01-01,True
+ff4587f4-9a7a-44a6-51da-4a3d8dfc927a,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,BS,Electrical Engineering,1964-01-01,1968-01-01,True
+ff4587f4-9a7a-44a6-51da-4a3d8dfc927a,a6549dc5-9dff-ce3e-eb1e-79af3430462e,The University of Texas at Austin,MS,Electrical Engineering,1966-01-01,1970-01-01,True
+23fe4ab4-1b58-5bad-0cce-115b38929538,6ae9957a-8fb4-0ab1-73fa-dd547c4d3da4,Washington University in St. Louis,JD,Law,1966-01-01,1970-01-01,True
+23fe4ab4-1b58-5bad-0cce-115b38929538,6a64a9ba-0bac-2722-8cd4-7b0b664880a1,Grinnell College,BA,unknown,1963-01-01,1967-01-01,True
+8e741464-8f45-f177-156f-806c4efaf31e,96ff42a9-300e-16e8-5730-379bc43c1bdd,Columbus State University,BBA,Business Administration,1982-01-01,1986-01-01,True
