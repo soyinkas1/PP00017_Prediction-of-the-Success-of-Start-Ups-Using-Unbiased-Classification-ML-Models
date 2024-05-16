@@ -7,6 +7,8 @@ from wtforms.validators import DataRequired, InputRequired
 
 import numpy as np
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
@@ -16,7 +18,9 @@ from src.entity.config_entity import DataTransformationConfig
 
 app =  Flask(__name__)
 Bootstrap = Bootstrap(app)
-app.config['SECRET_KEY'] = "kokoroasiri"
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 

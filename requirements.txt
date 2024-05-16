@@ -16,6 +16,7 @@ flask-bootstrap
 ensure
 python-box
 pyYAML
+python-dotenv
 
 
 
