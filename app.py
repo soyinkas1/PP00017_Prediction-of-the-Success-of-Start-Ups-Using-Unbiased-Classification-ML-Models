@@ -114,3 +114,17 @@ def predict_datapoint():
     else:
 
         return render_template('predictor.html', form=form)
+    
+@app.route('/train', methods=['GET'])
+def training():
+    
+    def change_page():
+
+        return render_template('on_training.html')
+    
+    change_page()
+    os.system("python main.py")
+
+    return render_template('training.html')
+
+    
