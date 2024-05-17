@@ -135,8 +135,8 @@ data_scrapping:
   unclean_backbone_local_data_file: artifacts/data_cleaning/clean_backbone.csv
   twitter_url: twitter_url
   facebook_url: facebook_url
-  twitter_username: SoyinkaSoy
-  twitter_password: Olatunde1$
+  twitter_username: twitter_username
+  twitter_password: twitter_password
   df_rows: 5
   max_tweets: 10
   facebook_username: SoyinkaSoy

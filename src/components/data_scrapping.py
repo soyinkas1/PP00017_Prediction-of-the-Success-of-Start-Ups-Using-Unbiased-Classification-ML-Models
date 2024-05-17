@@ -3,16 +3,22 @@ from selenium import webdriver
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 import os
 import sys
+from dotenv import load_dotenv
 from src.exception import CustomException
 from src.logger import logging
 from src.entity.config_entity import DataCleaningConfig, DataScrappingConfig
 
+load_dotenv()
+
+twitter_username = os.getenv('TWITTER_USERNAME')
+twitter_password = os.getenv('TWITTER_PASSWORD')
 
 class DataScrapping:
     """"
@@ -31,7 +37,7 @@ class DataScrapping:
         return:
         A dataframe containing the tweets
         """
-        social_df = pd.read_csv(self.clean_data_config.unclean_backbone_local_data_file,
+        social_df = pd.read_csv(self.clean_data_config.clean_backbone_local_data_file,
                                 nrows=self.scrapping_config.df_rows)
         logging.info("Twitter url loaded......")
         # Create an empty dictionary to store tweets scraped
@@ -90,9 +96,10 @@ class DataScrapping:
                 options.add_experimental_option("excludeSwitches", ['enable-automation'])
                 # Turn-off userAutomationExtension
                 options.add_experimental_option('useAutomationExtension', False)
-                service = Service(executable_path=self.scrapping_config.chrome_driver_path)
+                # service = Service(executable_path=self.scrapping_config.chrome_driver_path)
                 # self.scraper_config.chrome_driver_path)
-                driver = webdriver.Chrome(service=service, options=options)
+                # driver = webdriver.Chrome(service=service, options=options)
+                driver = webdriver.Chrome(options = options)
                 driver.get(twitter_page)
                 driver.maximize_window()
                 time.sleep(10)
@@ -110,7 +117,7 @@ class DataScrapping:
                 # locating username and password inputs and sending text to the inputs
                 time.sleep(8)
                 username = driver.find_element(By.XPATH, '//input[@autocomplete ="username"]')
-                username.send_keys(self.scrapping_config.twitter_username)  # Write Email Here
+                username.send_keys(twitter_username)  # Write Email Here
                 # Clicking on "Next" button
                 next_button = driver.find_element(By.XPATH, '//div[@role="button"]//span[text()="Next"]')
                 next_button.click()
@@ -118,7 +125,7 @@ class DataScrapping:
                 time.sleep(2)
                 # Enter the password
                 password = driver.find_element(By.XPATH, '//input[@autocomplete ="current-password"]')
-                password.send_keys(self.scrapping_config.twitter_password)  # Write Password Here
+                password.send_keys(twitter_password)  # Write Password Here
                 # locating login button and then clicking on it
                 login_button = driver.find_element(By.XPATH, '//div[@role="button"]//span[text()="Log in"]')
                 login_button.click()
