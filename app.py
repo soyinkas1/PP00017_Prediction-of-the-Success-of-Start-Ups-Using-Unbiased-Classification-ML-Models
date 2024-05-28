@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 
 from sklearn.preprocessing import StandardScaler
-from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
+from src.pipeline.stage_07_prediction_pipeline import CustomData, PredictPipeline
 from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import DataTransformationConfig
 
@@ -118,11 +118,6 @@ def predict_datapoint():
 @app.route('/train', methods=['GET'])
 def training():
     
-    def change_page():
-
-        return render_template('on_training.html')
-    
-    change_page()
     os.system("python main.py")
 
     return render_template('training.html')
