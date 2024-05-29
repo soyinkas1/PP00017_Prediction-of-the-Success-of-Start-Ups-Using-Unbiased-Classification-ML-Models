@@ -290,16 +290,17 @@ class DataCleaning:
             funding_rounds = pd.read_csv(self.cleaning_config.funding_rounds_local_data_file)
             # import the clean version of datasets that would provide features for the backbone dataset (ipos)
             ipos = pd.read_csv(self.cleaning_config.ipos_local_data_file)
+
+            logging.info('Merging in funding and acquisition datasets...')
             # Merge the fund raising and acquisition datasets
             success_ds = pd.merge(acquisitions, funding_rounds, on=self.cleaning_config.org_uuid, how='outer')
             # Merge the new fund raising dataset and ipos dataset
             success_ds = pd.merge(success_ds, ipos, on=self.cleaning_config.org_uuid, how='outer')
             # Columns with above values for investment type will be deleted from the funding DataFrame
             failure = ['series_a', 'seed', 'angel', 'debt_financing', 'series_unknown','grant', 'pre_seed']
-            for r, col in enumerate(success_ds['investment_type']):
-                for fail in failure:
-                    if col == fail:
-                        success_ds.drop(r, axis=0, inplace=True)
+            # Drop rows where 'investment_type' is in the failure list
+            success_ds = success_ds[~success_ds['investment_type'].isin(failure)]
+            logging.info('Merging in funding and acquisition datasets..2')
             # Drop all NaN in the investment_type column
             success_ds.dropna(subset=['investment_type'], inplace=True)
             # Create the success column with 1 to represent successful companies on this list
@@ -311,10 +312,14 @@ class DataCleaning:
                                 left_on=self.cleaning_config.uuid, how='left')
             # Companies not on this success Dataframe will have value filled with 0 (failure)
             backbone_ds['success'].fillna(0, inplace=True)
+
+            logging.info('Merging in funding and acquisition datasets..3')
             # cast the success column as INT
             backbone_ds['success'] = backbone_ds['success'].astype(int)
             # Save the backbone_ds before merging with the scraped dataset, cleaning and preparing for model training
             backbone_ds.to_csv(self.cleaning_config.clean_backbone_local_data_file, index=False)
+
+            logging.info('Second level cleaning completed..')
 
         except Exception as e:
             raise CustomException(e, sys)

@@ -1,8 +1,8 @@
 from src.logger import logging
 from src.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from src.pipeline.stage_02_data_cleaning import DataCleaningPipeline
-from src.pipeline.stage_03_data_transformation import DataTransformationPipeline
-from src.pipeline.stage_04_model_trainer import ModelTrainerPipeline
+from src.pipeline.stage_05_data_transformation import DataTransformationPipeline
+from src.pipeline.stage_06_model_trainer import ModelTrainerPipeline
 
 
 STAGE_NAME = 'Data Ingestion'
