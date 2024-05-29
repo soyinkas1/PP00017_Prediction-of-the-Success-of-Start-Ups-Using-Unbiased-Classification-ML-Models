@@ -19,7 +19,7 @@
 11. [Contributing](#contributing)
 12. [License](#license)
 13. [Acknowledgments](#acknowledgments)
-14. [Future Planned Updates](#Future-Planned-Updates)
+14. [Future Planned Updates](#Future-Work/Advancementss)
 
 
 ## Project Overview
