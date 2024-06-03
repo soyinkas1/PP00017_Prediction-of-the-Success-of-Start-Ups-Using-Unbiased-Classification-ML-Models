@@ -65,14 +65,23 @@ class DataTransformation:
             # drop all all rows with duplicate values across all columns.
             df.drop_duplicates(keep='first', inplace=True)
 
+           
+
+            # Ensure the columns are in datetime format
+            df[self.transform_config.founded_on] = pd.to_datetime(df[self.transform_config.founded_on], errors='coerce')
+            df[self.transform_config.degree_completed_on] = pd.to_datetime(df[self.transform_config.degree_completed_on], errors='coerce')
+
             # Create column for the years of experience of personnel at the founding of the company
-            df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - 
-                                                            df[self.transform_config.degree_completed_on])
-            # Convert the negative values to 0 days
-            df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(
-                lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
-            # Covert the days to years 
-            df[self.transform_config.per_exp_at_coy_start] = ((df[self.transform_config.per_exp_at_coy_start].dt.days)/365).astype(int)
+            df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - df[self.transform_config.degree_completed_on]).dt.days / 365.25
+            df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(lambda x: max(x, 0)).astype(int)
+            # # Create column for the years of experience of personnel at the founding of the company
+            # df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - 
+            #                                                 df[self.transform_config.degree_completed_on])
+            # # Convert the negative values to 0 days
+            # df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(
+            #     lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
+            # # Convert the days to years 
+            # df[self.transform_config.per_exp_at_coy_start] = ((df[self.transform_config.per_exp_at_coy_start].dt.days)/365).astype(int)
         
             # Create a column for the Length of degree of personnel
             df[self.transform_config.degree_length] = (df[self.transform_config.degree_completed_on] - df[self.clean_data_config.degree_started_on])

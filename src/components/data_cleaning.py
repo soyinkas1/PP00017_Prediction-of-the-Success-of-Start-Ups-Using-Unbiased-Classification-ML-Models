@@ -163,6 +163,10 @@ class DataCleaning:
                                                                         errors='coerce')
             organizations[self.cleaning_config.last_funding_on] = pd.to_datetime(organizations[
                                                                     self.cleaning_config.last_funding_on], errors='coerce')
+            
+            
+            
+            
             # Fill the rows with no degree_type, no subject, no started_on, no completed_on.
             for col in organizations.columns:
                 if organizations[col].dtype == 'O':
