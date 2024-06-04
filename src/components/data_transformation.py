@@ -67,10 +67,6 @@ class DataTransformation:
 
            
 
-            # Ensure the columns are in datetime format
-            df[self.transform_config.founded_on] = pd.to_datetime(df[self.transform_config.founded_on], errors='coerce')
-            df[self.transform_config.degree_completed_on] = pd.to_datetime(df[self.transform_config.degree_completed_on], errors='coerce')
-
             # Create column for the years of experience of personnel at the founding of the company
             df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - df[self.transform_config.degree_completed_on]).dt.days / 365.25
             df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(lambda x: max(x, 0)).astype(int)
