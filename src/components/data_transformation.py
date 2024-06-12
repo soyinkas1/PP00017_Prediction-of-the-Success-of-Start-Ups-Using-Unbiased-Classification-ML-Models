@@ -17,7 +17,7 @@ from sklearn.model_selection import train_test_split
 from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig
 from src.exception import CustomException
 from src.logger import logging
-from src.utils.common import save_object
+from src.utils.common import save_object, process_batch, process_in_batches
 
 
 # Suppress FutureWarnings
@@ -188,8 +188,7 @@ class DataTransformation:
             y_test = test['success']
 
 
-            print(X_train.info())
-            print(X_train.dtypes)
+         
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
@@ -215,10 +214,12 @@ class DataTransformation:
             y_train_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
-            train_df = pd.concat([pd.DataFrame(X_train.todense()), y_train_df], axis=1)
+            process_in_batches(X_train, y_train_df,3000, self.transform_config.train_data_local_data_file )
 
-            # Save to CSV file
-            train_df.to_csv(self.transform_config.train_data_local_data_file, index=False)
+            # train_df = pd.concat([pd.DataFrame(X_train.todense()), y_train_df], axis=1)
+
+            # # Save to CSV file
+            # train_df.to_csv(self.transform_config.train_data_local_data_file, index=False)
         
             logging.info("Saving final train dataset......")
 
@@ -228,10 +229,12 @@ class DataTransformation:
             y_val_df.reset_index(drop=True, inplace=True)
 
             # Combine X_val and y_val_df
-            val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
+            process_in_batches(X_val, y_val_df,10000, self.transform_config.validate_data_local_data_file )
 
-            # Save to CSV file
-            val_df.to_csv(self.transform_config.validate_data_local_data_file, index=False)
+            # val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
+
+            # # Save to CSV file
+            # val_df.to_csv(self.transform_config.validate_data_local_data_file, index=False)
             
             logging.info("Saving final validate dataset......")
 
@@ -242,10 +245,13 @@ class DataTransformation:
             y_test_df.reset_index(drop=True, inplace=True)
 
             # Combine X_test and y_test_df
-            test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)
+            process_in_batches(X_test, y_test_df,10000, self.transform_config.test_data_local_data_file )
+            
+            
+            # test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)
 
-            # Save to CSV file
-            test_df.to_csv(self.transform_config.test_data_local_data_file, index=False)
+            # # Save to CSV file
+            # test_df.to_csv(self.transform_config.test_data_local_data_file, index=False)
 
             logging.info("Saving final test dataset......")
 

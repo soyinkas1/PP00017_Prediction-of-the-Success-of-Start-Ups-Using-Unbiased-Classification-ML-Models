@@ -1,6 +1,7 @@
 # Import the required libraries
 import re
 import os
+import pandas as pd
 from src.logger import logging
 from box.exceptions import BoxValueError
 from box import ConfigBox
@@ -136,7 +137,7 @@ def clean_tweet(tweet: str) -> str:
     tweet = re.sub(r"http\S+", "", tweet)  # Remove the URL
     tweet = re.sub(r"www.\S+", "", tweet)  # Remove the URL
     tweet = re.sub('[()!?]', ' ', tweet)  # Remove punctuations
-    tweet = re.sub('\[.*?\]', ' ', tweet)  # Remove punctuations
+    tweet = re.sub(r'[^\w\s]', '', tweet)  # Remove all punctuations
     tweet = re.sub("[^a-z0-9]", " ", tweet)  # Remove all non-alphanumeric characters
 
     return tweet
@@ -249,3 +250,32 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
         return report
     except Exception as e:
         raise e
+    
+
+
+def process_in_batches(X, y, batch_size, path):
+    try:
+        n_samples = X.shape[0]
+        for start in range(0, n_samples, batch_size):
+            end = min(start + batch_size, n_samples)
+            X_batch = X[start:end]
+            y_batch = y[start:end]
+            
+            # Process each batch
+            process_batch(X_batch, y_batch, path)
+    except MemoryError as e:
+        raise CustomException(e, sys)
+
+def process_batch(X_batch, y_batch, path):
+    # Example batch processing
+    X_batch_dense = X_batch.todense()  # Only if absolutely necessary
+    batch_df = pd.concat([pd.DataFrame(X_batch_dense), y_batch.reset_index(drop=True)], axis=1)
+    # Continue processing the batch
+    batch_df.to_csv(path, index=False, mode='a')
+
+# def data_transformation(self):
+    
+#     try:
+#         process_in_batches(X_train, y_train_df)
+#     except MemoryError as e:
+#         raise CustomException(e, sys)
