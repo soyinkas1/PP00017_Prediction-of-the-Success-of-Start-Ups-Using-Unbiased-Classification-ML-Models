@@ -163,8 +163,10 @@ class DataTransformation:
             train, validate, test = np.split(df.sample(frac=1), [int(self.transform_config.train_percent*len(df)), 
                         int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
             
-            # train.to_csv('train_audit.csv', index=False)
             
+            train.to_csv('artifacts/train_audit.csv', index=False)
+            train.dtypes.to_csv('artifacts/train_dtype.csv', index=False)
+            print(train.dtypes)
             # Create a list of feature categorisations
             num_features = self.transform_config.num_features
             text_feature_o =  self.transform_config.text_feature_o
@@ -201,7 +203,7 @@ class DataTransformation:
                 ("text_p", text_pipeline, text_feature_p),
                 ("num", num_pipeline, num_features),
                 ("cat", cat_pipeline, cat_features)
-                ],remainder='passthrough'  
+            ],remainder='passthrough'  
             )
 
 
@@ -215,6 +217,9 @@ class DataTransformation:
             X_test = test.drop('success', axis=1)
             y_test = test['success']
 
+
+            print(X_train.info())
+            print(X_train.dtypes)
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
