@@ -45,7 +45,7 @@ class DataTransformation:
             df[self.transform_config.institution_name].fillna('not known',inplace=True)
             df[self.transform_config.degree_type].fillna('not known',inplace=True)
             df[self.transform_config.subject].fillna('not known',inplace=True)
-            df[self.transform_config.degree_is_completed].fillna('False',inplace=True)
+            df[self.transform_config.degree_is_completed].fillna('False',inplace=True, downcast={'object':bool})
 
             # The dates will be filled with current date so that the derived dates from these will be zero (0)
             for col in df.columns:
@@ -57,11 +57,11 @@ class DataTransformation:
                     df[col].fillna(np.datetime64(date.today()), inplace=True)
 
             # Cast the data type for 'exhibitor', 'organizer', 'speaker', 'sponsor' from float to int
-            df[self.transform_config.exhibitor] = df[self.transform_config.exhibitor].astype(int)
-            df[self.transform_config.organizer] = df[self.transform_config.organizer].astype(int)
-            df[self.transform_config.speaker] = df[self.transform_config.speaker].astype(int)
-            df[self.transform_config.sponsor] = df[self.transform_config.sponsor].astype(int)
-
+            df[self.transform_config.exhibitor] = df[self.transform_config.exhibitor].astype(np.int64)
+            df[self.transform_config.organizer] = df[self.transform_config.organizer].astype(np.int64)
+            df[self.transform_config.speaker] = df[self.transform_config.speaker].astype(np.int64)
+            df[self.transform_config.sponsor] = df[self.transform_config.sponsor].astype(np.int64)
+            df[self.transform_config.degree_is_completed] = df[self.transform_config.degree_is_completed].astype(bool)
             logging.info("Casting data types......")
             # drop all all rows with duplicate values across all columns.
             df.drop_duplicates(keep='first', inplace=True)
@@ -71,27 +71,15 @@ class DataTransformation:
             # Create column for the years of experience of personnel at the founding of the company
             df.loc[df['founded_on'] < df['degree_completed_on'] , 'founded_on'] = df['degree_completed_on']
             df['per_exp_at_coy_start'] = df['founded_on'] - df['degree_completed_on']
-            df['per_exp_at_coy_start'] = (df['per_exp_at_coy_start'].dt.days / 365).astype(int)
-            
-            
-            # df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - df[self.transform_config.degree_completed_on]).dt.days / 365.25
-            # df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(lambda x: max(x, 0)).astype(int)
-            # # # Create column for the years of experience of personnel at the founding of the company
-            # # df[self.transform_config.per_exp_at_coy_start] = (df[self.transform_config.founded_on] - 
-            # #                                                 df[self.transform_config.degree_completed_on])
-            # # # Convert the negative values to 0 days
-            # # df[self.transform_config.per_exp_at_coy_start] = df[self.transform_config.per_exp_at_coy_start].apply(
-            # #     lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
-            # # # Convert the days to years 
-            # # df[self.transform_config.per_exp_at_coy_start] = ((df[self.transform_config.per_exp_at_coy_start].dt.days)/365).astype(int)
-        
+            df['per_exp_at_coy_start'] = (df['per_exp_at_coy_start'].dt.days / 365).astype(np.int64)
+                             
             # Create a column for the Length of degree of personnel
             df[self.transform_config.degree_length] = (df[self.transform_config.degree_completed_on] - df[self.clean_data_config.degree_started_on])
             # Convert the negative values to 0 days
             df[self.transform_config.degree_length] = df[self.transform_config.degree_length].apply(
                 lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
             # Convert the days to years 
-            df[self.transform_config.degree_length] = ((df[self.transform_config.degree_length].dt.days)/365).astype(int)
+            df[self.transform_config.degree_length] = ((df[self.transform_config.degree_length].dt.days)/365).astype(np.int64)
 
             # Create a column for the years since the last funding received by the organisation
             df[self.transform_config.yrs_since_last_funding] = np.datetime64(date.today()) - df[self.transform_config.last_funding_on]
@@ -99,7 +87,7 @@ class DataTransformation:
             df[self.transform_config.yrs_since_last_funding] = df[self.transform_config.yrs_since_last_funding].apply(
                 lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
             # Covert the days to years 
-            df[self.transform_config.yrs_since_last_funding] = ((df[self.transform_config.yrs_since_last_funding].dt.days)/365).astype(int)
+            df[self.transform_config.yrs_since_last_funding] = ((df[self.transform_config.yrs_since_last_funding].dt.days)/365).astype(np.int64)
 
             # Create a column for the years of operation of the organisation
             df[self.transform_config.yrs_of_operation] = df[self.transform_config.closed_on] - df[self.transform_config.founded_on] 
@@ -107,7 +95,7 @@ class DataTransformation:
             df[self.transform_config.yrs_of_operation] = df[self.transform_config.yrs_of_operation].apply(
                 lambda x: x if(x/pd.Timedelta(hours=1) > 0) else (pd.Timedelta(seconds=0)) )
             # Convert the days to years 
-            df[self.transform_config.yrs_of_operation] = ((df[self.transform_config.yrs_of_operation].dt.days)/365).astype(int)
+            df[self.transform_config.yrs_of_operation] = ((df[self.transform_config.yrs_of_operation].dt.days)/365).astype(np.int64)
             
             logging.info("Dropping unneeded columns......")
             # Drop the columns that are no longer required
@@ -120,29 +108,15 @@ class DataTransformation:
             df.reset_index(drop=True, inplace=True)
 
             logging.info("Defining success column......")
-            # Set the organisations with employee count of 'employee_cap_success' and above as successful
-            # for idx in df.index:
-            #     if df.loc[idx, self.transform_config.employee_count] >= self.transform_config.employee_cap_success:
-            #         df.loc[idx, self.transform_config.success] = 1
             df.loc[df['employee_count'] >= 1000, 'success'] = 1
 
             # Set the organisations with years of operation of 20 years and above as successful
-            # for idx in df.index:
-            #     if df.loc[idx, self.transform_config.yrs_of_operation] >= 20 :
-            #         df.loc[idx, self.transform_config.success] = 1
             df.loc[df['yrs_of_operation'] >= 20, 'success'] = 1
 
             # Create a DataFrame of organisation with one or more rows as success = 1
             suc_df = pd.DataFrame(df.groupby(self.transform_config.uuid)[self.transform_config.success].
                                 sum()[df.groupby(self.transform_config.uuid)[self.transform_config.success].sum()>0])
             
-            # Update all rows of these organisations to success = 1
-            # for idx in df.index:
-            #     for coy in suc_df.index:
-            #         if df.loc[idx, self.transform_config.uuid] == coy :
-            #             df.loc[idx, self.transform_config.success] = 1
-            
-            # df[self.transform_config.cat_features] = df[self.transform_config.cat_features].astype(str) 
             # Update all rows of these organisations to success = 1
             matching_uuids = df['uuid'].isin(suc_df.index)
 
@@ -151,7 +125,6 @@ class DataTransformation:
             
             # drop company ID
             df.drop('uuid',axis=1, inplace=True)
-
 
             # Save the updated final dataset at this stage
             df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
@@ -164,10 +137,7 @@ class DataTransformation:
                         int((self.transform_config.train_percent+self.transform_config.validate_percent)*len(df))])
             
             
-            train.to_csv('artifacts/train_audit.csv', index=False)
-            train.dtypes.to_csv('artifacts/train_dtype.csv', index=False)
-            print(train.dtypes)
-            # Create a list of feature categorisations
+           # Create a list of feature categorisations
             num_features = self.transform_config.num_features
             text_feature_o =  self.transform_config.text_feature_o
             text_feature_p = self.transform_config.text_feature_p
