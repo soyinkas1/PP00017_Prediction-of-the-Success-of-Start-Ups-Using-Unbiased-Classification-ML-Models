@@ -50,9 +50,9 @@ class ModelTrainer:
 
         # We will load the training, validation and test dataset
 
-        train = pd.read_csv(self.model_trainer_config.train_data_path)
-        val = pd.read_csv(self.model_trainer_config.validation_data_path)
-        test = pd.read_csv(self.model_trainer_config.test_data_path)
+        train = pd.read_csv(self.model_trainer_config.train_data_path, chunksize=3000, low_memory=True)
+        val = pd.read_csv(self.model_trainer_config.validation_data_path, chunksize=3000, low_memory=True)
+        test = pd.read_csv(self.model_trainer_config.test_data_path, chunksize=3000, low_memory=True)
 
         logging.info('Dataset loaded loaded...')
       

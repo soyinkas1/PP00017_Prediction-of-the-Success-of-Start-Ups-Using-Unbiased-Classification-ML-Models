@@ -267,15 +267,12 @@ def process_in_batches(X, y, batch_size, path):
         raise CustomException(e, sys)
 
 def process_batch(X_batch, y_batch, path):
-    # Example batch processing
+    # batch processing
     X_batch_dense = X_batch.todense()  # Only if absolutely necessary
     batch_df = pd.concat([pd.DataFrame(X_batch_dense), y_batch.reset_index(drop=True)], axis=1)
+    
+    
     # Continue processing the batch
     batch_df.to_csv(path, index=False, mode='a')
+    print(f'shape of batched processed dataset:{batch_df.shape}')
 
-# def data_transformation(self):
-    
-#     try:
-#         process_in_batches(X_train, y_train_df)
-#     except MemoryError as e:
-#         raise CustomException(e, sys)
