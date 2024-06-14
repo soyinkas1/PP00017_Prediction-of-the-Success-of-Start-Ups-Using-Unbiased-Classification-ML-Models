@@ -48,19 +48,28 @@ class ModelTrainer:
 
     def initiate_model_trainer(self):
 
-        # We will load the training, validation and test dataset
+        # We will load the training, validation and test dataset as chunks
 
-        train = pd.read_csv(self.model_trainer_config.train_data_path, chunksize=3000, low_memory=True)
-        val = pd.read_csv(self.model_trainer_config.validation_data_path, chunksize=3000, low_memory=True)
-        test = pd.read_csv(self.model_trainer_config.test_data_path, chunksize=3000, low_memory=True)
+        train_reader = pd.read_csv(self.model_trainer_config.train_data_path, chunksize=3000, low_memory=True)
+        val_reader = pd.read_csv(self.model_trainer_config.validation_data_path, chunksize=3000, low_memory=True)
+        test_reader = pd.read_csv(self.model_trainer_config.test_data_path, chunksize=3000, low_memory=True)
 
-        logging.info('Dataset loaded loaded...')
+        # Concatenate all chunks into a single DataFrame
+        train = pd.concat(train_reader)
+        val = pd.concat(val_reader)
+        test = pd.concat(test_reader)
+
+        logging.info('Dataset loaded ...')
+
       
         # Split the data into input features and target labels
         X_train, y_train, X_val, y_val, X_test, y_test = train.iloc[:, :-1],train.iloc[:, -1], val.iloc[:, :-1], val.iloc[:, -1],test.iloc[:, :-1], test.iloc[:, -1]
 
+        logging.info('Dataset split completed...')
+
         # Evaluate the model and append its score to model_report
         model_report:dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_val, y_test=y_val, models=self.model_trainer_config.models, param=self.model_trainer_config.params)
+        
         logging.info('Models evaluated for best one...')   
         # To get best model score from dict
         best_model_score = max(sorted(model_report.values()))

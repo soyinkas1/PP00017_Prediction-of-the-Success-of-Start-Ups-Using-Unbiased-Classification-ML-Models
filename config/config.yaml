@@ -3,7 +3,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  n_rows: 30000
+  n_rows: 1000
   acquisition_source_data_file: data/acquisitions.csv
   cat_groups_source_data_file: data/category_groups.csv
   degrees_source_data_file: data/degrees.csv
