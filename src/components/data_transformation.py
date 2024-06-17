@@ -229,7 +229,7 @@ class DataTransformation:
             y_val_df.reset_index(drop=True, inplace=True)
 
             # Combine X_val and y_val_df
-            process_in_batches(X_val, y_val_df,10000, self.transform_config.validate_data_local_data_file )
+            process_in_batches(X_val, y_val_df,3000, self.transform_config.validate_data_local_data_file )
 
             # val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
 

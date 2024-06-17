@@ -29,13 +29,6 @@ class DataIngestion:
             acq_df.to_csv(self.ingestion_config.acquisition_local_data_file, index=False)
             logging.info('Saved the acquisitions dataset in csv format')
 
-            # catg_dfs = pd.read_csv(self.ingestion_config.cat_groups_source_data_file, chunksize=chunk_size,
-            #                        low_memory=True, nrows=self.ingestion_config.n_rows)
-            # catg_df = pd.concat(catg_dfs)
-            # logging.info('Read the category groups dataset as dataframe')
-            # catg_df.to_csv(self.ingestion_config.cat_groups_local_data_file, index=False)
-            # logging.info('Saved the category groups dataset in csv format')
-
             deg_dfs = pd.read_csv(self.ingestion_config.degrees_source_data_file, chunksize=chunk_size,
                                   low_memory=True, nrows=self.ingestion_config.n_rows)
             deg_df = pd.concat(deg_dfs)

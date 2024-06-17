@@ -150,6 +150,7 @@ class ConfigurationManager:
             facebook_username=config.facebook_username,
             facebook_password=config.facebook_password,
 
+
         )
 
         return data_scrapping_config

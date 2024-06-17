@@ -50,9 +50,9 @@ class ModelTrainer:
 
         # We will load the training, validation and test dataset as chunks
 
-        train_reader = pd.read_csv(self.model_trainer_config.train_data_path, chunksize=3000, low_memory=True)
-        val_reader = pd.read_csv(self.model_trainer_config.validation_data_path, chunksize=3000, low_memory=True)
-        test_reader = pd.read_csv(self.model_trainer_config.test_data_path, chunksize=3000, low_memory=True)
+        train_reader = pd.read_csv(self.model_trainer_config.train_data_path, chunksize=100, low_memory=False)
+        val_reader = pd.read_csv(self.model_trainer_config.validation_data_path, chunksize=100, low_memory=False)
+        test_reader = pd.read_csv(self.model_trainer_config.test_data_path, chunksize=100, low_memory=False)
 
         # Concatenate all chunks into a single DataFrame
         train = pd.concat(train_reader)
