@@ -3,7 +3,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  n_rows: 1000
+  n_rows: 5000
   acquisition_source_data_file: data/acquisitions.csv
   cat_groups_source_data_file: data/category_groups.csv
   degrees_source_data_file: data/degrees.csv
@@ -161,9 +161,9 @@ data_transformation:
     root_dir: artifacts/data_transformation
     clean_backbone_local_data_file: artifacts/data_cleaning/clean_backbone.csv
     transformed_data_local_data_file: artifacts/data_transformation/transformed_data.csv
-    train_data_local_data_file: artifacts/data_transformation/train_data.csv
-    validate_data_local_data_file: artifacts/data_transformation/validate_data.csv
-    test_data_local_data_file: artifacts/data_transformation/test_data.csv
+    train_data_local_data_file: artifacts/data_transformation/training_data.csv
+    validate_data_local_data_file: artifacts/data_transformation/valid_data.csv
+    test_data_local_data_file: artifacts/data_transformation/testing_data.csv
     per_exp_at_coy_start: per_exp_at_coy_start
     founded_on: founded_on
     closed_on: closed_on
@@ -211,9 +211,9 @@ data_transformation:
 
 model_trainer: 
     root_dir: artifacts/model_trainer
-    train_data_path: artifacts/data_transformation/train_data.csv
-    validation_data_path: artifacts/data_transformation/validate_data.csv
-    test_data_path: artifacts/data_transformation/test_data.csv
+    train_data_path: artifacts/data_transformation/training_data.csv
+    validation_data_path: artifacts/data_transformation/valid_data.csv
+    test_data_path: artifacts/data_transformation/testing_data.csv
     best_model_path: artifacts/model_trainer/best_model.pkl   
     models:
         Logistic Regression: sklearn.linear_model.LogisticRegression

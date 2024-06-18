@@ -1,34 +1,35 @@
 param_grid: 
     params: {'Logistic Regression': 
-      {'penalty': [None, '12', 'l1', 'elasticnet'],
-      'dual': [True, False],
-      'solver': ['lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga']},
+      {'penalty': ['12', 'l1'],
+      'dual': [False],
+      'solver': ['liblinear', 'saga']},
       'SVM': {
-      'C': [0.1, 1, 10, 1000],
-      'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-      'degree': [0, 1, 2, 3, 4, 5, 6],
-      'gamma': ['scale', 'auto']},
+      'C': [0.1, 1, 10],
+      'kernel': ['linear',  'rbf'],
+      'degree': [3],
+      'gamma': ['scale']},
       'Random Forest': {
-      'criterion': ['gini', 'entropy'],
-      'max_features': ['sqrt','log2'],
-      'n_estimators': [8, 256],
-      'max_leaf_nodes': [None, 16, 32 ],
-      'bootstrap': [True, False],
-      'n_jobs': [1, -1],
-      'max_samples': [2, 4,6],
-      'min_samples_split': [2, 18],
-      'min_samples_leaf': [1, 17]},
+      'criterion': ['gini'],
+      'max_features': ['sqrt'],
+      'n_estimators': [50, 100],
+      'max_leaf_nodes': [None, 32 ],
+      'bootstrap': [True],
+      'n_jobs': [1],
+      'min_samples_split': [2, 10],
+      'min_samples_leaf': [1, 5]},
       'XGB': {
-      'learning_rate': [0.01, 0.05, 0.1],
-      'max_depth': [6, 8, 10],
-      'gamma': [2, 4, 9, 12],
-      'sampling_method': ['uniform', 'gradient_based'],
-      'grow_policy': ['depthwise', 'lossguide'],
-      'n_estimators': [8,16,32,64,128,256]},
+      'learning_rate': [0.05, 0.1],
+      'max_depth': [6, 8],
+      'gamma': [2, 4],
+      'sampling_method': ['uniform'],
+      'grow_policy': ['depthwise'],
+      'n_estimators': [50,100]},
       'LightGBM': {
-      'boosting_type': ['gbdt', 'rf', 'dart'],
-      'max_depth': [-1, 2, -10],
-      'learning_rate': [0.01, 0.05, 0.1],
-      'n_estimator': [100, 50, 200],
-      'num_leaves': [31, 50, 100]}
-    }           
+      'boosting_type': ['gbdt'],
+      'max_depth': [-1, 2],
+      'learning_rate': [ 0.05, 0.1],
+      'n_estimator': [ 50, 100],
+      'num_leaves': [31, 50]}
+    }  
+
+       
