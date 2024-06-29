@@ -13,6 +13,7 @@ dill
 flask
 flask-wtf
 flask-bootstrap
+azure-storage-blob
 ensure
 python-box
 pyYAML
