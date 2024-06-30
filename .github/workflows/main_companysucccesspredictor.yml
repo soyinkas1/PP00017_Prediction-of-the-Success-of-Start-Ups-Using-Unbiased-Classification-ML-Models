@@ -29,6 +29,17 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Set GitHub secrets as environment variables
+        env:
+          AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: echo "Environment variables set from GitHub secrets"
+        
+     
+      
+        
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -83,7 +94,7 @@ jobs:
 
       - name: Configure Azure App Settings
         run: |
-          az webapp config appsettings set --resource-group 'companyprediction' --name 'companysuccesspredcitor' --settings SECRET_KEY=${{ secrets.AZURE_WEBAPP_SECRET_KEY }}
+          az webapp config appsettings set --resource-group 'companyprediction' --name 'companysuccesspredcitor' --settings SECRET_KEY=${{ secrets.SECRET_KEY }}
         env:
-          AZURE_WEBAPP_SECRET_KEY: ${{ secrets.AZURE_WEBAPP_SECRET_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
             
