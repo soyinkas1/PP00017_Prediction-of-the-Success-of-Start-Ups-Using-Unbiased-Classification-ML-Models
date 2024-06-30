@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+from azure.storage.blob import BlobServiceClient, _blob_client
 from src.exception import CustomException
 from src.logger import logging
 
@@ -14,6 +15,22 @@ class DataIngestion:
     """
     def __init__(self, config: DataIngestionConfig):
         self.ingestion_config = config
+        self.blob_service_client = BlobServiceClient(
+            account_url=f'https://{self.ingestion_config.azure_storage_account_name}.blob.core.windows.net',
+            credential=self.ingestion_config.azure_storage_account_key
+        )
+
+
+    def download_blob_to_df(self, container_name, blob_name, chunksize,nrows=None):
+        try:
+            blob_client = self.blob_service_client.get_blob_client(container_name, blob=blob_name)
+            blob_data = blob_client.download_blob()
+            df = pd.read_csv(blob_data, chunksize=self.ingestion_config.chunk_size)
+            return pd.concat(df)
+
+        except Exception as e
+            raise CustomException(e, sys)
+
 
     def initiate_data_ingestion(self):
         """ The method to ingest data from data sources"""
@@ -22,7 +39,9 @@ class DataIngestion:
         try:
             # # Create the artifact folder/directory
             # os.makedirs(os.path.dirname(self.ingestion_config.people_data_path), exist_ok=True)
-            acq_dfs = pd.read_csv(self.ingestion_config.acquisition_source_data_file, chunksize=chunk_size,
+            acq_dfs = download_blob_to_df(self.ingestion_config.azure_container_name, 
+                                          self.ingestion_config.acquisition_source_data_file, 
+                                          chunksize=self.ingestion_config.chunk_size,
                                   low_memory=True, nrows=self.ingestion_config.n_rows)
             acq_df = pd.concat(acq_dfs)
             logging.info('Read the acquisitions dataset as dataframe')

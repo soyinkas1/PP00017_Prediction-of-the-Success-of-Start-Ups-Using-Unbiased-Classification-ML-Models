@@ -2,13 +2,19 @@ from src.constants import *
 from src.utils.common import read_yaml, create_directories
 from src.entity.config_entity import DataIngestionConfig, DataCleaningConfig, DataEnrichConfig, DataScrappingConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig, WebFormConfig
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class ConfigurationManager:
    
+    # AZURE_STORAGE_ACC_KEY = os.getenv('AZURE_STORAGE_ACC_KEY')
+    # SECRET_KEY=os.getenv('SECRET_KEY')
 
-    SECRET_KEY=os.environ.get('SECRET_KEY')
+
+
 
     def __init__(self,
                  config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH):
@@ -16,6 +22,8 @@ class ConfigurationManager:
         self.params = read_yaml(params_filepath)
         # self.schema = read_yaml(schema_filepath)
         create_directories([self.config.artifacts_root])
+        AZURE_STORAGE_ACC_KEY = os.getenv('AZURE_STORAGE_ACC_KEY')
+        SECRET_KEY=os.getenv('SECRET_KEY')
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
@@ -25,6 +33,10 @@ class ConfigurationManager:
         data_ingestion_config = DataIngestionConfig(
             root_dir=config.root_dir,
             n_rows=config.n_rows,
+            chunk_size=config.chunk_size,
+            azure_storage_account_name=config.azure_storage_account_name,
+            azure_storage_account_key=config.azure_storage_account_key,
+            container_name=config.container_name,
             acquisition_source_data_file=config.acquisition_source_data_file,
             cat_groups_source_data_file=config.cat_groups_source_data_file,
             degrees_source_data_file=config.degrees_source_data_file,

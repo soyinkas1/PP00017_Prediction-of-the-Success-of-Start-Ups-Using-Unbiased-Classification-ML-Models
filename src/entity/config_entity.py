@@ -1,12 +1,19 @@
 from dataclasses import dataclass
 from pathlib import Path
 import os
+from typing import Any
+from dotenv import load_dotenv
 
+load_dotenv()
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir: Path
     n_rows: int
+    chunk_size:int
+    azure_storage_account_name: str 
+    azure_storage_account_key: Any
+    container_name: str
     acquisition_source_data_file: Path
     cat_groups_source_data_file: Path
     degrees_source_data_file: Path
