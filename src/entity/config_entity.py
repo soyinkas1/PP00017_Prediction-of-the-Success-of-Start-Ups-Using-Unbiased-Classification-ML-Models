@@ -13,7 +13,7 @@ class DataIngestionConfig:
     chunk_size:int
     azure_storage_account_name: str 
     azure_storage_account_key: Any
-    container_name: str
+    azure_container_name: str
     acquisition_source_data_file: Path
     cat_groups_source_data_file: Path
     degrees_source_data_file: Path
@@ -49,6 +49,45 @@ class DataIngestionConfig:
     organizations_local_data_file: Path
     people_local_data_file: Path
     people_descriptions_local_data_file: Path
+
+    acquisition_source_blob_file: Path
+    cat_groups_source_blob_file: Path
+    degrees_source_blob_file: Path
+    event_appearances_source_blob_file: Path
+    events_source_blob_file: Path
+    funding_rounds_source_blob_file: Path
+    funds_source_blob_file: Path
+    investments_partners_source_blob_file: Path
+    investments_source_blob_file: Path
+    investors_source_blob_file: Path
+    ipos_source_blob_file: Path
+    jobs_source_blob_file: Path
+    org_parents_source_blob_file: Path
+    organization_descriptions_source_blob_file: Path
+    organizations_source_blob_file: Path
+    people_source_blob_file: Path
+    people_descriptions_source_blob_file: Path
+
+    acquisition_local_blob_file: Path
+    cat_groups_local_blob_file: Path
+    degrees_local_blob_file: Path
+    event_appearances_local_blob_file: Path
+    events_local_blob_file: Path
+    funding_rounds_local_blob_file: Path
+    funds_local_blob_file: Path
+    investments_partners_local_blob_file: Path
+    investments_local_blob_file: Path
+    investors_local_blob_file: Path
+    ipos_local_blob_file: Path
+    jobs_local_blob_file: Path
+    org_parents_local_blob_file: Path
+    organization_descriptions_local_blob_file: Path
+    organizations_local_blob_file: Path
+    people_local_blob_file: Path
+    people_descriptions_local_blob_file: Path
+
+
+
 
 
 @dataclass(frozen=True)

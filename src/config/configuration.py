@@ -23,6 +23,7 @@ class ConfigurationManager:
         # self.schema = read_yaml(schema_filepath)
         create_directories([self.config.artifacts_root])
         AZURE_STORAGE_ACC_KEY = os.getenv('AZURE_STORAGE_ACC_KEY')
+        AZURE_STORAGE_ACC_NAME = os.getenv('AZURE_STORAGE_ACC_NAME')
         SECRET_KEY=os.getenv('SECRET_KEY')
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
@@ -34,9 +35,9 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             n_rows=config.n_rows,
             chunk_size=config.chunk_size,
-            azure_storage_account_name=config.azure_storage_account_name,
-            azure_storage_account_key=config.azure_storage_account_key,
-            container_name=config.container_name,
+            azure_storage_account_name=os.getenv('AZURE_STORAGE_ACC_NAME'),
+            azure_storage_account_key=os.getenv('AZURE_STORAGE_ACC_KEY'),
+            azure_container_name=config.azure_container_name,
             acquisition_source_data_file=config.acquisition_source_data_file,
             cat_groups_source_data_file=config.cat_groups_source_data_file,
             degrees_source_data_file=config.degrees_source_data_file,
@@ -70,7 +71,42 @@ class ConfigurationManager:
             organization_descriptions_local_data_file=config.organization_descriptions_local_data_file,
             organizations_local_data_file=config.organizations_local_data_file,
             people_local_data_file=config.people_local_data_file,
-            people_descriptions_local_data_file=config.people_descriptions_local_data_file
+            people_descriptions_local_data_file=config.people_descriptions_local_data_file,
+            acquisition_source_blob_file=config.acquisition_source_blob_file,
+            cat_groups_source_blob_file=config.cat_groups_source_blob_file,
+            degrees_source_blob_file=config.degrees_source_blob_file,
+            event_appearances_source_blob_file=config.event_appearances_source_blob_file,
+            events_source_blob_file=config.events_source_blob_file,
+            funding_rounds_source_blob_file=config.funding_rounds_source_blob_file,
+            funds_source_blob_file=config.funds_source_blob_file,
+            investments_partners_source_blob_file=config.investments_partners_source_blob_file,
+            investments_source_blob_file=config.investments_source_blob_file,
+            investors_source_blob_file=config.investors_source_blob_file,
+            ipos_source_blob_file=config.ipos_source_blob_file,
+            jobs_source_blob_file=config.jobs_source_blob_file,
+            org_parents_source_blob_file=config.org_parents_source_blob_file,
+            organization_descriptions_source_blob_file=config.organization_descriptions_source_blob_file,
+            organizations_source_blob_file=config.organizations_source_blob_file,
+            people_source_blob_file=config.people_source_blob_file,
+            people_descriptions_source_blob_file=config.people_descriptions_source_blob_file,
+
+            acquisition_local_blob_file=config.acquisition_local_blob_file,
+            cat_groups_local_blob_file=config.cat_groups_local_blob_file,
+            degrees_local_blob_file=config.degrees_local_blob_file,
+            event_appearances_local_blob_file=config.event_appearances_local_blob_file,
+            events_local_blob_file=config.events_local_blob_file,
+            funding_rounds_local_blob_file=config.funding_rounds_local_blob_file,
+            funds_local_blob_file=config.funds_local_blob_file,
+            investments_partners_local_blob_file=config.investments_partners_local_blob_file,
+            investments_local_blob_file=config.investors_local_blob_file,
+            investors_local_blob_file=config.investors_local_blob_file,
+            ipos_local_blob_file=config.ipos_local_blob_file,
+            jobs_local_blob_file=config.jobs_local_blob_file,
+            org_parents_local_blob_file=config.org_parents_local_blob_file,
+            organization_descriptions_local_blob_file=config.organization_descriptions_local_blob_file,
+            organizations_local_blob_file=config.organizations_local_blob_file,
+            people_local_blob_file=config.people_local_blob_file,
+            people_descriptions_local_blob_file=config.people_descriptions_local_blob_file
 
         )
 

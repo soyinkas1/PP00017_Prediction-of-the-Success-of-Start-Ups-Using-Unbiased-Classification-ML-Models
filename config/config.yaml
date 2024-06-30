@@ -7,7 +7,7 @@ data_ingestion:
   chunk_size: 100000
   azure_storage_account_name: ${AZURE_STORAGE_ACC_NAME}
   azure_storage_account_key: ${AZURE_STORAGE_ACC_KEY}
-  container_name: raw_data
+  azure_container_name: raw-data
   acquisition_source_data_file: data/acquisitions.csv
   cat_groups_source_data_file: data/category_groups.csv
   degrees_source_data_file: data/degrees.csv
@@ -43,6 +43,43 @@ data_ingestion:
   organizations_local_data_file: artifacts/data_ingestion/organizations.csv
   people_local_data_file: artifacts/data_ingestion/people.csv
   people_descriptions_local_data_file: artifacts/data_ingestion/people_descriptions.csv
+
+  acquisition_source_blob_file: acquisitions.csv
+  cat_groups_source_blob_file: category_groups.csv
+  degrees_source_blob_file: degrees.csv
+  event_appearances_source_blob_file: event_appearances.csv
+  events_source_blob_file: events.csv
+  funding_rounds_source_blob_file: funding_rounds.csv
+  funds_source_blob_file: funds.csv
+  investments_partners_source_blob_file: investment_partners.csv
+  investments_source_blob_file: investments.csv
+  investors_source_blob_file: investors.csv
+  ipos_source_blob_file: ipos.csv
+  jobs_source_blob_file: jobs.csv
+  org_parents_source_blob_file: org_parents.csv
+  organization_descriptions_source_blob_file: organization_descriptions.csv
+  organizations_source_blob_file: organizations.csv
+  people_source_blob_file: people.csv
+  people_descriptions_source_blob_file: people_descriptions.csv
+
+  acquisition_local_blob_file: artifacts/data_ingestion/acquisitions.csv
+  cat_groups_local_blob_file: artifacts/data_ingestion/category_groups.csv
+  degrees_local_blob_file: artifacts/data_ingestion/degrees.csv
+  event_appearances_local_blob_file: artifacts/data_ingestion/event_appearances.csv
+  events_local_blob_file: artifacts/data_ingestion/events.csv
+  funding_rounds_local_blob_file: artifacts/data_ingestion/funding_rounds.csv
+  funds_local_blob_file: artifacts/data_ingestion/funds.csv
+  investments_partners_local_blob_file: artifacts/data_ingestion/investment_partners.csv
+  investments_local_blob_file: artifacts/data_ingestion/investments.csv
+  investors_local_blob_file: artifacts/data_ingestion/investors.csv
+  ipos_local_blob_file: artifacts/data_ingestion/ipos.csv
+  jobs_local_blob_file: artifacts/data_ingestion/jobs.csv
+  org_parents_local_blob_file: artifacts/data_ingestion/org_parents.csv
+  organization_descriptions_local_blob_file: artifacts/data_ingestion/organization_descriptions.csv
+  organizations_local_blob_file: artifacts/data_ingestion/organizations.csv
+  people_local_blob_file: artifacts/data_ingestion/people.csv
+  people_descriptions_local_blob_file: artifacts/data_ingestion/people_descriptions.csv
+
 
 
 data_cleaning:

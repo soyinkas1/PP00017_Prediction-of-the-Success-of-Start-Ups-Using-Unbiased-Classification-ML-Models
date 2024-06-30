@@ -15,6 +15,43 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_
 from src.exception import CustomException
 import sys
 import dill
+from azure.storage.blob import BlobServiceClient
+
+def download_blob_to_df(storage_name, storage_key, container_name, blob_name, chunksize,low_memory=True, nrows=None):
+
+    try:
+        blob_service_client = BlobServiceClient(
+            account_url=f'https://{storage_name}.blob.core.windows.net',
+            credential=storage_key
+        )
+       
+        blob_client = blob_service_client.get_blob_client(container_name, blob=blob_name)
+        blob_data = blob_client.download_blob()
+        df = pd.read_csv(blob_data, chunksize=chunksize, low_memory=low_memory, nrows=nrows)
+        return pd.concat(df)
+
+    except Exception as e:
+        raise CustomException(e, sys)
+
+def upload_dataframe_to_blob(storage_name, storage_key, container_name, df, folder_file_name):
+
+    try:
+        blob_service_client = BlobServiceClient(
+            account_url=f'https://{storage_name}.blob.core.windows.net',
+            credential=storage_key
+        )
+        # Convert DataFrame to CSV string
+        csv_data = df.to_csv(index=False)
+
+        # Get blob client
+        blob_client = blob_service_client.get_blob_client(container=container_name, blob=f"{folder_file_name}")
+
+        # Upload CSV data to blob
+        blob_client.upload_blob(csv_data, overwrite=True)
+    
+    except Exception as e:
+        raise CustomException(e, sys)
+
 
 
 
