@@ -17,7 +17,7 @@ import sys
 import dill
 from azure.storage.blob import BlobServiceClient
 
-def download_blob_to_df(storage_name, storage_key, container_name, blob_name, chunksize,low_memory=True, nrows=None):
+def download_blob_to_df(storage_name, storage_key, container_name, blob_name, chunksize,low_memory=True, nrows=None, parse_dates=True):
 
     try:
         blob_service_client = BlobServiceClient(
@@ -27,7 +27,7 @@ def download_blob_to_df(storage_name, storage_key, container_name, blob_name, ch
        
         blob_client = blob_service_client.get_blob_client(container_name, blob=blob_name)
         blob_data = blob_client.download_blob()
-        df = pd.read_csv(blob_data, chunksize=chunksize, low_memory=low_memory, nrows=nrows)
+        df = pd.read_csv(blob_data, chunksize=chunksize, low_memory=low_memory, nrows=nrows, parse_dates=parse_dates)
         return pd.concat(df)
 
     except Exception as e:

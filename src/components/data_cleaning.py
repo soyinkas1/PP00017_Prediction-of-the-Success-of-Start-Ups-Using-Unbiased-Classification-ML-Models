@@ -6,6 +6,7 @@ from src.logger import logging
 from src.exception import CustomException
 import warnings
 from src.entity.config_entity import DataCleaningConfig, DataIngestionConfig
+from src.utils.common import download_blob_to_df, upload_dataframe_to_blob
 from datetime import date
 import re
 import sys
@@ -23,12 +24,19 @@ class DataCleaning:
         try:
             # Ingest data
             data_ingestion = DataIngestion(self.ingestion_config)
-            data_ingestion.initiate_data_ingestion()
+            # data_ingestion.initiate_data_ingestion()
 
             # Acquisition dataset cleaning
 
             logging.info('Cleaning acquisition dataset...')
-            acquisitions = pd.read_csv(self.ingestion_config.acquisition_local_data_file, low_memory=True)
+            # acquisitions = pd.read_csv(self.ingestion_config.acquisition_local_data_file, low_memory=True)
+            acquisitions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.acquisition_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+
+
             # Remove the unneeded columns
             acquisitions.drop(self.cleaning_config.acquisition_column_to_drop, axis=1, inplace=True)
             # Rename columns
@@ -41,12 +49,27 @@ class DataCleaning:
                 else:
                     acquisitions[col].fillna(0, inplace=True)
             # Save the clean version of the dataset
-            acquisitions.to_csv(self.cleaning_config.acquisition_local_data_file, index=False)
+            # acquisitions.to_csv(self.cleaning_config.acquisition_local_data_file, index=False)
+
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               acquisitions,
+                                               self.cleaning_config.acquisition_local_data_file)
+
+            
 
             # Degrees dataset cleaning
 
             logging.info('Cleaning degrees dataset...')
-            degrees = pd.read_csv(self.ingestion_config.degrees_local_data_file, low_memory=True)
+            # degrees = pd.read_csv(self.ingestion_config.degrees_local_data_file, low_memory=True)
+
+            degrees = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.degrees_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+
             # Remove the unneeded columns
             degrees.drop(self.cleaning_config.degrees_column_to_drop, axis=1, inplace=True)
             # Rename started_on and completed_on to make distinct
@@ -68,23 +91,53 @@ class DataCleaning:
             # Drop the rows with no degree_type, no subject, no started_on, no completed_on.
             degrees.dropna(subset=self.cleaning_config.degrees_column_to_drop_na, inplace=True)
             # Save the clean version of the dataset
-            degrees.to_csv(self.cleaning_config.degrees_local_data_file, index=False)
+            # degrees.to_csv(self.cleaning_config.degrees_local_data_file, index=False)
+
+            degrees = upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               degrees,
+                                               self.cleaning_config.degrees_local_data_file)
 
             # Event_appearances dataset cleaning
 
             logging.info('Cleaning event appearances dataset...')
-            event_appearances = pd.read_csv(self.ingestion_config.event_appearances_local_data_file, low_memory=True)
+            # event_appearances = pd.read_csv(self.ingestion_config.event_appearances_local_data_file, low_memory=True)
+
+            event_appearances = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.event_appearances_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+           
             # Remove the unneeded columns
             event_appearances.drop(self.cleaning_config.event_appearances_column_to_drop, axis=1, inplace=True)
             # Drop rows with missing values
             event_appearances.dropna(inplace=True)
             # Save the clean version of the dataset
-            event_appearances.to_csv(self.cleaning_config.event_appearances_local_data_file, index=False)
+            # event_appearances.to_csv(self.cleaning_config.event_appearances_local_data_file, index=False)
+
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               event_appearances,
+                                               self.cleaning_config.event_appearances_local_data_file)
+
+            
+
+
 
             # Funding rounds dataset cleaning
 
             logging.info('Cleaning funding rounds dataset...')
-            funding_rounds = pd.read_csv(self.ingestion_config.funding_rounds_local_data_file, low_memory=True)
+            # funding_rounds = pd.read_csv(self.ingestion_config.funding_rounds_local_data_file, low_memory=True)
+
+            funding_rounds = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.funding_rounds_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+
             # Remove the unneeded columns
             funding_rounds.drop(self.cleaning_config.funding_rounds_column_to_drop, axis=1,
                                 inplace=True)
@@ -96,12 +149,23 @@ class DataCleaning:
                 else:
                     funding_rounds[col].fillna(0, inplace=True)
             # Save the clean version of the dataset
-            funding_rounds.to_csv(self.cleaning_config.funding_rounds_local_data_file, index=False)
+            # funding_rounds.to_csv(self.cleaning_config.funding_rounds_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               funding_rounds,
+                                               self.cleaning_config.funding_rounds_local_data_file)
             # Ipos dataset cleaning
 
             logging.info('Cleaning Ipos dataset...')
-            ipos = pd.read_csv(self.ingestion_config.ipos_local_data_file, low_memory=True)
+            # ipos = pd.read_csv(self.ingestion_config.ipos_local_data_file, low_memory=True)
+
+            ipos = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.ipos_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
 
             # Remove the unneeded columns
             ipos.drop(self.cleaning_config.ipos_column_to_drop, axis=1, inplace=True)
@@ -117,12 +181,24 @@ class DataCleaning:
                 else:
                     ipos[col].fillna(0, inplace=True)
             # Save the clean version of the dataset
-            ipos.to_csv(self.cleaning_config.ipos_local_data_file, index=False)
+            # ipos.to_csv(self.cleaning_config.ipos_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               ipos,
+                                               self.cleaning_config.ipos_local_data_file)
             # Jobs dataset cleaning
 
             logging.info('Cleaning jobs dataset...')
-            jobs = pd.read_csv(self.ingestion_config.jobs_local_data_file, low_memory=True)
+            # jobs = pd.read_csv(self.ingestion_config.jobs_local_data_file, low_memory=True)
+            
+            jobs = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.jobs_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+                     
             # Remove the unneeded columns
             jobs.drop(self.cleaning_config.jobs_column_to_drop, axis=1, inplace=True)
             # rename started_on and completed_on to make distinct
@@ -137,23 +213,47 @@ class DataCleaning:
             #  fill_na "ended-on" with today's date.
             jobs[self.cleaning_config.job_ended_on].fillna(np.datetime64(date.today()), inplace=True)
             # Save the clean version of the dataset
-            jobs.to_csv(self.cleaning_config.jobs_local_data_file, index=False)
+            # jobs.to_csv(self.cleaning_config.jobs_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               jobs,
+                                               self.cleaning_config.jobs_local_data_file)
             # Organisation parents dataset cleaning
 
             logging.info('Cleaning org parents dataset...')
-            org_parents = pd.read_csv(self.ingestion_config.org_parents_local_data_file, low_memory=True)
+            # org_parents = pd.read_csv(self.ingestion_config.org_parents_local_data_file, low_memory=True)
+           
+            org_parents = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.org_parents_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+           
             # Remove the unneeded columns
             org_parents.drop(self.cleaning_config.org_parents_column_to_drop, axis=1, inplace=True)
             # rename uuid and name column to make distinct
             org_parents.rename(columns=self.cleaning_config.org_parents_column_to_rename, inplace=True)
             # Save the clean version of the dataset
-            org_parents.to_csv(self.cleaning_config.org_parents_local_data_file, index=False)
-
+            # org_parents.to_csv(self.cleaning_config.org_parents_local_data_file, index=False)
+            
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               org_parents,
+                                               self.cleaning_config.org_parents_local_data_file)
             # Organisations dataset cleaning
 
             logging.info('Cleaning organisations dataset...')
-            organizations = pd.read_csv(self.ingestion_config.organizations_local_data_file, low_memory=True)
+            # organizations = pd.read_csv(self.ingestion_config.organizations_local_data_file, low_memory=True)
+            
+            organizations = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.organizations_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
             # Remove the unneeded columns
             organizations.drop(self.cleaning_config.organizations_column_to_drop, axis=1, inplace=True)
             # Convert the started_on , last_funding_on and completed_on to DateTime data type
@@ -163,9 +263,6 @@ class DataCleaning:
                                                                         errors='coerce')
             organizations[self.cleaning_config.last_funding_on] = pd.to_datetime(organizations[
                                                                     self.cleaning_config.last_funding_on], errors='coerce')
-            
-            
-            
             
             # Fill the rows with no degree_type, no subject, no started_on, no completed_on.
             for col in organizations.columns:
@@ -191,13 +288,24 @@ class DataCleaning:
             organizations[self.cleaning_config.employee_count] = organizations[self.cleaning_config.employee_count].\
                 astype(int)
             # Save the clean version of the dataset
-            organizations.to_csv(self.cleaning_config.organizations_local_data_file, index=False)
+            # organizations.to_csv(self.cleaning_config.organizations_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               organizations,
+                                               self.cleaning_config.organizations_local_data_file)
             # Organisation descriptions dataset cleaning
 
             logging.info('Cleaning organisation descriptions dataset...')
-            organization_descriptions = pd.read_csv(self.ingestion_config.organization_descriptions_local_data_file,
-                                                    low_memory=True)
+            # organization_descriptions = pd.read_csv(self.ingestion_config.organization_descriptions_local_data_file, low_memory=True)
+            
+            organization_descriptions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.organization_descriptions_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+                                                   
             # Remove the unneeded columns
             organization_descriptions.drop(self.cleaning_config.organization_descriptions_column_to_drop, axis=1,
                                         inplace=True)
@@ -210,11 +318,23 @@ class DataCleaning:
             # Organisations without descriptions should be imputed with 'no description'
             organization_descriptions[self.cleaning_config.organization_description].fillna('no description', inplace=True)
             # Save the clean version of the dataset
-            organization_descriptions.to_csv(self.cleaning_config.organization_descriptions_local_data_file, index=False)
+            # organization_descriptions.to_csv(self.cleaning_config.organization_descriptions_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               organization_descriptions,
+                                               self.cleaning_config.organization_descriptions_local_data_file)
             # People dataset cleaning
             logging.info('Cleaning people dataset...')
-            people = pd.read_csv(self.ingestion_config.people_local_data_file, low_memory=True)
+            # people = pd.read_csv(self.ingestion_config.people_local_data_file, low_memory=True)
+            
+            people = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.people_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
             # Remove the unneeded columns
             people.drop(self.cleaning_config.people_column_to_drop, axis=1, inplace=True)
             # Rename 'facebook_url','linkedin_url', 'twitter_url' columns to make distinct
@@ -224,12 +344,25 @@ class DataCleaning:
             # All other missing values will be imputed with "not known"
             people.fillna('not known', inplace=True)
             # Save the clean version of the dataset
-            people.to_csv(self.cleaning_config.people_local_data_file, index=False)
+            # people.to_csv(self.cleaning_config.people_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               people,
+                                               self.cleaning_config.people_local_data_file)
             # People descriptions dataset
 
             logging.info('Cleaning people description dataset...')
-            people_descriptions = pd.read_csv(self.ingestion_config.people_descriptions_local_data_file, low_memory=True)
+            # people_descriptions = pd.read_csv(self.ingestion_config.people_descriptions_local_data_file, low_memory=True)
+            
+            people_descriptions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.ingestion_config.people_descriptions_local_blob_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
             # Remove the unneeded columns
             people_descriptions.drop(self.cleaning_config.people_descriptions_column_to_drop, axis=1, inplace=True)
             # Rename the uuid column to people_uuid
@@ -237,8 +370,14 @@ class DataCleaning:
             # Missing descriptions will be imputed with "no description"
             people_descriptions[self.cleaning_config.people_description].fillna('no description', inplace=True)
             # Save the clean version of the dataset
-            people_descriptions.to_csv(self.cleaning_config.people_descriptions_local_data_file, index=False)
+            # people_descriptions.to_csv(self.cleaning_config.people_descriptions_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               people_descriptions,
+                                               self.cleaning_config.people_descriptions_local_data_file)
+            
             logging.info('First level cleaning of all datasets completed...')
 
         except Exception as e:
@@ -249,30 +388,77 @@ class DataCleaning:
         try:
             logging.info('Merging of dataset starting...')
             # import the clean version of datasets that would provide features for the backbone dataset (organizaations)
-            organizations = pd.read_csv(self.cleaning_config.organizations_local_data_file,
-                                        parse_dates=[self.cleaning_config.founded_on, self.cleaning_config.closed_on])
+            # organizations = pd.read_csv(self.cleaning_config.organizations_local_data_file,
+                                        # parse_dates=[self.cleaning_config.founded_on, self.cleaning_config.closed_on])
+            
+            organizations = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.organizations_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size,
+                                               parse_dates=[self.cleaning_config.founded_on, self.cleaning_config.closed_on])
+            
             # import the clean version of datasets that would provide features for the backbone dataset (organizaation_descriptions)
-            organization_descriptions = pd.read_csv(self.cleaning_config.organization_descriptions_local_data_file)
+            # organization_descriptions = pd.read_csv(self.cleaning_config.organization_descriptions_local_data_file)
+            
+            organization_descriptions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.organization_descriptions_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
             # Merge with the organization_description table to add the description of the organisation
             logging.info('Merging in organization datasets...')
             backbone_ds = pd.merge(organizations, organization_descriptions, on=self.cleaning_config.uuid, how='inner')
             # import the clean version of datasets that would provide features for the backbone dataset (people)
-            people = pd.read_csv(self.cleaning_config.people_local_data_file)
+            # people = pd.read_csv(self.cleaning_config.people_local_data_file)
+            
+            people = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.people_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
             # Add the people to the backbone dataset
             logging.info('Merging in people datasets...')
             backbone_ds = pd.merge(backbone_ds, people, right_on=self.cleaning_config.featured_job_organization_uuid,
                                 left_on=self.cleaning_config.uuid, how='inner')
             # import the clean version of datasets that would provide features for the backbone dataset (people_description)
-            people_descriptions = pd.read_csv(self.cleaning_config.people_descriptions_local_data_file)
+            # people_descriptions = pd.read_csv(self.cleaning_config.people_descriptions_local_data_file)
+            
+            people_descriptions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.people_descriptions_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
+            
             # Add the people description to the backbone dataset
             backbone_ds = pd.merge(backbone_ds, people_descriptions, on=self.cleaning_config.person_uuid, how='inner')
             # import the clean version of datasets that would provide features for the backbone dataset (degrees)
             degrees = pd.read_csv(self.cleaning_config.degrees_local_data_file)
+            
+            degrees = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.degrees_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
             # Add the degrees to the backbone dataset
             logging.info('Merging in degrees datasets...')
             backbone_ds = pd.merge(backbone_ds, degrees, on=self.cleaning_config.person_uuid, how='left')
             # import the clean version of datasets that would provide features for the backbone dataset (events appearances)
             event_appearances = pd.read_csv(self.cleaning_config.event_appearances_local_data_file)
+            
+            event_appearances = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.event_appearances_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
             # Find the number of events participated in
             event_df_ds = pd.DataFrame(event_appearances.groupby(self.cleaning_config.event_group_by)[self.
                                     cleaning_config.event_uuid].count())
@@ -290,11 +476,36 @@ class DataCleaning:
 
             # import the clean version of datasets that would provide features for the backbone dataset (acquisitions)
             acquisitions = pd.read_csv(self.cleaning_config.acquisition_local_data_file)
+            
+            acquisitions = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.acquisition_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
             # import the clean version of datasets that would provide features for the backbone dataset (funding_rounds)
-            funding_rounds = pd.read_csv(self.cleaning_config.funding_rounds_local_data_file)
+            # funding_rounds = pd.read_csv(self.cleaning_config.funding_rounds_local_data_file)
+
+            funding_rounds = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.funding_rounds_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
+            
+            
             # import the clean version of datasets that would provide features for the backbone dataset (ipos)
             ipos = pd.read_csv(self.cleaning_config.ipos_local_data_file)
 
+            ipos = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.cleaning_config.ipos_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size)
+            
+            
+            
             logging.info('Merging in funding and acquisition datasets...')
             # Merge the fund raising and acquisition datasets
             success_ds = pd.merge(acquisitions, funding_rounds, on=self.cleaning_config.org_uuid, how='outer')
@@ -323,6 +534,15 @@ class DataCleaning:
             # Save the backbone_ds before merging with the scraped dataset, cleaning and preparing for model training
             backbone_ds.to_csv(self.cleaning_config.clean_backbone_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               backbone_ds,
+                                               self.cleaning_config.clean_backbone_local_data_file)
+            
+            
+            
+            
             logging.info('Second level cleaning completed..')
 
         except Exception as e:
