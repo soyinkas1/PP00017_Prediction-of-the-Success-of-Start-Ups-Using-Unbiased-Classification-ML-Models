@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
 # Import the required internal classes and methods
-from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig
+from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig, DataIngestionConfig
 from src.exception import CustomException
 from src.logger import logging
 from src.utils.common import save_object, process_batch, process_in_batches, download_blob_to_df, upload_dataframe_to_blob
@@ -27,18 +27,25 @@ class DataTransformation:
     """"
     This class is transform and carry out feature engineering to produce the final dataset for modelling
     """
-    def __init__(self, config: DataTransformationConfig, clean_data_config: DataCleaningConfig):
+    def __init__(self, config: DataTransformationConfig, clean_data_config: DataCleaningConfig, ingestion_config: DataIngestionConfig):
         self.transform_config = config
         self.clean_data_config = clean_data_config
+        self.ingestion_config = ingestion_config
 
     logging.info("Data transformation configuration done......")
 
     def data_transformation(self):
         
         try:
-            df = pd.read_csv(self.clean_data_config.clean_backbone_local_data_file,
-                            parse_dates=self.transform_config.columns_to_parse_dates)
-            
+            # df = pd.read_csv(self.clean_data_config.clean_backbone_local_data_file,
+            #                 parse_dates=self.transform_config.columns_to_parse_dates)
+            df = download_blob_to_df(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               self.clean_data_config.clean_backbone_local_data_file,
+                                               chunksize=self.ingestion_config.chunk_size,
+                                               parse_dates=self.transform_config.columns_to_parse_dates)
+
             logging.info("Data uploaded from data cleaning stage......")
             logging.info("Data transformation started......")
             # The following features should be filled with 'not known' and 'False' respectively  
@@ -127,8 +134,15 @@ class DataTransformation:
             df.drop('uuid',axis=1, inplace=True)
 
             # Save the updated final dataset at this stage
-            df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
+            # df.to_csv(self.transform_config.transformed_data_local_data_file, index=False)
 
+            upload_dataframe_to_blob(self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                               df,
+                                               self.transform_config.transformed_data_local_data_file)
+            
+            
             logging.info("Saving transformed dataset......")
 
             logging.info("Splitting transformed data......")
