@@ -17,7 +17,9 @@ from sklearn.model_selection import train_test_split
 from src.entity.config_entity import DataTransformationConfig, DataCleaningConfig, DataIngestionConfig
 from src.exception import CustomException
 from src.logger import logging
-from src.utils.common import save_object, process_batch, process_in_batches, download_blob_to_df, upload_dataframe_to_blob
+from src.utils.common import load_object_from_blob, save__object_to_blob, save_object, process_batch, \
+                            process_in_batches, download_blob_to_df, upload_dataframe_to_blob, \
+                            save__object_to_blob, load_object_from_blob, process_in_batches_blob, process_batch_blob
 
 
 # Suppress FutureWarnings
@@ -206,7 +208,16 @@ class DataTransformation:
             # Fit and transform the training input features data
             X_train = preprocessor.fit_transform(X_train)
 
-            save_object(self.transform_config.preprocessor_obj_path, preprocessor)
+            # save preprocessor 
+            # save_object(self.transform_config.preprocessor_obj_path, preprocessor)
+            save__object_to_blob(preprocessor,self.ingestion_config.azure_storage_account_name,
+                                               self.ingestion_config.azure_storage_account_key,
+                                               self.ingestion_config.azure_container_name,
+                                              self.transform_config.preprocessor_obj_path
+
+            )
+            
+            
             logging.info("Saved preprocessor ......")
 
             print(f'transformed shape of X_train:{X_train.shape}')
@@ -228,7 +239,10 @@ class DataTransformation:
             y_train_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
-            process_in_batches(X_train, y_train_df,3000, self.transform_config.train_data_local_data_file )
+            process_in_batches_blob(X_train, y_train_df,3000, self.transform_config.train_data_local_data_file,
+                                    storage_name=self.ingestion_config.azure_storage_account_name,
+                                     storage_key=self.ingestion_config.azure_storage_account_key,
+                                      container_name=self.ingestion_config.azure_container_name )
 
             # train_df = pd.concat([pd.DataFrame(X_train.todense()), y_train_df], axis=1)
 
@@ -243,7 +257,10 @@ class DataTransformation:
             y_val_df.reset_index(drop=True, inplace=True)
 
             # Combine X_val and y_val_df
-            process_in_batches(X_val, y_val_df,3000, self.transform_config.validate_data_local_data_file )
+            process_in_batches_blob(X_val, y_val_df,3000, self.transform_config.validate_data_local_data_file,
+                                     storage_name=self.ingestion_config.azure_storage_account_name,
+                                     storage_key=self.ingestion_config.azure_storage_account_key,
+                                      container_name=self.ingestion_config.azure_container_name)
 
             # val_df = pd.concat([pd.DataFrame(X_val.todense()), y_val_df], axis=1)
 
@@ -259,7 +276,10 @@ class DataTransformation:
             y_test_df.reset_index(drop=True, inplace=True)
 
             # Combine X_test and y_test_df
-            process_in_batches(X_test, y_test_df,10000, self.transform_config.test_data_local_data_file )
+            process_in_batches_blob(X_test, y_test_df,10000, self.transform_config.test_data_local_data_file,
+                                    storage_name=self.ingestion_config.azure_storage_account_name,
+                                     storage_key=self.ingestion_config.azure_storage_account_key,
+                                      container_name=self.ingestion_config.azure_container_name )
             
             
             # test_df = pd.concat([pd.DataFrame(X_test.todense()), y_test_df], axis=1)

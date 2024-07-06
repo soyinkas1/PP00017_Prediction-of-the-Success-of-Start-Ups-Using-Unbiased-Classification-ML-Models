@@ -359,5 +359,37 @@ def process_batch(X_batch, y_batch, path):
     
     # Continue processing the batch
     batch_df.to_csv(path, index=False, mode='a')
+ 
+
+    print(f'shape of batched processed dataset:{batch_df.shape}')
+
+def process_in_batches_blob(X, y, batch_size, path, storage_name, storage_key,container_name):
+    try:
+        n_samples = X.shape[0]
+        for start in range(0, n_samples, batch_size):
+            end = min(start + batch_size, n_samples)
+            X_batch = X[start:end]
+            y_batch = y[start:end]
+            
+            # Process each batch
+            process_batch_blob(X_batch, y_batch, path,storage_name=storage_name,
+                               storage_key=storage_key,container_name=container_name)
+    except MemoryError as e:
+        raise CustomException(e, sys)
+
+
+def process_batch_blob(X_batch, y_batch, path, storage_name, storage_key,container_name):
+    # batch processing
+    X_batch_dense = X_batch.todense()  # Only if absolutely necessary
+    batch_df = pd.concat([pd.DataFrame(X_batch_dense), y_batch.reset_index(drop=True)], axis=1)
+    
+    
+    # Continue processing the batch
+    # batch_df.to_csv(path, index=False, mode='a')
+    upload_dataframe_to_blob(storage_name=storage_name,
+                            storage_key=storage_key,
+                            container_name=container_name,
+                            df=batch_df, folder_file_name=path)
+
     print(f'shape of batched processed dataset:{batch_df.shape}')
 
