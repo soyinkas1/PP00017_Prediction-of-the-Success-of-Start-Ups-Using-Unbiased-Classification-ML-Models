@@ -52,8 +52,56 @@ def upload_dataframe_to_blob(storage_name, storage_key, container_name, df, fold
     except Exception as e:
         raise CustomException(e, sys)
 
+def load_object_from_blob(obj, storage_name, storage_key, container_name, blob_name):
 
+    try:
+        blob_service_client = BlobServiceClient(
+            account_url=f'https://{storage_name}.blob.core.windows.net',
+            credential=storage_key
+        )
+       
+        # Get the container client
+        container_client = blob_service_client.get_container_client(container_name)
+        
+        # Get the blob client
+        blob_client = container_client.get_blob_client(blob_name)
+        
+        # Download the blob data
+        blob_data = blob_client.download_blob().readall()
+        
+        # Deserialize the data using dill
+        obj = dill.loads(blob_data)
+        return obj
 
+    except Exception as e:
+        raise CustomException(e, sys)
+
+def save__object_to_blob(obj, storage_name, storage_key, container_name, blob_name):
+
+    try:
+        blob_service_client = BlobServiceClient(
+            account_url=f'https://{storage_name}.blob.core.windows.net',
+            credential=storage_key
+        )
+       
+         # Get the container client
+        container_client = blob_service_client.get_container_client(container_name)
+        
+        # Ensure the container exists
+        if not container_client.exists():
+            container_client.create_container()
+
+        # Serialize the data to a pickle format using dill
+        pickle_bytes = dill.dumps(obj)
+
+        # Get the blob client
+        blob_client = container_client.get_blob_client(blob_name)
+        
+        # Upload the pickle data to the blob
+        blob_client.upload_blob(pickle_bytes, overwrite=True)
+
+    except Exception as e:
+        raise CustomException(e, sys)
 
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     try:
