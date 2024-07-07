@@ -239,7 +239,7 @@ class DataTransformation:
             y_train_df.reset_index(drop=True, inplace=True)
 
             # Combine X_train and y_train_df
-            process_in_batches_blob(X_train, y_train_df,3000, self.transform_config.train_data_local_data_file,
+            process_in_batches(X_train, y_train_df,3000, self.transform_config.train_data_local_data_file,
                                     storage_name=self.ingestion_config.azure_storage_account_name,
                                      storage_key=self.ingestion_config.azure_storage_account_key,
                                       container_name=self.ingestion_config.azure_container_name )
